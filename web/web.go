@@ -66,32 +66,7 @@ func (s *Site) Account(w http.ResponseWriter, r *http.Request){}
 
 
 func (s *Site) TradingBots(w http.ResponseWriter, r *http.Request){
-		t, err := template.ParseFiles("./web/template/index.html")
-	if err != nil {
-		log.Printf("Ошибка парсинга шаблона: %v", err)
-		return
-	}
 
-
-
-	err = t.Execute(w, struct{
-		Hello string
-		Items []HomePageItem
-	}{
-		Hello: "World",
-		Items: []HomePageItem{  
-			HomePageItem {
-				Icon: "shared.svg",
-				Title: "DCA Bot",
-				Description: "No need to risk it all! Instead of investing a lump sum with unknown risks, the bot will invest the amount partially with maximum benefit.",
-				NameItem: "./catalog/dca",
-			},
-		},
-	})
-	if err != nil {
-		log.Printf("Ошибка записи в шаблон: %v", err)
-		return
-	}
 }
 
 
