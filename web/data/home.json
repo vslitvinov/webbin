@@ -37,6 +37,18 @@
 				"Description": "Easy automated bot configuration is always up to date with the current situation on the market. Less time — more profit!",
 				"Link": "./catalog/faqs"
 			}
-		]
+		],
+		"AllTools": [
+			{
+				"Title":"",
+				"Text":""
+			}
+		],
+		"FAQ": [
+			{
+				"Question":"",
+				"Answer":""
+			}
+		],
 	}
 }
