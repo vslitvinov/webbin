@@ -1,0 +1,18 @@
+{
+	"ServiseBlock" : {
+		"TraidingTools": [
+			{
+				"Icon": "shared.svg",
+				"Title": "DCA Bot",
+				"Description": "No need to risk it all! Instead of investing a lump sum with unknown risks, the bot will invest the amount partially with maximum benefit.",
+				"NameItem": "./catalog/dca"
+			},
+			{
+				"Icon": "shared.svg",
+				"Title": "Grid Bot",
+				"Description": "This bot will trade for you 24/7 making the most of market fluctuations. Its crucial skill is to buy low and sell high",
+				"NameItem": "./catalog/dca"
+			}
+		]
+	}
+}

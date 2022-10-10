@@ -1,4 +1,4 @@
-package moduls
+package models
 
 type NavBarItemLink struct {
 	Name string
@@ -18,9 +18,11 @@ type TraidingToolsItem struct {
 }
 
 type HomePage struct {
-	NavBar        []NavBarItem
-	TraidingTools []TraidingToolsItem
-	PricingPlans
-	AllTools
-	FAQ
+	ServiseBlock ServiseBlock
 }
+
+
+type ServiseBlock struct {
+	TraidingTools []TraidingToolsItem
+}
+

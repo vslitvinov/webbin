@@ -1,0 +1,66 @@
+<header id="topnav" class="defaultscroll sticky">
+    <div class="container">
+        <a class="logo" href="index.html">
+            <span class="logo-light-mode">
+                <img src="images/logo-dark.png" class="l-dark" height="60" alt="">
+                <img src="images/logo-light.png" class="l-light" height="60" alt="">
+            </span>
+            <img src="images/logo-light.png" height="60" class="logo-dark-mode" alt="">
+        </a>
+        <div class="menu-extras">
+            <div class="menu-item">
+                <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <ul class="buy-button list-inline mb-0">
+            <li class="list-inline-item mb-0">
+                <div class="dropdown dropdown-primary">
+                    <button type="button" class="btn btn-icon rounded-circle btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="user" class="icons"></i></button>
+                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-3" style="width: 200px;">
+                        <a class="dropdown-item text-dark" href="my-account.html"><i class="uil uil-user align-middle me-1"></i> Account</a>
+                        <a class="dropdown-item text-dark" href="#"><i class="uil uil-clipboard-notes align-middle me-1"></i> Order History</a>
+                        <a class="dropdown-item text-dark" href="#"><i class="uil uil-arrow-circle-down align-middle me-1"></i> Dashboard</a>
+                        <div class="dropdown-divider my-3 border-top"></div>
+                        <a class="dropdown-item text-dark" href="page-login.html"><i class="uil uil-sign-out-alt align-middle me-1"></i> Logout</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--end login button-->
+        <div id="navigation">
+            <!-- Navigation Menu-->
+            <ul class="navigation-menu nav-light">
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Trading Bots</a><span class="menu-arrow"></span>
+                    <ul class="submenu megamenu">
+                        <li>
+                            <ul>
+                                <li><a href="bot-dca.html" class="sub-menu-item"><img src="images/icons/shared.svg" class="avatar avatar-ex-sm me-2" alt=""> DCA Bot</a></li>
+                                <li><a href="bot-grid.html" class="sub-menu-item"><img src="images/icons/vps.svg" class="avatar avatar-ex-sm me-2" alt=""> Grid Bot</a></li>
+                                <li><a href="bot-options.html" class="sub-menu-item"><img src="images/icons/dedicated.svg" class="avatar avatar-ex-sm me-2" alt=""> Options Bot</a></li>
+                                <li><a href="bot-hold.html" class="sub-menu-item"><img src="images/icons/cloud.svg" class="avatar avatar-ex-sm me-2" alt=""> Hold Bot</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+                        <li><a href="page-support.html" class="sub-menu-item">Support Center</a></li>
+                        <li><a href="page-privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                        <li><a href="page-terms.html" class="sub-menu-item">Terms & Conditions</a></li>
+                        <li><a href="page-faqs.html" class="sub-menu-item">FAQs</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="sub-menu-item">Contacts</a></li>
+                <li><a href="javascript:void(0)" target="_blank" class="sub-menu-item">Education</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
