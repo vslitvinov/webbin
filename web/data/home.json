@@ -40,14 +40,46 @@
 		],
 		"AllTools": [
 			{
-				"Title":"",
-				"Text":""
+				"Title":"Smart Trade",
+				"Text":"Smart and optimized algorithm for each bot will make trading as profitable as possible"
+			},
+			{
+				"Title":"TradingView",
+				"Text":"Many built-in indicators for market analysis will turn complex analysis processes into an exciting game."
+			},
+			{
+				"Title":"Exchanges",
+				"Text":"The system works only with the most reliable trading platforms."
+			},
+			{
+				"Title":"Enterprise",
+				"Text":"Manage multiple investment portfolios and accounts through one interface."
+			},
+			{
+				"Title":"Trading Terminal",
+				"Text":"Profitable trading with a scalping strategy."
+			},
+			{
+				"Title":"State of the system",
+				"Text":"Smooth functioning 24/7 does everything possible to increase your assets at any time."
 			}
 		],
 		"FAQ": [
+			{    // Тут нужно выделение Eterinte в таком формате, можно ли вставить такой формат? или лучше обойтись тупым текстом?
+				"Question":"How <span class="text-primary">Eterinte</span> work ?",
+				"Answer":"Simple Text Example"
+			},
+			{ //Над Q&A поработаем позже, их ещё придумать надо.. вписать успеется
+				"Question":"What is the main process open account ?",
+				"Answer":"Simple Text Example"
+			},
 			{
-				"Question":"",
-				"Answer":""
+				"Question":"How to make unlimited data entry ",
+				"Answer":"Simple Text Example"
+			},
+			{
+				"Question":"Is Eterinte safer to use with my account ?",
+				"Answer":"Simple Text Example"
 			}
 		],
 	}
