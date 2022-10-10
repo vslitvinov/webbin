@@ -5,37 +5,37 @@
 				"Icon": "shared.svg",
 				"Title": "DCA Bot",
 				"Description": "No need to risk it all! Instead of investing a lump sum with unknown risks, the bot will invest the amount partially with maximum benefit.",
-				"NameItem": "./catalog/dca"
+				"Link": "./catalog/dca"
 			},
 			{
 				"Icon": "shared.svg",
 				"Title": "Grid Bot",
 				"Description": "This bot will trade for you 24/7 making the most of market fluctuations. Its crucial skill is to buy low and sell high",
-				"NameItem": "./catalog/dca"
+				"Link": "./catalog/grid"
 			},
 			{
 				"Icon": "shared.svg",
 				"Title": "Options Bot",
 				"Description": "Do you want to wait months for your gain? There is no doubt that the answer is no. At first glance, the Options bot might seem a little bit difficult to understand. However, its high speed and profitability will cover the time you need to learn it.",
-				"NameItem": "./catalog/dca"
+				"Link": "./catalog/options"
 			},
 			{
 				"Icon": "shared.svg",
 				"Title": "Hold Bot",
 				"Description": "Based on the principle of temporal DCA, it will buy the coin you choose to invest using an interval that suits you best!",
-				"NameItem": "./catalog/dca"
+				"Link": "./catalog/hold"
 			},
 			{
 				"Icon": "shared.svg",
 				"Title": "Cluster of Bots",
 				"Description": "All the bots can be run simultaneously, complementing each other to ensure the best result.",
-				"NameItem": "./catalog/dca"
+				"Link": "./catalog/faqs"
 			},
 			{
 				"Icon": "shared.svg",
 				"Title": "Automated Settings",
 				"Description": "Easy automated bot configuration is always up to date with the current situation on the market. Less time — more profit!",
-				"NameItem": "./catalog/dca"
+				"Link": "./catalog/faqs"
 			}
 		]
 	}
