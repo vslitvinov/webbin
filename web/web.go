@@ -1,7 +1,6 @@
 package web
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"text/template"
@@ -9,7 +8,6 @@ import (
 	"site/web/models"
 
 	"github.com/gorilla/mux"
-	"github.com/gorilla/sessions"
 	"encoding/json"
 	"os"
 )
@@ -18,12 +16,6 @@ import (
 var homePage models.HomePage 
 
 
-
-var (
-    // key must be 16, 24 or 32 bytes long (AES-128, AES-192 or AES-256)
-    key = []byte("super-secret-key")
-    store = sessions.NewCookieStore(key)
-)
 
 
 
@@ -80,23 +72,35 @@ func (s *Site) Signup(w http.ResponseWriter, r *http.Request){
 }
 
 
-type HomePageItem struct {
-	Icon string
-	Title string
-	Description string 
-	NameItem string
-}
 
 func (s *Site) Login(w http.ResponseWriter, r *http.Request){
-	session, _ := store.Get(r, "cookie-name")
 
-    // Аутентификация проходит здесь
-    // ...
-    fmt.Println(session)
 
-    // Установить пользователя как аутентифицированного
-    session.Values["authenticated"] = true
-    session.Save(r, w)
+	c, err := r.Cookie("session_token")
+
+	if err != nil {
+		if err == http.ErrNoCookie {
+			log.Println("err: cookie не установлен", err)
+			return
+		}
+		log.Println("err: Неверный запрос ", err)
+		return
+	}
+
+	log.Println("Cookie: ", c)
+
+	// if err != nil {
+	// 	if err == http.ErrNoCookie {
+	// 		// Если cookie не установлен, возвращаем неавторизованный статус
+	// 		w.WriteHeader(http.StatusUnauthorized)
+	// 		return
+	// 	}
+	// 	// Для любого другого типа ошибки возвращаем неверный статус запроса
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	return
+	// }
+	// sessionToken := c.Value
+
 }
 
 func (s *Site) RecoverAccount(w http.ResponseWriter, r *http.Request){}
@@ -116,10 +120,7 @@ func (s *Site) HomePage(w http.ResponseWriter, r *http.Request){
 		"./web/template/header.tmpl",
 		"./web/template/homeBlock.tmpl",
 		"./web/template/services.tmpl",
-<<<<<<< Updated upstream
-=======
-		"./web/template/index.html",
->>>>>>> Stashed changes
+		"./web/template/allTools-faq.tmpl",
 	)
 	if err != nil {
 		log.Printf("Ошибка парсинга шаблона: %v", err)
@@ -134,24 +135,12 @@ func (s *Site) HomePage(w http.ResponseWriter, r *http.Request){
 	})
 	err = t.ExecuteTemplate(w,"header.tmpl",struct{}{})
 	err = t.ExecuteTemplate(w,"homeBlock.tmpl",struct{}{})
-<<<<<<< Updated upstream
-
 
 
 	err = t.ExecuteTemplate(w,"services.tmpl", homePage.ServiseBlock)
+	err = t.ExecuteTemplate(w,"allTools-faq.tmpl", homePage)
 	if err != nil {
 		log.Printf("Ошибка записи в шаблон: %v", err)
 		return
 	}
-=======
-	err = t.ExecuteTemplate(w,"services.tmpl",homePage.ServiseBlock)
-
-
-
-	// err = t.ExecuteTemplate(w,"index.html", homePage.ServiseBlock)
-	// if err != nil {
-	// 	log.Printf("Ошибка записи в шаблон: %v", err)
-	// 	return
-	// }
->>>>>>> Stashed changes
 }

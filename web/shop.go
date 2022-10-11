@@ -12,4 +12,5 @@ type Order struct {
 type Item struct {
 	name string 
 	price float64 
+	count int 
 }
