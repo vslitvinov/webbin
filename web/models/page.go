@@ -20,10 +20,10 @@ type TraidingToolsItem struct {
 type HomePage struct {
 	ServiseBlock ServiseBlock
 	AllTools []Tool
-	FAQ Faqs
+	FAQ []Faq
 }
 
-type Faqs struct {
+type Faq struct {
 	Question string
 	Answer string 
 }
