@@ -65,11 +65,11 @@
 			}
 		],
 		"FAQ": [
-			{    // Тут нужно выделение Eterinte в таком формате, можно ли вставить такой формат? или лучше обойтись тупым текстом?
-				"Question":"How <span class="text-primary">Eterinte</span> work ?",
+			{   
+				"Question":"How <span class='text-primary'>Eterinte</span> work ?",
 				"Answer":"Simple Text Example"
 			},
-			{ //Над Q&A поработаем позже, их ещё придумать надо.. вписать успеется
+			{ 
 				"Question":"What is the main process open account ?",
 				"Answer":"Simple Text Example"
 			},
@@ -81,6 +81,6 @@
 				"Question":"Is Eterinte safer to use with my account ?",
 				"Answer":"Simple Text Example"
 			}
-		],
+		]
 	}
 }

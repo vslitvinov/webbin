@@ -6,7 +6,7 @@ import (
 )
 
 // читаем файл конфигурации
-func ReadData(data *interface{}, filePath string) (interface{}, error) {
+func ReadData(data interface{}, filePath string) (interface{}, error) {
 	file, err := os.ReadFile(filePath)
 	if err != nil {
 		return nil, err

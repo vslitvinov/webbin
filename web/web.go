@@ -114,7 +114,8 @@ func (s *Site) HomePage(w http.ResponseWriter, r *http.Request){
 	t, err := template.ParseFiles(
 		"./web/template/head.tmpl",
 		"./web/template/header.tmpl",
-		"./web/template/index.html",
+		"./web/template/homeBlock.tmpl",
+		"./web/template/services.tmpl",
 	)
 	if err != nil {
 		log.Printf("Ошибка парсинга шаблона: %v", err)
@@ -128,11 +129,11 @@ func (s *Site) HomePage(w http.ResponseWriter, r *http.Request){
 		Title: "Eternal Intelligence - Automated systems",
 	})
 	err = t.ExecuteTemplate(w,"header.tmpl",struct{}{})
-	err = t.ExecuteTemplate(w,"home.tmpl",struct{}{})
+	err = t.ExecuteTemplate(w,"homeBlock.tmpl",struct{}{})
 
 
 
-	err = t.ExecuteTemplate(w,"index.html", homePage.ServiseBlock)
+	err = t.ExecuteTemplate(w,"services.tmpl", homePage.ServiseBlock)
 	if err != nil {
 		log.Printf("Ошибка записи в шаблон: %v", err)
 		return
