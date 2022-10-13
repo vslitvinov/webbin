@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"log"
 	"fmt"
-	"site/web"
+	"site/webserver"
 )
 
 var host = "0.0.0.0"
@@ -12,7 +12,7 @@ var port = "8080"
 
 func main() {
 
-	site := web.NewWebSite()
+	site := webserver.NewWebServer()
 
 	addr := fmt.Sprintf("%s:%s", host, port)
 	

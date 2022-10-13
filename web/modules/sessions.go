@@ -28,12 +28,7 @@ func NewServiceSession() *ServiceSession{
 }
 
 
-type LoginData struct {
-	username string
-	password string
-}
-
-func (ss *ServiceSession) Login(data LoginData){
+func (ss *ServiceSession) Login(){
 
 
 

@@ -18,18 +18,33 @@ type User struct {
 
 type UsersService struct {
 	// db Storage
-	cache *Cache
+	cacheUser *Cache
+	cacheSession *Cache
 }
 
 
 func NewUsersService( ) UsersService {
 
 	us := UsersService{
-		cache: NewCache(),
+		cacheUser: NewCache(),
+		cacheSession: NewCache(),
 	}
 
 	return us
 
+} 
+
+// Signup регистрация 
+// Login 
+
+
+func (us *UsersService) CheckPassword(username string, pass string) bool{
+
+	user,ok := us.cache.Get(username)
+	if !ok {
+		return false
+	}
+	// todo hash password 
+	if user.Password == pass 
+
 }
-
-

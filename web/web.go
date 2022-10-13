@@ -88,18 +88,9 @@ func (s *Site) Login(w http.ResponseWriter, r *http.Request){
 	}
 
 	log.Println("Cookie: ", c)
+	sessionToken := c.Value
 
-	// if err != nil {
-	// 	if err == http.ErrNoCookie {
-	// 		// Если cookie не установлен, возвращаем неавторизованный статус
-	// 		w.WriteHeader(http.StatusUnauthorized)
-	// 		return
-	// 	}
-	// 	// Для любого другого типа ошибки возвращаем неверный статус запроса
-	// 	w.WriteHeader(http.StatusBadRequest)
-	// 	return
-	// }
-	// sessionToken := c.Value
+
 
 }
 
