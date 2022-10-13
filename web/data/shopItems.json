@@ -1,0 +1,160 @@
+{
+    "ShopItems": {
+        "DCABotsSubscriptions": [
+            {
+                "Name" : "DCA Bot Startup Plan",
+                "Description" : "3 DCA Bots, 10 Coin Pairs, Free Settings support",
+                "Price" : "30",
+                "Category": "DCA Bot Pricing Plans"
+            },
+            {
+                "Name" : "DCA Bot Drive Plan",
+                "Description" : "10 DCA Bots, 30 Coin Pairs, Free Settings support, Cluster System Support",
+                "Price" : "100",
+                "Category": "DCA Bot Pricing Plans"
+            },
+            {
+                "Name" : "DCA Bot Boost Plan",
+                "Description" : "20 DCA Bots, 50 Coin Pairs, Free Settings support, Cluster System Support, 30 Bot AI settings/month",
+                "Price" : "200",
+                "Category": "DCA Bot Pricing Plans"
+            },
+            {
+                "Name" : "DCA Bot Turbo Plan",
+                "Description" : "30 DCA Bots, Unlimited Coin Pairs, Free Settings support, Cluster System Support, Personal support service, Unlimited Bot AI settings support",
+                "Price" : "500",
+                "Category": "DCA Bot Pricing Plans"
+            }
+        ],
+        "GridBotsSubscriptions": [
+            {
+                "Name" : "Grid Bot Startup Plan",
+                "Description" : "3 Grid Bots, 10 Coin Pairs, Free Settings support",
+                "Price" : "30",
+                "Category": "Grid Bot Pricing Plans"
+            },
+            {
+                "Name" : "Grid Bot Drive Plan",
+                "Description" : "10 Grid Bots, 30 Coin Pairs, Free Settings support, Cluster System Support",
+                "Price" : "100",
+                "Category": "Grid Bot Pricing Plans"
+            },
+            {
+                "Name" : "Grid Bot Boost Plan",
+                "Description" : "20 Grid Bots, 50 Coin Pairs, Free Settings support, Cluster System Support, 30 Bot AI settings/month",
+                "Price" : "200",
+                "Category": "Grid Bot Pricing Plans"
+            },
+            {
+                "Name" : "Grid Bot Turbo Plan",
+                "Description" : "30 Grid Bots, Unlimited Coin Pairs, Free Settings support, Cluster System Support, Personal support service, Unlimited Bot AI settings support",
+                "Price" : "500",
+                "Category": "Grid Bot Pricing Plans"
+            }
+        ],
+        "OptionsBotsSubscriptions": [
+            {
+                "Name" : "Options Bot Startup Plan",
+                "Description" : "3 Options Bots, 10 Coin Pairs, Free Settings support",
+                "Price" : "30",
+                "Category": "Options Bot Pricing Plans"
+            },
+            {
+                "Name" : "Options Bot Drive Plan",
+                "Description" : "10 Options Bots, 30 Coin Pairs, Free Settings support, Cluster System Support",
+                "Price" : "100",
+                "Category": "Options Bot Pricing Plans"
+            },
+            {
+                "Name" : "Options Bot Boost Plan",
+                "Description" : "20 Options Bots, 50 Coin Pairs, Free Settings support, Cluster System Support, 30 Bot AI settings/month",
+                "Price" : "200",
+                "Category": "Options Bot Pricing Plans"
+            },
+            {
+                "Name" : "Options Bot Turbo Plan",
+                "Description" : "30 Options Bots, Unlimited Coin Pairs, Free Settings support, Cluster System Support, Personal support service, Unlimited Bot AI settings support",
+                "Price" : "500",
+                "Category": "Options Bot Pricing Plans"
+            }
+        ],
+        "HoldBotsSubscriptions": [
+            {
+                "Name" : "Hold Bot Startup Plan",
+                "Description" : "3 Hold Bots, 10 Coin Pairs, Free Settings support",
+                "Price" : "30",
+                "Category": "Hold Bot Pricing Plans"
+            },
+            {
+                "Name" : "Hold Bot Drive Plan",
+                "Description" : "10 Hold Bots, 30 Coin Pairs, Free Settings support, Cluster System Support",
+                "Price" : "100",
+                "Category": "Hold Bot Pricing Plans"
+            },
+            {
+                "Name" : "Hold Bot Boost Plan",
+                "Description" : "20 Hold Bots, 50 Coin Pairs, Free Settings support, Cluster System Support, 30 Bot AI settings/month",
+                "Price" : "200",
+                "Category": "Hold Bot Pricing Plans"
+            },
+            {
+                "Name" : "Hold Bot Turbo Plan",
+                "Description" : "30 Hold Bots, Unlimited Coin Pairs, Free Settings support, Cluster System Support, Personal support service, Unlimited Bot AI settings support",
+                "Price" : "500",
+                "Category": "Hold Bot Pricing Plans"
+            }
+        ],
+        "AdditionalBotSlots" : [
+            {
+                "Name" : "Add 1 DCA Bot",
+                "Description" : "1 Additional DCA Bot Slot",
+                "Price" : "10",
+                "Category": "Additional Bot Slots"
+            },
+            {
+                "Name" : "Add 1 Grid Bot",
+                "Description" : "1 Additional Grid Bot Slot",
+                "Price" : "10",
+                "Category": "Additional Bot Slots"
+            },
+            {
+                "Name" : "Add 1 Options Bot",
+                "Description" : "1 Additional Grid Bot Slot",
+                "Price" : "10",
+                "Category": "Additional Bot Slots"
+            },
+            {
+                "Name" : "Add 1 Hold Bot",
+                "Description" : "1 Additional Grid Bot Slot",
+                "Price" : "10",
+                "Category": "Additional Bot Slots"
+            }
+        ],
+        "IncreasingProfitLimit": [
+            {
+                "Name" : "Increase DCA Bots Profit Limit by $500",
+                "Description" : "+ $500 to DCA Bots Profit Limit",
+                "Price" : "30",
+                "Category": "Profit limit increasing"
+            },
+            {
+                "Name" : "Increase Grid Bots Profit Limit by $500",
+                "Description" : "+ $500 to Grid Bots Profit Limit",
+                "Price" : "30",
+                "Category": "Profit limit increasing"
+            },
+            {
+                "Name" : "Increase Options Bots Profit Limit by $500",
+                "Description" : "+ $500 to Options Bots Profit Limit",
+                "Price" : "30",
+                "Category": "Profit limit increasing"
+            },
+            {
+                "Name" : "Increase Hold Bots Profit Limit by $500",
+                "Description" : "+ $500 to Hold Bots Profit Limit",
+                "Price" : "30",
+                "Category": "Profit limit increasing"
+            }
+        ]
+    }
+}
