@@ -1,4 +1,4 @@
-{{define "signup"}}
+{{define "Signup"}}
 <section class="cover-user bg-white">
     <div class="container-fluid px-0">
         <div class="row no-gutters position-relative">
@@ -16,18 +16,24 @@
                             <div class="card login-page border-0 shadow mt-4" style="z-index: 1">
                                 <div class="card-body p-4">
                                     <h4 class="card-title text-center">Signup</h4>
-                                    <form class="login-form mt-4">
+                                    <form class="login-form mt-4" action="/signup" method="post">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3 position-relative">
                                                     <label class="form-label">First name <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="First Name" name="s" required="">
+                                                    <input type="text" class="form-control" placeholder="First Name" name="fristname" required="">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3 position-relative">
                                                     <label class="form-label">Last name <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="Last Name" name="s" required="">
+                                                    <input type="text" class="form-control" placeholder="Last Name" name="lastname" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="mb-3 position-relative">
+                                                    <label class="form-label">Display Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Display Name " name="displayname" required="">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -39,7 +45,7 @@
                                             <div class="col-md-12">
                                                 <div class="mb-3 position-relative">
                                                     <label class="form-label">Password <span class="text-danger">*</span></label>
-                                                    <input type="password" class="form-control" placeholder="Password" required="">
+                                                    <input type="password" class="form-control" placeholder="Password" required="" name="password">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -53,18 +59,8 @@
                                             <div class="col-md-12">
                                                 <button class="btn btn-primary w-100">Register</button>
                                             </div>
-                                            <div class="col-lg-12 mt-4 text-center">
-                                                <h6>Or Signup With</h6>
-                                                <ul class="list-unstyled social-icon mb-0 mt-3">
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="github" class="fea icon-sm fea-social"></i></a></li>
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="gitlab" class="fea icon-sm fea-social"></i></a></li>
-                                                </ul>
-                                                <!--end icon-->
-                                            </div>
                                             <div class="mx-auto">
-                                                <p class="mb-0 mt-3"><small class="text-dark me-2">Already have an account ?</small> <a href="page-login.html" class="text-dark fw-bold">Sign in</a></p>
+                                                <p class="mb-0 mt-3"><small class="text-dark me-2">Already have an account ?</small> <a href="./login" class="text-dark fw-bold">Sign in</a></p>
                                             </div>
                                         </div>
                                     </form>

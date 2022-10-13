@@ -1,9 +1,9 @@
 package modules
 
 import (
+	"html/template"
 	"log"
 	"net/http"
-	"text/template"
 	"time"
 )
 
@@ -20,14 +20,22 @@ func (s sessionUser) isExpired() bool {
 type UsersService struct {
 	cacheUser *Cache
 	cacheSession *Cache
+	Temp *template.Template
 }
 
 
 func NewUsersService( ) *UsersService {
 
+	var err error
+
 	us := &UsersService{
 		cacheUser: NewCache(),
 		cacheSession: NewCache(),
+	}
+
+	us.Temp, err = TempLoad("./webserver/template/auth/")
+	if err != nil {
+		log.Println(err)
 	}
 
 	return us
@@ -72,11 +80,15 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 
 
 func (us *UsersService) Signup(w http.ResponseWriter, r *http.Request){
-
 	if us.CheckSessionToken(r) {
-		// redirect
+		// http.Redirect(w, r, newUrl, http.StatusSeeOther)
 	}
 
+	r.ParseForm()                    
+    x := r.Form.Get("lastname")
+
+
+	log.Println(x)
 	log.Println(r.Method)
 
 	buf := make([]byte,500)
@@ -85,18 +97,18 @@ func (us *UsersService) Signup(w http.ResponseWriter, r *http.Request){
 	log.Println(string(buf[:n]),err)
 
 
-
-	// err := json.NewDecoder(r.Body).Decode(&data)
-	// if err != nil {
-	// 	log.Println(err)
-	// }
-
-	t, err := template.ParseFiles("./webserver/template/signup.tmpl")
-	if err != nil {
-		log.Printf("Ошибка парсинга шаблона: %v", err)
-		return
+	if r.Method == "POST" {
+		log.Println(r.Body)
 	}
-	err = t.ExecuteTemplate(w,"signup.tmpl",struct{}{})
+
+
+    us.Temp.ExecuteTemplate(w, "Index", struct{
+    	Title string
+    }{
+    	Title: "Signup",
+    })
+
+
 }
 
 

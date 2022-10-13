@@ -1,0 +1,31 @@
+{{define "TraidingTools"}}
+ <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-title text-center mb-4 pb-2">
+                    <h4 class="title mb-3">Traiding Tools</h4>
+                    <p class="text-muted para-desc mx-auto mb-0">Choose the best strategy to meet your plans and expectations</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            {{ range .TraidingTools }}
+            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                <div class="card services p-4 rounded-pill border-0">
+                    <div class="icon text-center mb-4">
+                        <img src="images/icons/{{ .Icon }}" alt="">
+                    </div>
+                    <div class="card-body p-0 content">
+                        <h5 class="mb-3"><a href="hosting-shared.html" class="title text-dark">{{ .Title }}</a></h5>
+                        <p class="text-muted mb-3">{{ .Description }}</p>
+                        <a href="{{ .Link }}" class="text-primary">Read More <i data-feather="chevron-right" class="fea icon-sm"></i></a>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+        <!--end row-->
+    </div>
+{{end}}

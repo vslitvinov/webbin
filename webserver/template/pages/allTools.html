@@ -1,0 +1,33 @@
+{{define "AllTools"}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="section-title text-center mb-4 pb-2">
+                <h4 class="title mb-3">All the tools you need</h4>
+                <p class="text-muted para-desc mx-auto mb-0">Site services are not limited to bots</p>
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+    <div class="row justify-content-center">
+        <div class="col-lg-7 mt-4">
+            <div class="tiny-single-item">
+                <div class="tiny-slide">
+                    <div class="card border-0 text-center client-bar m-2">
+                        <div class="card-body content rounded-pill  px-4 py-5 shadow position-relative">
+                            <i class="mdi icons text-primary"></i>
+                            <p class="text-muted mb-0">{{.Text}}</p>
+                        </div>
+                        <h6 class="text-primary mt-2 mb-0">{{.Title}}</h6>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+</div>
+<!--end container-->
+{{end}}

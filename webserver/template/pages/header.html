@@ -1,0 +1,108 @@
+{{define "Header"}}
+<header id="topnav" class="defaultscroll sticky nav-sticky">
+    <div class="container">
+        <!-- Logo container-->
+        <a class="logo" href="./">
+            <span class="logo-light-mode">
+                <img src="./images/logo-dark.png" class="l-dark" height="60" alt="">
+                <img src="./images/logo-light.png" class="l-light" height="60" alt="">
+            </span>
+            <img src="images/logo-light.png" height="60" class="logo-dark-mode" alt="">
+        </a>
+        <div class="menu-extras">
+            <div class="menu-item">
+                <!-- Mobile menu toggle-->
+                <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+                <!-- End mobile menu toggle-->
+            </div>
+        </div>
+        <ul class="buy-button list-inline mb-0">
+            <li class="list-inline-item mb-0">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-icon rounded-circle btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="shopping-cart" class="icons"></i></button>
+                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-4" style="width: 300px;">
+                        <div class="pb-4">
+                            <a href="javascript:void(0)" class="d-flex align-items-center">
+                                <img src="images/shop/com.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
+                                <div class="flex-1 text-start ms-3">
+                                    <h6 class="text-dark mb-0">.com</h6>
+                                    <p class="text-muted mb-0">$10 X 2</p>
+                                </div>
+                                <h6 class="text-dark mb-0">$10</h6>
+                            </a>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between pt-4 border-top">
+                            <h6 class="text-dark mb-0">Total($):</h6>
+                            <h6 class="text-dark mb-0">$10</h6>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <a href="javascript:void(0)" class="btn btn-primary me-2">View Cart</a>
+                            <a href="javascript:void(0)" class="btn btn-primary">Checkout</a>
+                        </div>
+                        <p class="text-muted text-start mt-1 mb-0">*T&C Apply</p>
+                    </div>
+                </div>
+            </li>
+            <li class="list-inline-item mb-0">
+                <div class="dropdown dropdown-primary">
+                    <button type="button" class="btn btn-icon rounded-circle btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="user" class="icons"></i></button>
+                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-3" style="width: 200px;">
+                        <a class="dropdown-item text-dark" href="my-account.html"><i class="uil uil-user align-middle me-1"></i> Account</a>
+                        <a class="dropdown-item text-dark" href="#"><i class="uil uil-clipboard-notes align-middle me-1"></i> Order History</a>
+                        <a class="dropdown-item text-dark" href="#"><i class="uil uil-arrow-circle-down align-middle me-1"></i> Dashboard</a>
+                        <div class="dropdown-divider my-3 border-top"></div>
+                        <a class="dropdown-item text-dark" href="page-login.html"><i class="uil uil-sign-out-alt align-middle me-1"></i> Logout</a>
+                    </div>
+                </div>
+            </li>
+            <li class="list-inline-item mb-0">
+                <a href="javascript:void(0)" class="btn btn-sm btn-icon rounded-circle btn-dark dark-version t-dark" onclick="setTheme('style-dark')"><i data-feather="moon" class="icons"></i></a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-icon rounded-circle btn-dark light-version t-light" onclick="setTheme('style')"><i data-feather="moon" class="icons"></i></a>
+            </li>
+        </ul>
+        <!--end login button-->
+        <div id="navigation">
+            <!-- Navigation Menu-->
+            <ul class="navigation-menu nav-light">
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Trading Bots</a><span class="menu-arrow"></span>
+                    <ul class="submenu megamenu">
+                        <li>
+                            <ul>
+                                <li><a href="bot-dca.html" class="sub-menu-item"><img src="images/icons/shared.svg" class="avatar avatar-ex-sm me-2" alt=""> DCA Bot</a></li>
+                                <li><a href="bot-grid.html" class="sub-menu-item"><img src="images/icons/vps.svg" class="avatar avatar-ex-sm me-2" alt=""> Grid Bot</a></li>
+                                <li><a href="bot-options.html" class="sub-menu-item"><img src="images/icons/dedicated.svg" class="avatar avatar-ex-sm me-2" alt=""> Options Bot</a></li>
+                                <li><a href="bot-hold.html" class="sub-menu-item"><img src="images/icons/cloud.svg" class="avatar avatar-ex-sm me-2" alt=""> Hold Bot</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+        
+                        <li><a href="page-support.html" class="sub-menu-item">Support Center</a></li>
+                        <li><a href="page-privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                        <li><a href="page-terms.html" class="sub-menu-item">Terms & Conditions</a></li>
+                        <li><a href="page-faqs.html" class="sub-menu-item">FAQs</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html" class="sub-menu-item">Contacts</a></li>
+                <li><a href="javascript:void(0)" target="_blank" class="sub-menu-item">Education</a></li>
+            </ul>
+            <!--end navigation menu-->
+        </div>
+        <!--end navigation-->
+    </div>
+    <!--end container-->
+</header>
+<!--end header-->
+<!-- Navbar End -->
+{{end}}

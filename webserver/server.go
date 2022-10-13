@@ -1,45 +1,58 @@
 package webserver
 
 import (
+	"html/template"
+	"log"
 	"net/http"
 	"site/webserver/modules"
-	"log"
 )
 
 
 type WebServer struct {
 	Router *http.ServeMux
 	US *modules.UsersService
+	Temp *template.Template
+	CachePage *modules.Cache
 }
 
 
 func NewWebServer() *WebServer{
-	s :=  &WebServer{ 
+
+	var err error
+
+	s :=  &WebServer{
 		Router: http.NewServeMux(),
 		US: modules.NewUsersService(),
+		CachePage :  modules.NewCache(),
 	}
-	
-	s.Router.HandleFunc("/signup", s.US.Signup)
+
+	s.Temp, err = modules.TempLoad("./webserver/template/pages/")
+	if err != nil {
+		log.Println(err)
+	}
+
+	// todo struct data
+	modules.LoadConfigPage(s.CachePage, "home","./webserver/config/homePage.json")
+
+	// s.Router.HandleFunc("/signup", s.US.Signup)
 	s.Router.HandleFunc("/", s.HomePage)
-	// s.Router.Handle("/", http.FileServer(http.Dir("./web/template/")))
+	s.Router.HandleFunc("/catalog", s.TradingBots)
+	s.Router.HandleFunc("/signup", s.US.Signup)
+	s.Router.Handle("/assets", http.FileServer(http.Dir("./web/template/")))
 
 	return s
 }
 
 
 func (ws *WebServer) HomePage(w http.ResponseWriter, r *http.Request){
- 
-	temp,err  := modules.TempLoad()
-	if err != nil {
+
+	data, err :=  ws.CachePage.Get("home")
+	if !err {
 		log.Println(err)
 	}
-
-
-    s1 := temp.Lookup("page.tmpl")
-    s1.ExecuteTemplate(w, "page", nil)
-    // s2 := temp.Lookup("head.tmpl")
-    // s2.ExecuteTemplate(w, "head", nil)
-    // s3 := temp.Lookup("signup.tmpl")
-    // s3.ExecuteTemplate(w, "signup", nil)
-
+	log.Println(data)
+    ws.Temp.ExecuteTemplate(w, "Index", data)
+}
+func (ws *WebServer) TradingBots(w http.ResponseWriter, r *http.Request){
+    ws.Temp.ExecuteTemplate(w, "Index", nil)
 }
