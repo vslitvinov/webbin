@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"site/web/models"
 	"site/webserver/modules"
 )
 
@@ -31,14 +32,17 @@ func NewWebServer() *WebServer{
 		log.Println(err)
 	}
 
-	// todo struct data
-	modules.LoadConfigPage(s.CachePage, "home","./webserver/config/homePage.json")
-
-	// s.Router.HandleFunc("/signup", s.US.Signup)
+	// todo
+	modules.LoadConfigPage(s.CachePage, "home","./webserver/config/homePage.json",&models.HomePage{})
 	s.Router.HandleFunc("/", s.HomePage)
+	// s.Router.HandleFunc("/signup", s.US.Signup)
 	s.Router.HandleFunc("/catalog", s.TradingBots)
 	s.Router.HandleFunc("/signup", s.US.Signup)
-	s.Router.Handle("/assets", http.FileServer(http.Dir("./web/template/")))
+
+
+	fs := http.FileServer(http.Dir("./webserver/assets"))
+    s.Router.Handle("/assets/", http.StripPrefix("/assets", fs))
+
 
 	return s
 }
@@ -50,7 +54,6 @@ func (ws *WebServer) HomePage(w http.ResponseWriter, r *http.Request){
 	if !err {
 		log.Println(err)
 	}
-	log.Println(data)
     ws.Temp.ExecuteTemplate(w, "Index", data)
 }
 func (ws *WebServer) TradingBots(w http.ResponseWriter, r *http.Request){

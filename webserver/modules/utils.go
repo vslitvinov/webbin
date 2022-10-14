@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"site/webserver/models"
 	"strings"
 )
 
@@ -38,8 +39,8 @@ func TempLoad(url string) (*template.Template, error){
 
 }
 
-func LoadConfigPage(c *Cache, name string, url string) error {
-    data, err := LoadConfigFile(url)
+func LoadConfigPage(c *Cache, name string, url string,data interface{}) error {
+    data, err := LoadConfigFile(data,url)
     if err != nil {
         log.Println(err)
         return err 
@@ -50,19 +51,19 @@ func LoadConfigPage(c *Cache, name string, url string) error {
 
 }
 
-func LoadConfigFile(url string) (interface{}, error){
-    var data interface{}
-    file, err := os.ReadFile("./web/data/home.json")
+func LoadConfigFile(data interface{}, url string) (interface{}, error){
+    data = &models.PageHome{}
+    file, err := os.ReadFile(url)
     if err != nil {
         log.Println(err)
         return nil, err
     }
     
-    if err := json.Unmarshal(file,&data); err != nil {
+    if err := json.Unmarshal(file,&data ); err != nil {
         log.Println(err)
         return nil, err
     }
-
+log.Println(data)
     return data, nil
 
 }
