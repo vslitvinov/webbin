@@ -1,0 +1,29 @@
+{{define "BotTools"}}
+<!-- Start -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row mt-0 mt-md-5 justify-content-center">
+            {{ range .BotTools.Items }}
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card services serv-primary rounded p-4 bg-white position-relative overflow-hidden border-0">
+                    <span class="h1 icon2 text-primary">
+                        <i class="uil uil-comment-check"></i>
+                    </span>
+                    <div class="card-body p-0 content">
+                        <h5>{{ .Title }}</h5>
+                        <p class="para text-muted mb-0">{{ .Description }}</p>
+                    </div>
+                    <div class="big-icon icon-right">
+                        <i class="uil uil-comment-check"></i>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- End -->
+{{end}}

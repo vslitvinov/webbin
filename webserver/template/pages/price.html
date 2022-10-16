@@ -1,0 +1,54 @@
+{{define "Price"}}
+<!-- Start Price -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-title text-center mb-4 pb-2">
+                    <h4 class="title mb-3">{{ .Price.Title }}</h4>
+                    <p class="text-muted para-desc mx-auto mb-0">{{ .Price.SubTitle }}</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+             {{ range .Price.Items }}
+            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                <div class="card pricing border-0 rounded bg-transparent overflow-hidden text-center">
+                    <div class="plan-name p-4 bg-warning">
+                        <h4 class="title text-white title-dark mb-3">{{ .Name }}</h4>
+                        <p class="para text-light title-dark mb-0">Profit Limit <strong>${{ .Profit }}</strong>/month</p>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <div class="d-flex justify-content-center">
+                            <span class="h6 text-muted mb-0 mt-2">$</span>
+                            <span class="price text-warning h1 mb-0">{{ .Price }}</span>
+                            <span class="h6 text-muted align-self-end mb-1">/month</span>
+                        </div>
+                        <h6 class="text-muted mt-1"><span class="text-danger">{{ .CountBot }} </span> {{ .TyBot }}</h6>
+                        <a href="javascript:void(0)" class="btn btn-soft-warning mt-2">{{ .Button }}</a>
+                    </div>
+                    <div class="py-3 bg-light">
+                        <p class="text-muted mb-0">Great choise to try <strong>Dca Bots</strong> </p>
+                    </div>
+                    <div class="bg-white p-4 border-bottom">
+                        <ul class="feature-list list-unstyled mb-0">
+                            {{ range .Items }}
+                                <li class="text-muted">{{ . }}</li>
+                            {{end}}
+                            <li class="text-muted">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            {{end}}
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- End Price -->
+{{end}}

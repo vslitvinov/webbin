@@ -3,11 +3,20 @@
 <html lang="en">
 {{template "Head" .}}
 <body>
-	{{template "Header"}}
-	{{template "HomeBlock"}}
-	{{template "ServicesBlock"}}
-	{{template "AllToolsAndFAQ"}}
-	{{template "Footer"}}
+	{{template "Header" .}}
+
+	{{if eq .NameTemp "dca"}}
+		{{template "Bot" .}}
+	{{end}}
+
+	{{if eq .NameTemp "home"}}
+		{{template "Home" .}}
+	{{end}}
+
+
+
+	
+	{{template "Footer" .}}
 </body>
 
 </html>

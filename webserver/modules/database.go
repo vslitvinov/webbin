@@ -1,39 +1,61 @@
 package modules
 
-// import (
-// 	"context"
-// 	"encoding/json"
+import (
+	"context"
+	"log"
+	"site/webserver/models"
 
-// 	"github.com/jackc/pgx/v4"
-// 	"github.com/jackc/pgx/v4/pgxpool"
-// )
+	"github.com/jackc/pgx/v4"
+	"github.com/jackc/pgx/v4/pgxpool"
+)
 
-// type DB struct {
-// 	conn *pgxpool.Pool
-// 	tx  pgx.Tx
-// }
+type DB struct {
+	conn *pgxpool.Pool
+	tx  pgx.Tx
+}
 
-// // создает новое соединение postgres
-// func NewPostgres(ctx context.Context, dsn string) (*pgxpool.Pool, error) {
-// 	conn, err := pgxpool.Connect(ctx, dsn)
-// 	if err != nil {
-// 		return nil, err
-// 	}
+// создает новое соединение postgres
+func NewPostgres(ctx context.Context, dsn string) (*pgxpool.Pool, error) {
+	conn, err := pgxpool.Connect(ctx, dsn)
+	if err != nil {
+		return nil, err
+	}
 
-// 	err = conn.Ping(ctx)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-// 	return conn, nil
-// }
+	err = conn.Ping(ctx)
+	if err != nil {
+		return nil, err
+	}
+	return conn, nil
+}
 
 
-// // NewDatabaseInstance - конструктор структуры экземпляра базы данных
-// func NewDatabase(conn *pgxpool.Pool) *DB {
-// 	return &DB{
-// 		conn: conn,
-// 	}
-// }
+// NewDatabaseInstance - конструктор структуры экземпляра базы данных
+func NewDatabase(conn *pgxpool.Pool) *DB {
+	return &DB{
+		conn: conn,
+	}
+}
+
+func (db *DB) Get(ctx context.Context) ([]models.User,error) {
+	return []models.User{},nil
+}
+func (db *DB) SetUser(ctx context.Context, user models.User) (uint64,error){
+	sql := `INSERT INTO users (firstname, lastname, displayname, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING user_id`
+	row := db.conn.QueryRow(context.Background(),sql,
+		user.FirstName,
+		user.LastName,
+		user.DisplayName,
+		user.Email,
+		user.Password,
+	)
+	var id uint64
+ 	err := row.Scan(&id)
+ 	if err != nil {
+ 		log.Println(err)
+ 		return 0, err
+ 	}
+ 	return id, nil
+}
 
 // // получение всех order
 // func (db *DB) Get(ctx context.Context) ([]models.Order,error) {
@@ -86,45 +108,45 @@ package modules
 
 // }
 
-// // Добавление order
+// Добавление order
 // func (db *DB) Set(ctx context.Context, order models.Order) (string,error){
 
-// 	delivery, err := json.Marshal(order.Delivery)
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	payment, err := json.Marshal(order.Payment)
-// 	if err != nil {
-// 		return "", err
-// 	}
-// 	items, err := json.Marshal(order.Items)
-// 	if err != nil {
-// 		return "", err
-// 	}
+	// delivery, err := json.Marshal(order.Delivery)
+	// if err != nil {
+	// 	return "", err
+	// }
+	// payment, err := json.Marshal(order.Payment)
+	// if err != nil {
+	// 	return "", err
+	// }
+	// items, err := json.Marshal(order.Items)
+	// if err != nil {
+	// 	return "", err
+	// }
 
-// 	sql := `INSERT INTO "order" (order_uid, track_number, entry, delivery, payment, items, locale, internal_signature, customer_id, delivery_service, shardkey, sm_id, date_created, oof_shard)
-//         VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) RETURNING order_uid;`
-//     row := db.conn.QueryRow(ctx,sql,
-//     	order.OrderUID,
-//     	order.TrackNumber,
-//     	order.Entry,
-//     	delivery,
-//     	payment,
-//     	items,
-//     	order.Locale,
-//     	order.InternalSignature,
-//     	order.CustomerID,
-//     	order.DeliveryService,
-//     	order.Shardkey,
-//     	order.SmID,
-//     	order.DateCreated,
-//     	order.OofShard,
-//     )
-//     var order_uid string
-//   	err = row.Scan(&order_uid)
-//   	if err != nil {
-//   		return "",err
-// 	}
-// 	return order_uid,nil
+	// sql := `INSERT INTO "order" (order_uid, track_number, entry, delivery, payment, items, locale, internal_signature, customer_id, delivery_service, shardkey, sm_id, date_created, oof_shard)
+ //        VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) RETURNING order_uid;`
+ //    row := db.conn.QueryRow(ctx,sql,
+ //    	order.OrderUID,
+ //    	order.TrackNumber,
+ //    	order.Entry,
+ //    	delivery,
+ //    	payment,
+ //    	items,
+ //    	order.Locale,
+ //    	order.InternalSignature,
+ //    	order.CustomerID,
+ //    	order.DeliveryService,
+ //    	order.Shardkey,
+ //    	order.SmID,
+ //    	order.DateCreated,
+ //    	order.OofShard,
+ //    )
+ //    var order_uid string
+ //  	err = row.Scan(&order_uid)
+ //  	if err != nil {
+ //  		return "",err
+	// }
+	// return order_uid,nil
 
 // }

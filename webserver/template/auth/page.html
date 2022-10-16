@@ -7,7 +7,15 @@
 
 <body>
 {{template "BackToHome"}}
+
+{{if eq .T "login"}}
+{{template "Login"}}
+{{end}}
+
+{{if eq .T "signup"}}
 {{template "Signup"}}
+{{end}}
+
 {{template "Footer"}}
 </body>
 

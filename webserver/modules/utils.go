@@ -39,31 +39,20 @@ func TempLoad(url string) (*template.Template, error){
 
 }
 
-func LoadConfigPage(c *Cache, name string, url string,data interface{}) error {
-    data, err := LoadConfigFile(data,url)
-    if err != nil {
-        log.Println(err)
-        return err 
-    }
 
-    c.Set(name, data)
-    return nil
-
-}
-
-func LoadConfigFile(data interface{}, url string) (interface{}, error){
-    data = &models.PageHome{}
+func LoadConfigFile( url string) (map[string]models.Page, error){
+    data := map[string]models.Page{}
     file, err := os.ReadFile(url)
     if err != nil {
         log.Println(err)
         return nil, err
     }
     
-    if err := json.Unmarshal(file,&data ); err != nil {
+    if err := json.Unmarshal(file,&data); err != nil {
         log.Println(err)
         return nil, err
     }
-log.Println(data)
+// log.Println(data)
     return data, nil
 
 }

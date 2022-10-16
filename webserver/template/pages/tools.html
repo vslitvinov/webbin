@@ -1,17 +1,17 @@
-{{define "TraidingTools"}}
+{{define "Tools"}}
  <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title mb-3">Traiding Tools</h4>
-                    <p class="text-muted para-desc mx-auto mb-0">Choose the best strategy to meet your plans and expectations</p>
+                    <h4 class="title mb-3">{{ .Tools.Title }}</h4>
+                    <p class="text-muted para-desc mx-auto mb-0">{{ .Tools.SubTitle }}</p>
                 </div>
             </div>
             <!--end col-->
         </div>
         <!--end row-->
         <div class="row">
-            {{ range .TraidingTools }}
+            {{ range .Tools.Items }}
             <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                 <div class="card services p-4 rounded-pill border-0">
                     <div class="icon text-center mb-4">
