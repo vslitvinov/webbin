@@ -45,6 +45,16 @@
                 "link": "./catalog/faqs"
             }]
         },
+        "advantageline": {
+            "title": "Easy setup",
+            "subtitle": "Launch a bot is easy!",
+            "items": [
+                "Enter the API key to manage your account on the exchange",
+                "Set the parameters you need in a user friendly interface",
+                "Click the Launch button",
+                "Enjoy profit!"
+            ]
+        },
         "need":
         {
             "title": "All the tools you need",
@@ -108,7 +118,20 @@
         "botdescription": {
             "title": "Everything you need",
             "items" : [
-                "DCA trading is for investors who want to reduce the impact of volatility and gradually accumulate or lower their positions. This mechanism allows users to average the price of their tokens by purchasing an established amount over time."
+                "DCA trading is for investors who want to reduce the impact of volatility and gradually accumulate or lower their positions. This mechanism allows users to average the price of their tokens by purchasing an established amount over time.",
+                "DCA trading is for investors who want to reduce the impact of volatility and gradually accumulate or lower their positions. This mechanism allows users to average the price of their tokens by purchasing an established amount over time.",
+                "For example, if you enter the market with one investment, there is a risk that you have just bought an asset at a high price. The value will decrease after a while, resulting in a loss-making position.",
+                "However, if you invest by dividing the amount into parts, you can buy assets at different times and prices. It leads to a more favorable average cost, meaning that you will significantly reduce the risks of local price changes."
+            ]
+        },
+        "advantageline": {
+            "title": "Easy setup",
+            "subtitle": "Launch a bot is easy!",
+            "items": [
+                "Enter the API key to manage your account on the exchange",
+                "Set the parameters you need in a user friendly interface",
+                "Click the Launch button",
+                "Enjoy profit!"
             ]
         },
         "bottools":
@@ -126,6 +149,7 @@
             "items":[
                 {
                     "name":"Startup",
+                    "subtitle":"Great choise to try Dca Bots",
                     "profit":500,
                     "price":30,
                     "countbot":3,
@@ -135,6 +159,54 @@
                         "3 DCA Bots",
                         "10 Coin Pairs",
                         "Free Settings support"
+                    ]
+                },
+                {
+                    "name":"Drive",
+                    "subtitle":"More Bots & 3X Resources.",
+                    "profit":1500,
+                    "price":100,
+                    "countbot":10,
+                    "tybot":"DCA Bots",
+                    "button":"Get Drive",
+                    "items": [
+                        "10 DCA Bots",
+                        "30 Coin Pairs",
+                        "Free Settings support",
+                        "Cluster System Support"
+                    ]
+                },
+                {
+                    "name":"Boost",
+                    "subtitle":"Boost Servers + More Power",
+                    "profit":3000,
+                    "price":200,
+                    "countbot":20,
+                    "tybot":"DCA Bots",
+                    "button":"Get Boost",
+                    "items": [
+                        "20 DCA Bots",
+                        "50 Coin Pairs",
+                        "Free Settings support",
+                        "Cluster System Support",
+                        "30 Bot AI settings/month"
+                    ]
+                },
+                {
+                    "name":"Turbo",
+                    "subtitle":"Bot Army Style",
+                    "profit":6000,
+                    "price":500,
+                    "countbot":30,
+                    "tybot":"DCA Bots",
+                    "button":"Get Turbo",
+                    "items": [
+                        "30 DCA Bots",
+                        "Unlimited Coin Pairs",
+                        "Free Settings support",
+                        "Cluster System Support",
+                        "Personal support service",
+                        "Unlimited Bot AI settings support"
                     ]
                 }
             ]

@@ -1,19 +1,20 @@
 package models
 
 type Price struct {
-	Title string `json:"title"`
-	SubTitle string `json:"subtitle"`
-	Items []PriceItem `json:"items"`
+	Title    string      `json:"title"`
+	SubTitle string      `json:"subtitle"`
+	Items    []PriceItem `json:"items"`
 }
 
 type PriceItem struct {
-	Name string `json:"name"`
-	Profit int `json:"profit"`
-	Price int `json:"price"`
-	CountBot int `json:"countbot"`
-	TyBot string `json:"tybot"`
-	Button string `json:"button"`
-	Items []string `json:"items"`
+	Name     string   `json:"name"`
+	SubTitle string   `json:"subtitle"`
+	Profit   int      `json:"profit"`
+	Price    int      `json:"price"`
+	CountBot int      `json:"countbot"`
+	TyBot    string   `json:"tybot"`
+	Button   string   `json:"button"`
+	Items    []string `json:"items"`
 }
 
 type FAQ struct {
@@ -21,42 +22,47 @@ type FAQ struct {
 }
 
 type FAQItem struct {
-	Question string  `json:"question"`
-	Answer string `json:"answer"`
+	Question string `json:"question"`
+	Answer   string `json:"answer"`
 }
 
 type Tools struct {
-	Title string `json:"title"`
-	SubTitle string `json:"subtitle"`
-	Items []ToolsItem `json:"items"`
+	Title    string      `json:"title"`
+	SubTitle string      `json:"subtitle"`
+	Items    []ToolsItem `json:"items"`
 }
 
-
 type ToolsItem struct {
-	Icon string `json:"icon"`
-	Title string `json:"title"`
+	Icon        string `json:"icon"`
+	Title       string `json:"title"`
 	Description string `json:"description"`
-	Link string `json:"link"`
+	Link        string `json:"link"`
 }
 
 type BotHome struct {
-	Title string `json:"title"`
+	Title    string `json:"title"`
 	SubTitle string `json:"subtitle"`
 }
 
 type Need struct {
-	Title string `json:"title"`
-	SubTitle string `json:"subtitle"`
-	Items []NeedItems `json:"items"`
+	Title    string      `json:"title"`
+	SubTitle string      `json:"subtitle"`
+	Items    []NeedItems `json:"items"`
 }
 
 type NeedItems struct {
 	Title string `json:"title"`
-	Text string `json:"text"`
+	Text  string `json:"text"`
+}
+
+type AdvantageLine struct {
+	Title    string   `json:"title"`
+	SubTitle string   `json:"subtitle"`
+	Items    []string `json:"items"`
 }
 
 type BotToolsItems struct {
-	Title string `json:"title"`
+	Title       string `json:"title"`
 	Description string `json:"description"`
 }
 
@@ -65,19 +71,19 @@ type BotTools struct {
 }
 
 type BotDescription struct {
-	Title string `json:"title"`
+	Title string   `json:"title"`
 	Items []string `json:"items"`
 }
 
 type Page struct {
-	NameTemp string `json:"nametemp"`
-	Title string `json:"title"`
-	Tools Tools `json:"tools"`
-	Need Need `json:"need"`
-	FAQ FAQ `json:"faq"`
-	Price Price `json:"price"`
-	BotHome BotHome `json:"botHome"`
-	BotTools BotTools `json:"botTools"`
+	NameTemp       string         `json:"nametemp"`
+	Title          string         `json:"title"`
+	Tools          Tools          `json:"tools"`
+	Need           Need           `json:"need"`
+	FAQ            FAQ            `json:"faq"`
+	Price          Price          `json:"price"`
+	BotHome        BotHome        `json:"botHome"`
+	BotTools       BotTools       `json:"botTools"`
 	BotDescription BotDescription `json:"botdescription"`
+	AdvantageLine  AdvantageLine  `json:"advantageline"`
 }
-
