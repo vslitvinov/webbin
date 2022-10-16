@@ -64,6 +64,11 @@ type BotTools struct {
 	Items []BotToolsItems `json:"items"`
 }
 
+type BotDescription struct {
+	Title string `json:"title"`
+	Items []string `json:"items"`
+}
+
 type Page struct {
 	NameTemp string `json:"nametemp"`
 	Title string `json:"title"`
@@ -73,5 +78,6 @@ type Page struct {
 	Price Price `json:"price"`
 	BotHome BotHome `json:"botHome"`
 	BotTools BotTools `json:"botTools"`
+	BotDescription BotDescription `json:"botdescription"`
 }
 

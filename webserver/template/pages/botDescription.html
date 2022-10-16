@@ -1,0 +1,26 @@
+{{define "BotDescription"}}
+<!-- Start -->
+<section class="section bg-primary">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="section-title">
+                    <h4 class="title text-white title-dark mb-4">{{ .BotDescription.Title }}</h4>
+                    {{ range .BotDescription.Items }}
+                    <p class="text-white-50 para-desc mb-0">{{.}}</p>
+                    {{end }}
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col-lg-6 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <img src="/assets/images/features/4.png" class="img-fluid" alt="">
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- End -->
+{{end}}

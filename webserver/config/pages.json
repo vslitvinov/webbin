@@ -105,6 +105,12 @@
             "title": "DCA Bot",
             "subtitle": "Averaging and Loss Protection Strategy"
         },
+        "botdescription": {
+            "title": "Everything you need",
+            "items" : [
+                "DCA trading is for investors who want to reduce the impact of volatility and gradually accumulate or lower their positions. This mechanism allows users to average the price of their tokens by purchasing an established amount over time."
+            ]
+        },
         "bottools":
         {
             "items": [
