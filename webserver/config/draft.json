@@ -1,0 +1,106 @@
+"options":
+    {
+        "nametemp": "options",
+        "title": "Options",
+        "botHome":
+        {
+            "title": "Options Bot",
+            "subtitle": "Buy Call and Put Options"
+        },
+        "botdescription": {
+            "title": "Everything you need",
+            "items" : [
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "advantageline": {
+            "title": "Great tool for investment!",
+            "subtitle": "",
+            "items": [
+                "Enter the API key to manage your account on the exchange",
+                "Set the parameters you need in a user friendly interface",
+                "Click the Launch button",
+                "Enjoy profit!"
+            ]
+        },
+        "bottools":
+        {
+            "items": [
+            {
+                "title": "Options Bot",
+                "description": "Buy Call and Put Options"
+            }
+        ]
+        },
+        "price":{
+            "title":"Options Bot Pricing Plans",
+            "subtitle":"Options Bot Pricing Plans",
+            "items":[
+                {
+                    "name":"Startup",
+                    "subtitle":"Great choise to try Options Bots",
+                    "profit":500,
+                    "price":30,
+                    "countbot":3,
+                    "tybot":"Options Bots",
+                    "button":"Get Startup",
+                    "items": [
+                        "3 Options Bots",
+                        "10 Coin Pairs",
+                        "Free Settings support"
+                    ]
+                },
+                {
+                    "name":"Drive",
+                    "subtitle":"More Bots & 3X Resources.",
+                    "profit":1500,
+                    "price":100,
+                    "countbot":10,
+                    "tybot":"Options Bots",
+                    "button":"Get Drive",
+                    "items": [
+                        "10 Options Bots",
+                        "30 Coin Pairs",
+                        "Free Settings support",
+                        "Cluster System Support"
+                    ]
+                },
+                {
+                    "name":"Boost",
+                    "subtitle":"Boost Servers + More Power",
+                    "profit":3000,
+                    "price":200,
+                    "countbot":20,
+                    "tybot":"Options Bots",
+                    "button":"Get Boost",
+                    "items": [
+                        "20 Options Bots",
+                        "50 Coin Pairs",
+                        "Free Settings support",
+                        "Cluster System Support",
+                        "30 Bot AI settings/month"
+                    ]
+                },
+                {
+                    "name":"Turbo",
+                    "subtitle":"Bot Army Style",
+                    "profit":6000,
+                    "price":500,
+                    "countbot":30,
+                    "tybot":"Options Bots",
+                    "button":"Get Turbo",
+                    "items": [
+                        "30 Options Bots",
+                        "Unlimited Coin Pairs",
+                        "Free Settings support",
+                        "Cluster System Support",
+                        "Personal support service",
+                        "Unlimited Bot AI settings support"
+                    ]
+                }
+            ]
+        }
+    }
