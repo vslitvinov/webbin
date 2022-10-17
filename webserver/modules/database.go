@@ -36,9 +36,25 @@ func NewDatabase(conn *pgxpool.Pool) *DB {
 	}
 }
 
-func (db *DB) Get(ctx context.Context) ([]models.User,error) {
-	return []models.User{},nil
+func (db *DB) GetAll(ctx context.Context) ([]models.User,error) {
+	sql := `SELECT * FROM "users"`
+	rows, err := db.conn.Query(ctx,sql)
+	if err != nil {
+		return nil,err
+	}
+	var data []models.User
+
+	for rows.Next() {
+		d := models.User{}
+		err = rows.Scan(&d.ID,&d.FirstName,&d.LastName,&d.DisplayName,&d.Email,&d.Password)
+		if err != nil {
+			log.Println(err)
+		}	
+		data = append(data,d)
+	}
+ 	return data,nil
 }
+
 func (db *DB) SetUser(ctx context.Context, user models.User) (uint64,error){
 	sql := `INSERT INTO users (firstname, lastname, displayname, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING user_id`
 	row := db.conn.QueryRow(context.Background(),sql,

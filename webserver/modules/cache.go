@@ -1,6 +1,5 @@
 package modules
 
-
 import (
 	"sync"
 )

@@ -8,12 +8,13 @@ import (
 	"site/webserver/models"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"golang.org/x/crypto/bcrypt"
 )
 
 type sessionUser struct {
-	username string
+	email string
 	expiry   time.Time
 }
 
@@ -31,7 +32,7 @@ type UsersService struct {
 
 
 type Storage interface {
-	Get(ctx context.Context) ([]models.User, error)
+	GetAll(ctx context.Context) ([]models.User, error)
 	SetUser(ctx context.Context, data models.User) (uint64, error)
 }
 
@@ -44,6 +45,16 @@ func NewUsersService(db *pgxpool.Pool) *UsersService {
 		cacheUser: NewCache(),
 		cacheSession: NewCache(),
 	}
+	users,err := us.db.GetAll(context.Background())
+	if err != nil {
+		log.Println(err)
+	}
+
+	for _,user := range users {
+		us.cacheUser.Set(user.Email,user)
+	}
+	log.Println("load users complite")
+
 
 	us.Temp, err = TempLoad("./webserver/template/auth/")
 	if err != nil {
@@ -54,9 +65,7 @@ func NewUsersService(db *pgxpool.Pool) *UsersService {
 
 } 
 
-func (us *UsersService) GetUserByUsername(username string){
-	// us.cacheUser.Get()
-}
+
 
 func (us *UsersService) CheckSessionToken(r *http.Request) bool {
 	// токен сеанса из cookies
@@ -68,17 +77,15 @@ func (us *UsersService) CheckSessionToken(r *http.Request) bool {
 		return false
 	}
 
-	sessionToken := c.Value
-
 	// получаем имя пользователя из кеша сеанса
-	userSession, ok := us.cacheSession.Get(sessionToken)
+	userSession, ok := us.cacheSession.Get(c.Value)
 	if !ok {
 		// токен сеанса отсутствует 
 		return false
 	}
 	// истекло ли время сессии 
 	if userSession.(sessionUser).isExpired() {
-		us.cacheSession.Delete(sessionToken)
+		us.cacheSession.Delete(c.Value)
 		return false
 	}
 
@@ -86,31 +93,55 @@ func (us *UsersService) CheckSessionToken(r *http.Request) bool {
 
 }
 
-func (us *UsersService) HashPassword(password string) (string, error) {
-    bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
-    return string(bytes), err
-}
+// func (us *UsersService) 
 
-func (us *UsersService) CheckPasswordHash(password, hash string) bool {
-    err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
-    return err == nil
-}
+func (us *UsersService) Signin (w http.ResponseWriter, r *http.Request){
 
-func (us *UsersService) Login(w http.ResponseWriter, r *http.Request) {
-	if us.CheckSessionToken(r) {
-		 http.Redirect(w, r, "./account", http.StatusSeeOther)
-	}
+		// если POST
+	// Получение данных из формы 
+	// получение данных пользователя на основе данных 
+		// если такого пользователя нет возрощаем ошибку 
+	// проверяем хеши паролей 
+		// если нет возрат ошибки авторизации 
+	// создание токена сесии и временой метки 
+	// сохранение за пользователем сессии 
+	// установление куков пользователю и редерект 
 
 	if r.Method == "POST" {
-
 		r.ParseForm()                    
     	email := r.Form.Get("email")
     	password := r.Form.Get("password")
-    	log.Println(email,password)
+
+    	user, ok := us.cacheUser.Get(email)
+    	if !ok {
+    		// пользователя нет
+    		w.WriteHeader(http.StatusUnauthorized)
+    	}
+    	if !CheckPasswordHash(password, user.(models.User).Password) {
+    		// пароли не совпадают
+    		w.WriteHeader(http.StatusUnauthorized)
+    	}
+
+    	session := sessionUser{
+    		email:  email,
+    		expiry: time.Now().Add(1200 * time.Second),
+    	}
+    	sessionToken := uuid.NewString()
+		
+		us.cacheSession.Set(sessionToken,session)
+		http.SetCookie(w, &http.Cookie{
+			Name:    "session_token",
+			Value:   sessionToken,
+			Expires: session.expiry,
+		})
+		http.Redirect(w, r, "./account", http.StatusSeeOther)
 	}
 
+	if us.CheckSessionToken(r){
+		http.Redirect(w, r, "./account", http.StatusSeeOther)
+	}
 
-    us.Temp.ExecuteTemplate(w, "Index", struct{
+	us.Temp.ExecuteTemplate(w, "Index", struct{
     	T string
     	Title string
     }{
@@ -118,33 +149,33 @@ func (us *UsersService) Login(w http.ResponseWriter, r *http.Request) {
     	Title: "Login",
     })
 
-
-	expiresAt := time.Now().Add(1000 * time.Second)
-	http.SetCookie(w, &http.Cookie{
-		Name:    "Test",
-		Value:   "test12",
-		Expires: expiresAt,
-	})
 }
+
+
 func (us *UsersService) Logout(w http.ResponseWriter, r *http.Request) {
 	//прекщение сессии 
 }
 
 func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
+	if !us.CheckSessionToken(r){
+		http.Redirect(w, r, "./login", http.StatusSeeOther)
+	}
 	// http.Redirect(w, r, newUrl, http.StatusSeeOther)
 }
 
 
 func (us *UsersService) Signup(w http.ResponseWriter, r *http.Request){
-	if us.CheckSessionToken(r) {
-		// http.Redirect(w, r, newUrl, http.StatusSeeOther)
-	}
 
 	if r.Method == "POST" {
-		// check username and email 
-		// if 
+		u, ok := us.cacheUser.Get(r.Form.Get("email"))
+		if !ok {
+			// err email занят
+		}
+		if u.(models.User).DisplayName == r.Form.Get("displayname"){
+			// err display name занят
+		}
 		r.ParseForm()                    
-    	pass,err := us.HashPassword(r.Form.Get("password"))
+    	pass,err := HashPassword(r.Form.Get("password"))
     	if err != nil {
     		log.Println(err)
     	}
@@ -170,10 +201,6 @@ func (us *UsersService) Signup(w http.ResponseWriter, r *http.Request){
 	}
 
 
-
-
-
-
     us.Temp.ExecuteTemplate(w, "Index", struct{
     	T string
     	Title string
@@ -187,6 +214,12 @@ func (us *UsersService) Signup(w http.ResponseWriter, r *http.Request){
 
 
 
+func HashPassword(password string) (string, error) {
+    bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
+    return string(bytes), err
+}
 
-// Signup регистрация 
-// Login 
+func CheckPasswordHash(password, hash string) bool {
+    err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
+    return err == nil
+}

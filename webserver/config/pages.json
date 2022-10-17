@@ -118,15 +118,15 @@
         "botdescription": {
             "title": "Everything you need",
             "items" : [
-                "DCA bots are trading bots that allow users to automatically buy and sell cryptocurrencies at recurring intervals over a set period.",
+                "DCA trading is for investors who want to reduce the impact of volatility and gradually accumulate or lower their positions. This mechanism allows users to average the price of their tokens by purchasing an established amount over time.",
                 "DCA trading is for investors who want to reduce the impact of volatility and gradually accumulate or lower their positions. This mechanism allows users to average the price of their tokens by purchasing an established amount over time.",
                 "For example, if you enter the market with one investment, there is a risk that you have just bought an asset at a high price. The value will decrease after a while, resulting in a loss-making position.",
                 "However, if you invest by dividing the amount into parts, you can buy assets at different times and prices. It leads to a more favorable average cost, meaning that you will significantly reduce the risks of local price changes."
             ]
         },
         "advantageline": {
-            "title": "Launch a bot is easy!",
-            "subtitle": "Easy setup",
+            "title": "Easy setup",
+            "subtitle": "Launch a bot is easy!",
             "items": [
                 "Enter the API key to manage your account on the exchange",
                 "Set the parameters you need in a user friendly interface",
@@ -202,215 +202,6 @@
                     "button":"Get Turbo",
                     "items": [
                         "30 DCA Bots",
-                        "Unlimited Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "Personal support service",
-                        "Unlimited Bot AI settings support"
-                    ]
-                }
-            ]
-        }
-    },
-    "grid":
-    {
-        "nametemp": "grid",
-        "title": "Grid",
-        "botHome":
-        {
-            "title": "Grid Bot",
-            "subtitle": "Trading at the perfect time"
-        },
-        "botdescription": {
-            "title": "Everything you need",
-            "items" : [
-                "Want to profit from cryptocurrency trading, but have no time to make transactions and study the market? Grid Bot will help the trader solve this problem! It perfectly automates the trading process and will provide a permanent income.",
-                "The traders' income depends on the number of successful deals they can make during the day. Therefore, experienced investors say they have to spend plenty of time on the stock exchange at the expense of other activities. They lose potential income if they do not have the opportunity to trade actively.",
-                "The Grid Bot can trade on behalf of a person according to predefined parameters in the chosen range. The bottom price is the minimum price for which a bot can buy a contract, and the top price is the maximum value at which the bot has the opportunity to sell. When the market price drops below the lower value or exceeds the upper price, the bot stops selling the contracts."
-            ]
-        },
-        "advantageline": {
-            "title": "Who should use the Grid Bot?",
-            "subtitle": "",
-            "items": [
-                "Experienced investors that do not have time to trade manually",
-                " Beginner traders, as the bot is easy to manage and configure"
-            ]
-        },
-        "bottools":
-        {
-            "items": [
-            {
-                "title": "Grid Bot",
-                "description": "Trading at the perfect time"
-            }
-        ]
-        },
-        "price":{
-            "title":"Grid Bot Pricing Plans",
-            "subtitle":"Grid Bot Pricing Plans",
-            "items":[
-                {
-                    "name":"Startup",
-                    "subtitle":"Great choise to try Grid Bots",
-                    "profit":500,
-                    "price":30,
-                    "countbot":3,
-                    "tybot":"Grid Bots",
-                    "button":"Get Startup",
-                    "items": [
-                        "3 Grid Bots",
-                        "10 Coin Pairs",
-                        "Free Settings support"
-                    ]
-                },
-                {
-                    "name":"Drive",
-                    "subtitle":"More Bots & 3X Resources.",
-                    "profit":1500,
-                    "price":100,
-                    "countbot":10,
-                    "tybot":"Grid Bots",
-                    "button":"Get Drive",
-                    "items": [
-                        "10 Grid Bots",
-                        "30 Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support"
-                    ]
-                },
-                {
-                    "name":"Boost",
-                    "subtitle":"Boost Servers + More Power",
-                    "profit":3000,
-                    "price":200,
-                    "countbot":20,
-                    "tybot":"Grid Bots",
-                    "button":"Get Boost",
-                    "items": [
-                        "20 Grid Bots",
-                        "50 Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "30 Bot AI settings/month"
-                    ]
-                },
-                {
-                    "name":"Turbo",
-                    "subtitle":"Bot Army Style",
-                    "profit":6000,
-                    "price":500,
-                    "countbot":30,
-                    "tybot":"Grid Bots",
-                    "button":"Get Turbo",
-                    "items": [
-                        "30 Grid Bots",
-                        "Unlimited Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "Personal support service",
-                        "Unlimited Bot AI settings support"
-                    ]
-                }
-            ]
-        }
-    },
-    "hold":
-    {
-        "nametemp": "hold",
-        "title": "Hold",
-        "botHome":
-        {
-            "title": "Hold Bot",
-            "subtitle": "The best solution for long-term investment"
-        },
-        "botdescription": {
-            "title": "Everything you need",
-            "items" : [
-                "The HODL bots follow the same pattern as the Hold but offer a more flexible investment strategy. Traditional investments involve monthly withdrawals and investments in diversified portfolios such as funds and bonds.",
-                "You decide which assets to buy, in what amount, and at what interval.",
-                "The entry price must be optimal when occupying a position. It is often difficult to do this manually, and waiting for the best price is too time-consuming.",
-                "It is where bots can help! At the moment of an anomalous drawdown of an asset, the pre-configured bot buys positions at an optimal price. So you don't have to wait for the right moment yourself. The same goes for fixing profits: you will not bite your elbows because of a missed opportunity to sell the ether at 5,000. Set the initial target profit rate at 100-600%, and the bot will do all the work!"
-            ]
-        },
-        "advantageline": {
-            "title": "Great tool for investment!",
-            "subtitle": "",
-            "items": [
-                "Guaranteed income",
-                "Buy at optimal prices",
-                "Set your profit target before trading",
-                "Don’t miss the right moment!"
-            ]
-        },
-        "bottools":
-        {
-            "items": [
-            {
-                "title": "Hold Bot",
-                "description": "The best solution for long-term investment"
-            }
-        ]
-        },
-        "price":{
-            "title":"Hold Bot Pricing Plans",
-            "subtitle":"Hold Bot Pricing Plans",
-            "items":[
-                {
-                    "name":"Startup",
-                    "subtitle":"Great choise to try Hold Bots",
-                    "profit":500,
-                    "price":30,
-                    "countbot":3,
-                    "tybot":"Hold Bots",
-                    "button":"Get Startup",
-                    "items": [
-                        "3 Hold Bots",
-                        "10 Coin Pairs",
-                        "Free Settings support"
-                    ]
-                },
-                {
-                    "name":"Drive",
-                    "subtitle":"More Bots & 3X Resources.",
-                    "profit":1500,
-                    "price":100,
-                    "countbot":10,
-                    "tybot":"Hold Bots",
-                    "button":"Get Drive",
-                    "items": [
-                        "10 Hold Bots",
-                        "30 Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support"
-                    ]
-                },
-                {
-                    "name":"Boost",
-                    "subtitle":"Boost Servers + More Power",
-                    "profit":3000,
-                    "price":200,
-                    "countbot":20,
-                    "tybot":"Hold Bots",
-                    "button":"Get Boost",
-                    "items": [
-                        "20 Hold Bots",
-                        "50 Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "30 Bot AI settings/month"
-                    ]
-                },
-                {
-                    "name":"Turbo",
-                    "subtitle":"Bot Army Style",
-                    "profit":6000,
-                    "price":500,
-                    "countbot":30,
-                    "tybot":"Hold Bots",
-                    "button":"Get Turbo",
-                    "items": [
-                        "30 Hold Bots",
                         "Unlimited Coin Pairs",
                         "Free Settings support",
                         "Cluster System Support",
@@ -526,5 +317,9 @@
                 }
             ]
         }
+    },
+    "cart":{
+        "nametemp": "cart",
+        "title": "Cart"
     }
 }
