@@ -211,5 +211,9 @@
                 }
             ]
         }
+    },
+    "cart":{
+        "nametemp": "cart",
+        "title": "Cart"
     }
 }

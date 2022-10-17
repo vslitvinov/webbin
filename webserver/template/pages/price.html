@@ -9,7 +9,7 @@
                     <p class="text-muted para-desc mx-auto mb-0">{{ .Price.SubTitle }}</p>
                 </div>
             </div>
-            <!--end col-->w
+            <!--end col-->
         </div>
         <!--end row-->
         <div class="row">
@@ -27,7 +27,7 @@
                             <span class="h6 text-muted align-self-end mb-1">/month</span>
                         </div>
                         <h6 class="text-muted mt-1"><span class="text-danger">{{ .CountBot }} </span> {{ .TyBot }}</h6>
-                        <a href="javascript:void(0)" class="btn btn-soft-warning mt-2">{{ .Button }}</a>
+                        <a onclick="AddCartItem({{.Name}})" class="btn btn-soft-warning mt-2">{{ .Button }}</a>
                     </div>
                     <div class="py-3 bg-light">
                         <p class="text-muted mb-0">{{ .SubTitle}} </p>
