@@ -257,6 +257,7 @@
             "subtitle":"Grid Bot Pricing Plans",
             "items":[
                 {
+                    "uuid":"aadbc031-e962-40a8-8a7b-2d6389bced08",
                     "name":"Startup",
                     "subtitle":"Great choise to try Grid Bots",
                     "profit":500,
@@ -271,6 +272,7 @@
                     ]
                 },
                 {
+                    "uuid":"54f93d89-07bb-430d-bc99-f4b6354ba12f",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -286,6 +288,7 @@
                     ]
                 },
                 {
+                    "uuid":"14e22737-17c4-4d7b-9e33-98892544fbd6",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -302,6 +305,7 @@
                     ]
                 },
                 {
+                    "uuid":"10c13e2b-b10a-4f97-b6b8-d1be85280a69",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
@@ -364,6 +368,7 @@
             "subtitle":"Hold Bot Pricing Plans",
             "items":[
                 {
+                    "uuid": "ad02aa49-b7ec-4fe8-bce0-5e74f638487f",
                     "name":"Startup",
                     "subtitle":"Great choise to try Hold Bots",
                     "profit":500,
@@ -378,6 +383,7 @@
                     ]
                 },
                 {
+                    "uuid": "16038312-69ff-4c2c-8625-7a51871d1580",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -393,6 +399,7 @@
                     ]
                 },
                 {
+                    "uuid": "e42d27c7-e15a-4cb4-b4bf-1c16f8217ce7",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -409,6 +416,7 @@
                     ]
                 },
                 {
+                    "uuid": "5758eb96-f367-44f3-8d2f-cc7ab95943ef",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
