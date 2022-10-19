@@ -216,9 +216,49 @@ func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request
 }
 
 func (cs *CartService) GetCartInfo(w http.ResponseWriter, r *http.Request){
-	// проверяем если ли токен корзинны ? 
-		// если да удаляем содержимое 
-		
+	// read coockie file 
+	var cartToken = uuid.NewString()
+
+	token, err := r.Cookie("cart_token")
+	if err != nil {
+		log.Println("err get body cookie: ",err)
+	} 
+	if token == nil {
+		res, err := json.Marshal(AddItemReq{UUID :cartToken})
+		if err != nil {
+			log.Println("Marshal json req")
+		}
+		fmt.Fprintf(w,string(res))
+		return
+	}
+	if token != nil {
+		cartToken = token.Value
+	}
+
+	var cart Cart
+
+	// check cart by uuid
+	c,ok := cs.cache.Get(cartToken)
+	if !ok {
+		cart = NewCart()
+		cs.cache.Set(cartToken,cart)
+	} else {
+		cart = c.(Cart)
+	}
+
+	res, err := json.Marshal(struct {
+		UUIDCart string
+		Cart     Cart
+	}{
+		UUIDCart: cartToken,
+		Cart:     cart,
+	})
+	if err != nil {
+		log.Println("Marshal json req")
+	}
+	fmt.Fprintf(w,string(res))
+
+
 }
 
 func (cs *CartService) EditCountItem(w http.ResponseWriter, r *http.Request){
