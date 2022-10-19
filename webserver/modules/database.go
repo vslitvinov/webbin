@@ -65,7 +65,7 @@ func (db *DB) GetAllProduct(ctx context.Context) ([]models.Product,error) {
 
 	for rows.Next() {
 		d := models.Product{}
-		err = rows.Scan(&d.UUID,&d.Name,&d.Price,&d.Сategory,&d.Subscription,&d.Level)
+		err = rows.Scan(&d.UUID,&d.Name,&d.Price,&d.Сategory,&d.Subscription,&d.Level,&d.Icon,&d.Url)
 		if err != nil {
 			log.Println(err)
 		}	
