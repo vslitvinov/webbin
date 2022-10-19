@@ -85,7 +85,6 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 	if err != nil {
 		log.Println("err decode: ",err)
 	}
-	log.Println(data.UUID)
 
 	// read coockie file 
 	var cartToken = uuid.NewString()
@@ -97,7 +96,6 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 	if token != nil {
 		cartToken = token.Value
 	}
-	log.Println(cartToken)
 
 	var cart Cart
 
@@ -139,23 +137,88 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 
 	// 
 	res, err := json.Marshal(AddItemReq{UUID :cartToken})
+	if err != nil {
+		log.Println("Marshal json req")
+	}
 	fmt.Fprintf(w,string(res))
-	log.Println(cart)
 }
 
 func (cs *CartService) ResetCart(w http.ResponseWriter, r *http.Request){
 	// удаляем содержимое корзины
+
+	var cartToken = uuid.NewString()
+	token, err := r.Cookie("cart_token")
+	if err != nil {
+		log.Println("err get body cookie: ",err)
+	} 
+	if token != nil {
+		cartToken = token.Value
+	}
+
+	// clear cart 
+	cs.cache.Set(cartToken, NewCart())
+	
 }
 
 func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request){
 	// фейл сейф проверка если в куках токен корзины 
 	// проверка находится ли в корзине товар с нужным uuid 
 		// если да удаляем 
+
+	// parse body request
+	data := &AddItemReq{}
+	err := json.NewDecoder(r.Body).Decode(data)
+	if err != nil {
+		log.Println("err decode: ",err)
+	}
+
+	// read coockie file 
+	var cartToken = uuid.NewString()
+
+	token, err := r.Cookie("cart_token")
+	if err != nil {
+		log.Println("err get body cookie: ",err)
+	} 
+	if token == nil {
+		res, err := json.Marshal(AddItemReq{UUID :cartToken})
+		if err != nil {
+			log.Println("Marshal json req")
+		}
+		fmt.Fprintf(w,string(res))
+		return
+	}
+	if token != nil {
+		cartToken = token.Value
+	}
+
+	var cart Cart
+
+	// check cart by uuid
+	c,ok := cs.cache.Get(cartToken)
+	if !ok {
+		cart = NewCart()
+		cs.cache.Set(cartToken,cart)
+	} else {
+		cart = c.(Cart)
+	}
+
+	// product item and to cart
+	_, ok = cart.Items[data.UUID]
+	if ok {
+		delete(cart.Items,data.UUID)
+	} 
+
+	res, err := json.Marshal(AddItemReq{UUID :cartToken})
+	if err != nil {
+		log.Println("Marshal json req")
+	}
+	fmt.Fprintf(w,string(res))
 }
 
 func (cs *CartService) GetCartInfo(w http.ResponseWriter, r *http.Request){
 	// проверяем если ли токен корзинны ? 
 		// если да удаляем содержимое 
+		
 }
 
 func (cs *CartService) EditCountItem(w http.ResponseWriter, r *http.Request){
