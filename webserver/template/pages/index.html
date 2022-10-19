@@ -9,6 +9,14 @@
 		{{template "Bot" .}}
 	{{end}}
 
+	{{if eq .NameTemp "grid"}}
+		{{template "Bot" .}}
+	{{end}}
+
+	{{if eq .NameTemp "hold"}}
+		{{template "Bot" .}}
+	{{end}}
+
 	{{if eq .NameTemp "home"}}
 		{{template "Home" .}}
 	{{end}}
