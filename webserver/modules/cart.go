@@ -73,6 +73,12 @@ type AddItemReq struct {
 	UUID string `json:"uuid"`
 }
 
+
+type FullCart struct {
+	UUID string `json:"uuid"`
+	Cart     Cart
+}
+
 func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 	// проверяем если ли токен корзинны ? 
 		// если нет создаем токен и корзину
@@ -136,7 +142,10 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 
 
 	// 
-	res, err := json.Marshal(AddItemReq{UUID :cartToken})
+	res, err := json.Marshal(FullCart{
+		UUID: cartToken,
+		Cart: cart,
+	})
 	if err != nil {
 		log.Println("Marshal json req")
 	}
@@ -179,14 +188,6 @@ func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request
 	if err != nil {
 		log.Println("err get body cookie: ",err)
 	} 
-	if token == nil {
-		res, err := json.Marshal(AddItemReq{UUID :cartToken})
-		if err != nil {
-			log.Println("Marshal json req")
-		}
-		fmt.Fprintf(w,string(res))
-		return
-	}
 	if token != nil {
 		cartToken = token.Value
 	}
@@ -208,7 +209,10 @@ func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request
 		delete(cart.Items,data.UUID)
 	} 
 
-	res, err := json.Marshal(AddItemReq{UUID :cartToken})
+	res, err := json.Marshal(FullCart{
+		UUID: cartToken,
+		Cart: cart,
+	})
 	if err != nil {
 		log.Println("Marshal json req")
 	}
@@ -246,12 +250,9 @@ func (cs *CartService) GetCartInfo(w http.ResponseWriter, r *http.Request){
 		cart = c.(Cart)
 	}
 
-	res, err := json.Marshal(struct {
-		UUIDCart string
-		Cart     Cart
-	}{
-		UUIDCart: cartToken,
-		Cart:     cart,
+	res, err := json.Marshal(FullCart{
+		UUID: cartToken,
+		Cart: cart,
 	})
 	if err != nil {
 		log.Println("Marshal json req")
