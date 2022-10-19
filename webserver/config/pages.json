@@ -113,7 +113,8 @@
         "botHome":
         {
             "title": "DCA Bot",
-            "subtitle": "Averaging and Loss Protection Strategy"
+            "subtitle": "Averaging and Loss Protection Strategy",
+            "image": "dca-bot-image.png"
         },
         "botdescription": {
             "title": "Everything you need",
@@ -223,7 +224,8 @@
         "botHome":
         {
             "title": "Grid Bot",
-            "subtitle": "Trading at the perfect time"
+            "subtitle": "Trading at the perfect time",
+            "image": "grid-bot-image.png"
         },
         "botdescription": {
             "title": "Everything you need",
@@ -326,7 +328,8 @@
         "botHome":
         {
             "title": "Hold Bot",
-            "subtitle": "The best solution for long-term investment"
+            "subtitle": "The best solution for long-term investment",
+            "image": "hold-bot-image.png"
         },
         "botdescription": {
             "title": "Everything you need",
@@ -432,7 +435,8 @@
         "botHome":
         {
             "title": "Options Bot",
-            "subtitle": "Buy Call and Put Options"
+            "subtitle": "Buy Call and Put Options",
+            "image": "email-dashboard.png"
         },
         "botdescription": {
             "title": "Everything you need",

@@ -43,6 +43,7 @@ type ToolsItem struct {
 type BotHome struct {
 	Title    string `json:"title"`
 	SubTitle string `json:"subtitle"`
+	Image    string `json:"image"`
 }
 
 type Need struct {
