@@ -1,12 +1,9 @@
-async function Request(method, url, data) {
-    return fetch(url, {
-        method: method,
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-    })
+function Request(method, url, data) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
+    return xhr
 }
 
 
@@ -17,16 +14,10 @@ function AddCartItem(uuid) {
         uuid: uuid,
     };
 
-    var json = JSON.stringify(data);
+    req = Request("POST","/cart/additem", data)
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/cart/additem");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(json);
-
-
-    xhr.onload = () => {
-        uuid = JSON.parse(xhr.response).uuid
+    req.onload = () => {
+        uuid = JSON.parse(req.response).uuid
         document.cookie = "cart_token="+uuid
     };
 
