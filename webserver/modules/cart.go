@@ -1,86 +1,166 @@
 package modules
 
 import (
-	"sync"
+	"context"
+	"encoding/json"
+	"log"
+	"net/http"
+	"site/webserver/models"
+	"time"
 
 	"github.com/google/uuid"
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
 
-type Product struct {
-	Name string 
-	Price float64
-	Сategory string
-}
-
-type ItemCart struct {
-	Product Product
+type CartItem struct {
+	Product models.Product
 	Count int64
 }
 
-// записи товара 
 
 type Cart struct {
-	sync.RWMutex
-	items map[string]*ItemCart
+	Items map[string]CartItem
 }
 
-
-
-func NewCart() *Cart {
-	items := make(map[string]*ItemCart)
-	return &Cart{
-		items: items,
+func NewCart() Cart{
+	c := Cart{
+		Items: make(map[string]CartItem),
 	}
+	return c
 }
 
-func (c *Cart) EditCount(uuid string, n int64) bool{
-	c.Lock()
-	defer  c.Unlock()
 
-	item, found := c.items[uuid]
-	if !found {
-		return  false
+type StorageProduct interface {
+	GetAllProduct(ctx context.Context) ([]models.Product, error)
+}
+
+
+type CartService struct {
+	db StorageProduct 
+	cacheProduct *Cache
+	cache *Cache
+}
+
+func NewCartService(db *pgxpool.Pool) *CartService {
+	cs :=  &CartService{
+		db: NewDatabase(db),
+		cacheProduct: NewCache(),
+		cache: NewCache(),
+	}
+
+	ps,err := cs.db.GetAllProduct(context.Background())
+	if err != nil {
+		log.Println(err)
+	}
+	for _,p := range ps {
+		cs.cacheProduct.Set(p.UUID,p)
+	}
+	log.Println(ps)
+
+
+	return cs
+}
+
+
+// AddItemToCart добавить в корзину товар
+// ResetCart очистить корзину 
+// DeleteItemFromCart // удалить итем из корзины 
+// GetCartInfo // получить содержимое корзины
+// EditCountItem // изменить количество элемента в корзине 
+
+type AddItemReq struct {
+	UUID string `json:"uuid"`
+}
+
+func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
+	// проверяем если ли токен корзинны ? 
+		// если нет создаем токен и корзину
+	// генерируем uuid и добавляем элемент 
+
+	// sessionToken := uuid.NewString()
+	// parse body request
+	data := &AddItemReq{}
+	err := json.NewDecoder(r.Body).Decode(data)
+	if err != nil {
+		log.Println("err decode: ",err)
+	}
+	log.Println(data.UUID)
+
+	// read coockie file 
+	var cartToken = uuid.NewString()
+
+	token, err := r.Cookie("cart_token")
+	if err != nil {
+		log.Println("err get body cookie: ",err)
 	} 
+	if token != nil {
+		cartToken = token.Value
+	}
+	log.Println(cartToken)
 
-	item.Count = item.Count + n
-	c.items[uuid] = item
-	return  true 
-}
+	var cart Cart
 
-func (c *Cart) Set(value *ItemCart) string {
-	c.Lock()
-	defer  c.Unlock()
-	key := uuid.NewString()
-	c.items[key] = value
-	return key
-}
-
-func (c *Cart) Get(key string) (*ItemCart, bool) {
-	c.RLock()
-	defer c.RUnlock()
-	if item, found := c.items[key]; !found {
-		return nil, false
+	// check cart by uuid
+	c,ok := cs.cache.Get(cartToken)
+	if !ok {
+		cart = NewCart()
+		cs.cache.Set(cartToken,cart)
 	} else {
-		return item, true
-	}
-}
-
-func (c *Cart) Delete(key string) {
-	c.Lock()
-	defer c.Unlock()
-	delete(c.items, key)
-}
-
-func (c *Cart) GetAllIDs() []string {
-	var ids []string
-
-	c.RLock()
-	defer c.RUnlock()
-
-	for key := range c.items {
-		ids = append(ids, key)
+		cart = c.(Cart)
 	}
 
-	return ids
+	// check and get product by uuid 
+	product,ok := cs.cacheProduct.Get(data.UUID)
+	if !ok {
+		log.Println("err not fount product by uuid")
+	}
+	log.Println(product)
+
+	// product item and to cart
+	item, ok := cart.Items[data.UUID]
+	if ok {
+		item.Count += 1 
+		cart.Items[data.UUID] = item
+	} else {
+		cart.Items[data.UUID] = CartItem{
+			Product: product.(models.Product),
+			Count: 1,
+		}
+	}
+
+	// update cookie file 
+	http.SetCookie(w, &http.Cookie{
+		Name:    "cart_token",
+		Value:   cartToken,
+		Expires: time.Now().Add(1200 * time.Second),
+	})
+
+
 }
+
+func (cs *CartService) ResetCart(w http.ResponseWriter, r *http.Request){
+	// удаляем содержимое корзины
+}
+
+func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request){
+	// фейл сейф проверка если в куках токен корзины 
+	// проверка находится ли в корзине товар с нужным uuid 
+		// если да удаляем 
+}
+
+func (cs *CartService) GetCartInfo(w http.ResponseWriter, r *http.Request){
+	// проверяем если ли токен корзинны ? 
+		// если да удаляем содержимое 
+}
+
+func (cs *CartService) EditCountItem(w http.ResponseWriter, r *http.Request){
+	// фейл сейф проверка если в куках токен корзины 
+	// проверка находится ли в корзине товар с нужным uuid 
+		// если да изменяем его количество 
+}
+
+
+
+
+

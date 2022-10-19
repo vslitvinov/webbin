@@ -148,6 +148,7 @@
             "subtitle":"DCA Bot Pricing Plans",
             "items":[
                 {
+                    "uuid":"a8ebc134-1171-479c-bb18-bd2d29835c80",
                     "name":"Startup",
                     "subtitle":"Great choise to try Dca Bots",
                     "profit":500,
@@ -162,6 +163,7 @@
                     ]
                 },
                 {
+                    "uuid":"6fb60eaa-cc91-4313-a9c5-92e8d851e882",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -177,6 +179,7 @@
                     ]
                 },
                 {
+                    "uuid":"caf802d6-a3c7-45ae-bb17-04b34201649d",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -193,6 +196,7 @@
                     ]
                 },
                 {
+                    "uuid":"e7c07980-97de-408f-af63-3ea2c8015f08",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
@@ -526,5 +530,9 @@
                 }
             ]
         }
+    },
+    "cart":{
+        "nametemp": "cart",
+        "title": "Cart"
     }
 }

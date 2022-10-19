@@ -95,8 +95,7 @@ func (us *UsersService) CheckSessionToken(r *http.Request) bool {
 
 // func (us *UsersService) 
 
-func (us *UsersService) Signin (w http.ResponseWriter, r *http.Request){
-
+func (us *UsersService) Signin (w http.ResponseWriter, r *http.Request){ 
 		// если POST
 	// Получение данных из формы 
 	// получение данных пользователя на основе данных 
@@ -135,20 +134,19 @@ func (us *UsersService) Signin (w http.ResponseWriter, r *http.Request){
 			Expires: session.expiry,
 		})
 		http.Redirect(w, r, "./account", http.StatusSeeOther)
-	}
-
-	if us.CheckSessionToken(r){
-		http.Redirect(w, r, "./account", http.StatusSeeOther)
-	}
-
-	us.Temp.ExecuteTemplate(w, "Index", struct{
-    	T string
-    	Title string
-    }{
-    	T: "login",
-    	Title: "Login",
-    })
-
+	} else{
+		if us.CheckSessionToken(r){
+			http.Redirect(w, r, "./account", http.StatusSeeOther)
+		}
+	
+		us.Temp.ExecuteTemplate(w, "Index", struct{
+    		T string
+    		Title string
+    	}{
+    		T: "login",
+    		Title: "Login",
+    	})
+    }
 }
 
 

@@ -7,6 +7,7 @@ type Price struct {
 }
 
 type PriceItem struct {
+	UUID     string   `json:"uuid"`
 	Name     string   `json:"name"`
 	SubTitle string   `json:"subtitle"`
 	Profit   int      `json:"profit"`

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
-	"log"
-	"fmt"
 	"context"
+	"fmt"
+	"log"
+	"net/http"
 	"site/webserver"
 	"site/webserver/modules"
 )
@@ -21,6 +21,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Initialization failed: ", err)
 	}
+
 
 	connConfig := fmt.Sprintf("postgres://%v:%v@%v:%v/%v", 
 		conf.Database.User,

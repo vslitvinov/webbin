@@ -1,7 +1,11 @@
 package models 
 
 
-
-type AddCartItem struct {
-	
+type Product struct {
+	UUID string  `json:"uuid"`
+	Name string  `json:"name"`
+	Price int `json:"price"`
+	Сategory string `json:"category"`
+	Subscription bool `json:"subscription"`
+	Level int `json:"level"`
 }

@@ -16,6 +16,7 @@ type WebServer struct {
 	Router *http.ServeMux
 	US *modules.UsersService
 	Temp *template.Template
+	CartApi *modules.CartService
 	Pages map[string]models.Page
 }
 
@@ -27,6 +28,7 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 	s :=  &WebServer{
 		Router: http.NewServeMux(),
 		US: modules.NewUsersService(db),
+		CartApi: modules.NewCartService(db),
 	}
 
 	s.Temp, err = modules.TempLoad("./webserver/template/pages/")
@@ -47,6 +49,7 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 	s.Router.HandleFunc("/signup", s.US.Signup)
 	s.Router.HandleFunc("/login", s.US.Signin)
 	s.Router.HandleFunc("/cart", s.Cart)
+	s.Router.HandleFunc("/cart/additem", s.CartApi.AddItemToCart)
 
 
 	fs := http.FileServer(http.Dir("./webserver/assets"))

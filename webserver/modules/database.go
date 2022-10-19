@@ -55,6 +55,25 @@ func (db *DB) GetAll(ctx context.Context) ([]models.User,error) {
  	return data,nil
 }
 
+func (db *DB) GetAllProduct(ctx context.Context) ([]models.Product,error) {
+	sql := `SELECT * FROM "products"`
+	rows, err := db.conn.Query(ctx,sql)
+	if err != nil {
+		return nil,err
+	}
+	var data []models.Product
+
+	for rows.Next() {
+		d := models.Product{}
+		err = rows.Scan(&d.UUID,&d.Name,&d.Price,&d.Сategory,&d.Subscription,&d.Level)
+		if err != nil {
+			log.Println(err)
+		}	
+		data = append(data,d)
+	}
+ 	return data,nil
+}
+
 func (db *DB) SetUser(ctx context.Context, user models.User) (uint64,error){
 	sql := `INSERT INTO users (firstname, lastname, displayname, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING user_id`
 	row := db.conn.QueryRow(context.Background(),sql,

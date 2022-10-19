@@ -12,16 +12,18 @@ async function Request(method, url, data) {
 
 
 
-function AddCartItem(id) {
+function AddCartItem(uuid) {
     var data = {
-        name: "helloworld",
-        age: 123
+        uuid: uuid,
     };
 
     var json = JSON.stringify(data);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/cart");
+    xhr.open("POST", "/cart/additem");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(json);
 }
+
+
+
