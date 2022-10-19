@@ -3,10 +3,10 @@ package modules
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"site/webserver/models"
-	"time"
 
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v4/pgxpool"
@@ -115,7 +115,7 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 	if !ok {
 		log.Println("err not fount product by uuid")
 	}
-	log.Println(product)
+
 
 	// product item and to cart
 	item, ok := cart.Items[data.UUID]
@@ -130,13 +130,17 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 	}
 
 	// update cookie file 
-	http.SetCookie(w, &http.Cookie{
-		Name:    "cart_token",
-		Value:   cartToken,
-		Expires: time.Now().Add(1200 * time.Second),
-	})
+	// http.SetCookie(w, &http.Cookie{
+	// 	Name:    "cart_token",
+	// 	Value:   cartToken,
+	// 	Expires: time.Now().Add(1200 * time.Second),
+	// })
 
 
+	// 
+	res, err := json.Marshal(AddItemReq{UUID :cartToken})
+	fmt.Fprintf(w,string(res))
+	log.Println(cart)
 }
 
 func (cs *CartService) ResetCart(w http.ResponseWriter, r *http.Request){
