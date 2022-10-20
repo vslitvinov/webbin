@@ -61,7 +61,7 @@ func main() {
         TLSConfig:    cfg,
         TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
     }
-    log.Fatal(srv.ListenAndServeTLS("../server.crt", "../server.key"))
+    log.Fatal(srv.ListenAndServeTLS("./server.crt", "./server.key"))
 	// err = http.ListenAndServe(addr, site.Router)
 	// err = http.ListenAndServeTLS(addr, "../server.crt", "../server.key", site.Router)
 	// if err != nil {
