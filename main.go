@@ -10,7 +10,7 @@ import (
 )
 
 var host = "0.0.0.0"
-var port = "8080"
+var port = "443"
 
 func main() {
 
@@ -42,7 +42,8 @@ func main() {
 
 	addr := fmt.Sprintf("%s:%s", host, port)
 	
-	err = http.ListenAndServe(addr, site.Router)
+	// err = http.ListenAndServe(addr, site.Router)
+	err = http.ListenAndServeTLS(addr, "../server.crt", "../server.key", site.Router)
 	if err != nil {
 		log.Fatal(fmt.Sprintf("Не удалось запустить сервер: %v", err))
 	}
