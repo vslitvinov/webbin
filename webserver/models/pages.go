@@ -7,15 +7,16 @@ type Price struct {
 }
 
 type PriceItem struct {
-	UUID     string   `json:"uuid"`
-	Name     string   `json:"name"`
-	SubTitle string   `json:"subtitle"`
-	Profit   int      `json:"profit"`
-	Price    int      `json:"price"`
-	CountBot int      `json:"countbot"`
-	TyBot    string   `json:"tybot"`
-	Button   string   `json:"button"`
-	Items    []string `json:"items"`
+	UUID       string   `json:"uuid"`
+	Background string   `json:"background"`
+	Name       string   `json:"name"`
+	SubTitle   string   `json:"subtitle"`
+	Profit     int      `json:"profit"`
+	Price      int      `json:"price"`
+	CountBot   int      `json:"countbot"`
+	TyBot      string   `json:"tybot"`
+	Button     string   `json:"button"`
+	Items      []string `json:"items"`
 }
 
 type FAQ struct {
@@ -66,6 +67,7 @@ type AdvantageLine struct {
 type BotToolsItems struct {
 	Title       string `json:"title"`
 	Description string `json:"description"`
+	UilIcon     string `json:"uilicon"`
 }
 
 type BotTools struct {

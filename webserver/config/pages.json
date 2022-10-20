@@ -139,8 +139,34 @@
         {
             "items": [
             {
-                "title": "DCA Bot",
-                "description": "Averaging and Loss Protection Strategy"
+                "title": "Minimum actions",
+                "description": "We work - you earn! Entrust the bot with the whole routine and watch with pleasure how your profit grows.",
+                "uilicon": "uil-comment-check"
+            },
+            {
+                "title": "Reliable servers",
+                "description": "Uninterrupted operation and a secure broadband connection increase the reliability of bots and ensure they do not miss out on profitable deals.",
+                "uilicon": "uil-wifi"
+            },
+            {
+                "title": "Data protection",
+                "description": "High-quality data encryption, protection of servers from attacks, complete confidentiality - a guarantee of the security of your activities!",
+                "uilicon": "uil-th-slash"
+            },
+            {
+                "title": "Flexible pricing policy",
+                "description": "Do not overpay for extra services. Customize the subscription by adding the features you need.",
+                "uilicon": "uil-files-landscapes-alt"
+            },
+            {
+                "title": "Accessibility for everyone",
+                "description": "Even beginner traders can launch bots thanks to a simple setup and user-friendly interface!",
+                "uilicon": "uil-users-alt"
+            },
+            {
+                "title": "24x7 Support",
+                "description": "Qualified specialists are always ready to help and answer all your questions.",
+                "uilicon": "uil-headphones"
             }
         ]
         },
@@ -150,6 +176,7 @@
             "items":[
                 {
                     "uuid":"a8ebc134-1171-479c-bb18-bd2d29835c80",
+                    "background": "bg-warning",
                     "name":"Startup",
                     "subtitle":"Great choise to try Dca Bots",
                     "profit":500,
@@ -165,6 +192,7 @@
                 },
                 {
                     "uuid":"6fb60eaa-cc91-4313-a9c5-92e8d851e882",
+                    "background": "bg-primary",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -181,6 +209,7 @@
                 },
                 {
                     "uuid":"caf802d6-a3c7-45ae-bb17-04b34201649d",
+                    "background": "bg-success",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -198,6 +227,7 @@
                 },
                 {
                     "uuid":"e7c07980-97de-408f-af63-3ea2c8015f08",
+                    "background": "bg-info",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
@@ -258,6 +288,7 @@
             "items":[
                 {
                     "name":"Startup",
+                    "background": "bg-warning",
                     "subtitle":"Great choise to try Grid Bots",
                     "profit":500,
                     "price":30,
@@ -272,6 +303,7 @@
                 },
                 {
                     "name":"Drive",
+                    "background": "bg-primary",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
                     "price":100,
@@ -287,6 +319,7 @@
                 },
                 {
                     "name":"Boost",
+                    "background": "bg-success",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
                     "price":200,
@@ -303,6 +336,7 @@
                 },
                 {
                     "name":"Turbo",
+                    "background": "bg-info",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
                     "price":500,
@@ -364,6 +398,7 @@
             "subtitle":"Hold Bot Pricing Plans",
             "items":[
                 {
+                    "background": "bg-warning",
                     "name":"Startup",
                     "subtitle":"Great choise to try Hold Bots",
                     "profit":500,
@@ -378,6 +413,7 @@
                     ]
                 },
                 {
+                    "background": "bg-primary",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -393,6 +429,7 @@
                     ]
                 },
                 {
+                    "background": "bg-success",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -409,6 +446,7 @@
                     ]
                 },
                 {
+                    "background": "bg-info",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
@@ -471,6 +509,7 @@
             "subtitle":"Options Bot Pricing Plans",
             "items":[
                 {
+                    "background": "bg-warning",
                     "name":"Startup",
                     "subtitle":"Great choise to try Options Bots",
                     "profit":500,
@@ -485,6 +524,7 @@
                     ]
                 },
                 {
+                    "background": "bg-primary",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -500,6 +540,7 @@
                     ]
                 },
                 {
+                    "background": "bg-success",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -516,6 +557,7 @@
                     ]
                 },
                 {
+                    "background": "bg-info",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
