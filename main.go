@@ -56,7 +56,7 @@ func main() {
         },
     }
     srv := &http.Server{
-        Addr:         ":443",
+        Addr:         "0.0.0.0:443",
         Handler:       site.Router,
         TLSConfig:    cfg,
         TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
@@ -64,9 +64,9 @@ func main() {
     log.Fatal(srv.ListenAndServeTLS("../server.crt", "../server.key"))
 	// err = http.ListenAndServe(addr, site.Router)
 	// err = http.ListenAndServeTLS(addr, "../server.crt", "../server.key", site.Router)
-	if err != nil {
-		log.Fatal(fmt.Sprintf("Не удалось запустить сервер: %v", err))
-	}
+	// if err != nil {
+	// 	log.Fatal(fmt.Sprintf("Не удалось запустить сервер: %v", err))
+	// }
 
 
 }
