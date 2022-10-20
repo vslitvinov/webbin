@@ -16,18 +16,18 @@
              {{ range .Price.Items }}
             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div class="card pricing border-0 rounded bg-transparent overflow-hidden text-center">
-                    <div class="plan-name p-4 {{ .Background}}">
+                    <div class="plan-name p-4 bg-{{ .BlockStyle}}">
                         <h4 class="title text-white title-dark mb-3">{{ .Name }}</h4>
                         <p class="para text-light title-dark mb-0">Profit Limit <strong>${{ .Profit }}</strong>/month</p>
                     </div>
                     <div class="p-4 bg-white">
                         <div class="d-flex justify-content-center">
                             <span class="h6 text-muted mb-0 mt-2">$</span>
-                            <span class="price text-warning h1 mb-0">{{ .Price }}</span>
+                            <span class="price text-{{ .BlockStyle}} h1 mb-0">{{ .Price }}</span>
                             <span class="h6 text-muted align-self-end mb-1">/month</span>
                         </div>
                         <h6 class="text-muted mt-1"><span class="text-danger">{{ .CountBot }} </span> {{ .TyBot }}</h6>
-                        <a onclick="AddCartItem({{ .UUID}})" class="btn btn-soft-warning mt-2">{{ .Button }}</a>
+                        <a onclick="AddCartItem({{ .UUID}})" class="btn btn-soft-{{ .BlockStyle}} mt-2">{{ .Button }}</a>
                     </div>
                     <div class="py-3 bg-light">
                         <p class="text-muted mb-0">{{ .SubTitle}} </p>

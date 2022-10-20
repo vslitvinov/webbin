@@ -141,32 +141,32 @@
             {
                 "title": "Minimum actions",
                 "description": "We work - you earn! Entrust the bot with the whole routine and watch with pleasure how your profit grows.",
-                "uilicon": "uil-comment-check"
+                "uilicon": "comment-check"
             },
             {
                 "title": "Reliable servers",
                 "description": "Uninterrupted operation and a secure broadband connection increase the reliability of bots and ensure they do not miss out on profitable deals.",
-                "uilicon": "uil-wifi"
+                "uilicon": "wifi"
             },
             {
                 "title": "Data protection",
                 "description": "High-quality data encryption, protection of servers from attacks, complete confidentiality - a guarantee of the security of your activities!",
-                "uilicon": "uil-th-slash"
+                "uilicon": "th-slash"
             },
             {
                 "title": "Flexible pricing policy",
                 "description": "Do not overpay for extra services. Customize the subscription by adding the features you need.",
-                "uilicon": "uil-files-landscapes-alt"
+                "uilicon": "files-landscapes-alt"
             },
             {
                 "title": "Accessibility for everyone",
                 "description": "Even beginner traders can launch bots thanks to a simple setup and user-friendly interface!",
-                "uilicon": "uil-users-alt"
+                "uilicon": "users-alt"
             },
             {
                 "title": "24x7 Support",
                 "description": "Qualified specialists are always ready to help and answer all your questions.",
-                "uilicon": "uil-headphones"
+                "uilicon": "headphones"
             }
         ]
         },
@@ -176,7 +176,7 @@
             "items":[
                 {
                     "uuid":"a8ebc134-1171-479c-bb18-bd2d29835c80",
-                    "background": "bg-warning",
+                    "blockstyle": "warning",
                     "name":"Startup",
                     "subtitle":"Great choise to try Dca Bots",
                     "profit":500,
@@ -192,7 +192,7 @@
                 },
                 {
                     "uuid":"6fb60eaa-cc91-4313-a9c5-92e8d851e882",
-                    "background": "bg-primary",
+                    "blockstyle": "primary",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -209,7 +209,7 @@
                 },
                 {
                     "uuid":"caf802d6-a3c7-45ae-bb17-04b34201649d",
-                    "background": "bg-success",
+                    "blockstyle": "success",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -227,7 +227,7 @@
                 },
                 {
                     "uuid":"e7c07980-97de-408f-af63-3ea2c8015f08",
-                    "background": "bg-info",
+                    "blockstyle": "info",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
@@ -276,11 +276,37 @@
         "bottools":
         {
             "items": [
-            {
-                "title": "Grid Bot",
-                "description": "Trading at the perfect time"
-            }
-        ]
+                {
+                    "title": "Minimum actions",
+                    "description": "We work - you earn! Entrust the bot with the whole routine and watch with pleasure how your profit grows.",
+                    "uilicon": "comment-check"
+                },
+                {
+                    "title": "Reliable servers",
+                    "description": "Uninterrupted operation and a secure broadband connection increase the reliability of bots and ensure they do not miss out on profitable deals.",
+                    "uilicon": "wifi"
+                },
+                {
+                    "title": "Data protection",
+                    "description": "High-quality data encryption, protection of servers from attacks, complete confidentiality - a guarantee of the security of your activities!",
+                    "uilicon": "th-slash"
+                },
+                {
+                    "title": "Flexible pricing policy",
+                    "description": "Do not overpay for extra services. Customize the subscription by adding the features you need.",
+                    "uilicon": "files-landscapes-alt"
+                },
+                {
+                    "title": "Accessibility for everyone",
+                    "description": "Even beginner traders can launch bots thanks to a simple setup and user-friendly interface!",
+                    "uilicon": "users-alt"
+                },
+                {
+                    "title": "24x7 Support",
+                    "description": "Qualified specialists are always ready to help and answer all your questions.",
+                    "uilicon": "headphones"
+                }
+            ]
         },
         "price":{
             "title":"Grid Bot Pricing Plans",
@@ -289,7 +315,7 @@
                 {
                     "uuid":"aadbc031-e962-40a8-8a7b-2d6389bced08",
                     "name":"Startup",
-                    "background": "bg-warning",
+                    "blockstyle": "warning",
                     "subtitle":"Great choise to try Grid Bots",
                     "profit":500,
                     "price":30,
@@ -305,7 +331,7 @@
                 {
                     "uuid":"54f93d89-07bb-430d-bc99-f4b6354ba12f",
                     "name":"Drive",
-                    "background": "bg-primary",
+                    "blockstyle": "primary",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
                     "price":100,
@@ -322,7 +348,7 @@
                 {
                     "uuid":"14e22737-17c4-4d7b-9e33-98892544fbd6",
                     "name":"Boost",
-                    "background": "bg-success",
+                    "blockstyle": "success",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
                     "price":200,
@@ -340,7 +366,7 @@
                 {
                     "uuid":"10c13e2b-b10a-4f97-b6b8-d1be85280a69",
                     "name":"Turbo",
-                    "background": "bg-info",
+                    "blockstyle": "info",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
                     "price":500,
@@ -391,11 +417,37 @@
         "bottools":
         {
             "items": [
-            {
-                "title": "Hold Bot",
-                "description": "The best solution for long-term investment"
-            }
-        ]
+                {
+                    "title": "Minimum actions",
+                    "description": "We work - you earn! Entrust the bot with the whole routine and watch with pleasure how your profit grows.",
+                    "uilicon": "comment-check"
+                },
+                {
+                    "title": "Reliable servers",
+                    "description": "Uninterrupted operation and a secure broadband connection increase the reliability of bots and ensure they do not miss out on profitable deals.",
+                    "uilicon": "wifi"
+                },
+                {
+                    "title": "Data protection",
+                    "description": "High-quality data encryption, protection of servers from attacks, complete confidentiality - a guarantee of the security of your activities!",
+                    "uilicon": "th-slash"
+                },
+                {
+                    "title": "Flexible pricing policy",
+                    "description": "Do not overpay for extra services. Customize the subscription by adding the features you need.",
+                    "uilicon": "files-landscapes-alt"
+                },
+                {
+                    "title": "Accessibility for everyone",
+                    "description": "Even beginner traders can launch bots thanks to a simple setup and user-friendly interface!",
+                    "uilicon": "users-alt"
+                },
+                {
+                    "title": "24x7 Support",
+                    "description": "Qualified specialists are always ready to help and answer all your questions.",
+                    "uilicon": "headphones"
+                }
+            ]
         },
         "price":{
             "title":"Hold Bot Pricing Plans",
@@ -403,7 +455,7 @@
             "items":[
                 {
                     "uuid": "ad02aa49-b7ec-4fe8-bce0-5e74f638487f",
-                    "background": "bg-warning",
+                    "blockstyle": "warning",
                     "name":"Startup",
                     "subtitle":"Great choise to try Hold Bots",
                     "profit":500,
@@ -419,7 +471,7 @@
                 },
                 {
                     "uuid": "16038312-69ff-4c2c-8625-7a51871d1580",
-                    "background": "bg-primary",
+                    "blockstyle": "primary",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -436,7 +488,7 @@
                 },
                 {
                     "uuid": "e42d27c7-e15a-4cb4-b4bf-1c16f8217ce7",
-                    "background": "bg-success",
+                    "blockstyle": "success",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -454,7 +506,7 @@
                 },
                 {
                     "uuid": "5758eb96-f367-44f3-8d2f-cc7ab95943ef",
-                    "background": "bg-info",
+                    "blockstyle": "info",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
@@ -506,18 +558,44 @@
         "bottools":
         {
             "items": [
-            {
-                "title": "Options Bot",
-                "description": "Buy Call and Put Options"
-            }
-        ]
+                {
+                    "title": "Minimum actions",
+                    "description": "We work - you earn! Entrust the bot with the whole routine and watch with pleasure how your profit grows.",
+                    "uilicon": "comment-check"
+                },
+                {
+                    "title": "Reliable servers",
+                    "description": "Uninterrupted operation and a secure broadband connection increase the reliability of bots and ensure they do not miss out on profitable deals.",
+                    "uilicon": "wifi"
+                },
+                {
+                    "title": "Data protection",
+                    "description": "High-quality data encryption, protection of servers from attacks, complete confidentiality - a guarantee of the security of your activities!",
+                    "uilicon": "th-slash"
+                },
+                {
+                    "title": "Flexible pricing policy",
+                    "description": "Do not overpay for extra services. Customize the subscription by adding the features you need.",
+                    "uilicon": "files-landscapes-alt"
+                },
+                {
+                    "title": "Accessibility for everyone",
+                    "description": "Even beginner traders can launch bots thanks to a simple setup and user-friendly interface!",
+                    "uilicon": "users-alt"
+                },
+                {
+                    "title": "24x7 Support",
+                    "description": "Qualified specialists are always ready to help and answer all your questions.",
+                    "uilicon": "headphones"
+                }
+            ]
         },
         "price":{
             "title":"Options Bot Pricing Plans",
             "subtitle":"Options Bot Pricing Plans",
             "items":[
                 {
-                    "background": "bg-warning",
+                    "blockstyle": "warning",
                     "name":"Startup",
                     "subtitle":"Great choise to try Options Bots",
                     "profit":500,
@@ -532,7 +610,7 @@
                     ]
                 },
                 {
-                    "background": "bg-primary",
+                    "blockstyle": "primary",
                     "name":"Drive",
                     "subtitle":"More Bots & 3X Resources.",
                     "profit":1500,
@@ -548,7 +626,7 @@
                     ]
                 },
                 {
-                    "background": "bg-success",
+                    "blockstyle": "success",
                     "name":"Boost",
                     "subtitle":"Boost Servers + More Power",
                     "profit":3000,
@@ -565,7 +643,7 @@
                     ]
                 },
                 {
-                    "background": "bg-info",
+                    "blockstyle": "info",
                     "name":"Turbo",
                     "subtitle":"Bot Army Style",
                     "profit":6000,
