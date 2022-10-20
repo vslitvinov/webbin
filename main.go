@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"path/filepath"
 	"site/webserver"
 	"site/webserver/modules"
 )
@@ -42,7 +43,11 @@ func main() {
 	site := webserver.NewWebServer(db)
 
 	// addr := fmt.Sprintf("%s:%s", host, port)
-	
+	    fmt.Println(filepath.Dir(""))
+    fmt.Println(filepath.Dir("."))
+    fmt.Println(filepath.Dir("/"))
+    fmt.Println(filepath.Dir("//"))
+    fmt.Println(filepath.Dir("../gfg.org"))
 
     cfg := &tls.Config{
         MinVersion:               tls.VersionTLS12,
