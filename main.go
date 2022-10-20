@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"path/filepath"
 	"site/webserver"
 	"site/webserver/modules"
 )
@@ -43,11 +42,7 @@ func main() {
 	site := webserver.NewWebServer(db)
 
 	// addr := fmt.Sprintf("%s:%s", host, port)
-	    fmt.Println(filepath.Dir(""))
-    fmt.Println(filepath.Dir("."))
-    fmt.Println(filepath.Dir("/"))
-    fmt.Println(filepath.Dir("//"))
-    fmt.Println(filepath.Dir("../gfg.org"))
+	
 
     cfg := &tls.Config{
         MinVersion:               tls.VersionTLS12,
@@ -66,7 +61,7 @@ func main() {
         TLSConfig:    cfg,
         TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
     }
-    log.Fatal(srv.ListenAndServeTLS("server.crt", "server.key"))
+    log.Fatal(srv.ListenAndServeTLS("./server.crt", "./server.key"))
 	// err = http.ListenAndServe(addr, site.Router)
 	// err = http.ListenAndServeTLS(addr, "../server.crt", "../server.key", site.Router)
 	// if err != nil {
