@@ -1,7 +1,6 @@
 package webserver
 
 import (
-	"encoding/json"
 	"html/template"
 	"log"
 	"net/http"
@@ -46,6 +45,8 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 	s.Router.HandleFunc("/", s.HomePage)
 	// s.Router.HandleFunc("/signup", s.US.Signup)
 	s.Router.HandleFunc("/dca", s.DCA)
+	s.Router.HandleFunc("/grid", s.Grid)
+	s.Router.HandleFunc("/hold", s.Hold)
 	s.Router.HandleFunc("/signup", s.US.Signup)
 	s.Router.HandleFunc("/login", s.US.Signin)
 	s.Router.HandleFunc("/cart", s.Cart)
@@ -74,28 +75,24 @@ func (ws *WebServer) DCA(w http.ResponseWriter, r *http.Request){
     	log.Println(err)
     }
 }
-
-
-type Rwe struct {
-	Name string `json:"name"`
-	Age int `json:"age"`
+func (ws *WebServer) Hold(w http.ResponseWriter, r *http.Request){
+    err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["hold"])
+    if err != nil {
+    	log.Println(err)
+    }
 }
 
+func (ws *WebServer) Grid(w http.ResponseWriter, r *http.Request){
+    err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["grid"])
+    if err != nil {
+    	log.Println(err)
+    }
+}
+
+
+
+
 func (ws *WebServer) Cart(w http.ResponseWriter, r *http.Request){
-
-
-
-	data := &Rwe{}
-	if r.Method == "POST" {
-		err := json.NewDecoder(r.Body).Decode(data)
-		if err != nil {
-			log.Println(err)
-		}
-		log.Println(data)
-		// var items []models.AddCartItem{}
-		// json.Unmarshal(body, &items)
-
-	}
 
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["cart"])
     if err != nil {

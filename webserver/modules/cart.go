@@ -56,7 +56,7 @@ func NewCartService(db *pgxpool.Pool) *CartService {
 	for _,p := range ps {
 		cs.cacheProduct.Set(p.UUID,p)
 	}
-	log.Println(ps)
+	log.Println("load product, count :", len(ps))
 
 
 	return cs
