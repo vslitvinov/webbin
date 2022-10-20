@@ -12,37 +12,37 @@
                 "icon": "dca-bot-icon.png",
                 "title": "DCA Bot",
                 "description": "No need to risk it all! Instead of investing a lump sum with unknown risks, the bot will invest the amount partially with maximum benefit.",
-                "link": "./catalog/dca"
+                "link": "dca"
             },
             {
                 "icon": "grid-bot-icon.png",
                 "title": "Grid Bot",
                 "description": "This bot will trade for you 24/7 making the most of market fluctuations. Its crucial skill is to buy low and sell high",
-                "link": "./catalog/grid"
+                "link": "grid"
             },
             {
                 "icon": "hold-bot-icon.png",
                 "title": "Hold Bot",
                 "description": "Based on the principle of temporal DCA, it will buy the coin you choose to invest using an interval that suits you best!",
-                "link": "./catalog/hold"
+                "link": "hold"
             },
             {
                 "icon": "clusters-icon.png",
                 "title": "Cluster of Bots",
                 "description": "All the bots can be run simultaneously, complementing each other to ensure the best result.",
-                "link": "./catalog/faqs"
+                "link": "faqs"
             },
             {
                 "icon": "ai-func-icon.png",
                 "title": "Automated Settings",
                 "description": "Easy automated bot configuration is always up to date with the current situation on the market. Less time — more profit!",
-                "link": "./catalog/faqs"
+                "link": "faqs"
             },
             {
                 "icon": "exchange-icon.png",
                 "title": "Popular Exchanges",
                 "description": "A wide range of exchanges for trading at your choice. Just send bots to one of them and watch the result!",
-                "link": "./catalog/faqs"
+                "link": "faqs"
             }]
         },
         "advantageline": {
