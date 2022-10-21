@@ -44,9 +44,9 @@ func main() {
 	server := http.Server{
 		Addr:    ":443",
 		Handler: site.Router,
-		TLSConfig: &tls.Config{
-			NextProtos: []string{"h2", "http/1.1"},
-		},
+		// TLSConfig: &tls.Config{
+		// 	NextProtos: []string{"h2", "http/1.1"},
+		// },
 	}
 
 	// go func() {
