@@ -49,11 +49,11 @@ func main() {
 		},
 	}
 
-	go func() {
-		if err := http.ListenAndServe(":80", http.HandlerFunc(redirectTLS)); err != nil {
-			log.Fatalf("ListenAndServe error: %v", err)
-		}
-	}()
+	// go func() {
+	// 	if err := http.ListenAndServe(":80", http.HandlerFunc(redirectTLS)); err != nil {
+	// 		log.Fatalf("ListenAndServe error: %v", err)
+	// 	}
+	// }()
 
 
 	fmt.Printf("Server listening on %s", server.Addr)
