@@ -64,8 +64,7 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 
 
 func (ws *WebServer) HomePage(w http.ResponseWriter, r *http.Request){
-	 w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-        w.Write([]byte("This is an example server.\n"))
+	 // w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["home"])
     if err != nil {
     	log.Println(err)
