@@ -70,7 +70,6 @@ func (ws *WebServer) HomePage(w http.ResponseWriter, r *http.Request){
     if err != nil {
     	log.Println(err)
     }
-    fmt.Fprintf(w, "%+v", r.TLS)
 }
 func (ws *WebServer) DCA(w http.ResponseWriter, r *http.Request){
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["dca"])
