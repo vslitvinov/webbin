@@ -57,7 +57,7 @@ func main() {
 
 
 	fmt.Printf("Server listening on %s", server.Addr)
-	if err := server.ListenAndServeTLS("cert.pem", "key.pem"); err != nil {
+	if err := server.ListenAndServeTLS("cert.csr", "key.key"); err != nil {
 		fmt.Println(err)
 	}
 
