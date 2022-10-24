@@ -49,18 +49,20 @@ func main() {
 		},
 	}
 
-	// go func() {
-	// 	if err := http.ListenAndServe(":80", http.HandlerFunc(redirectTLS)); err != nil {
-	// 		log.Fatalf("ListenAndServe error: %v", err)
-	// 	}
-	// }()
+	go func() {
+		if err := http.ListenAndServe(":80", http.HandlerFunc(redirectTLS)); err != nil {
+			log.Fatalf("ListenAndServe error: %v", err)
+		}
+	}()
+
 
 	fmt.Printf("Server listening on %s", server.Addr)
-	if err := server.ListenAndServeTLS("eterinte_com.crt", "eterinte_com.ca-bundle"); err != nil {
+	if err := server.ListenAndServeTLS("eterinte_com.crt", "key.pem"); err != nil {
 		fmt.Println(err)
 	}
 
 }
+
 
 func redirectTLS(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "https://"+domain+":443"+r.RequestURI, http.StatusMovedPermanently)
