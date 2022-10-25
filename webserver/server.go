@@ -55,7 +55,7 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 	s.Router.HandleFunc("/privacy", s.Privacy)
 	s.Router.HandleFunc("/terms", s.Terms)
 	s.Router.HandleFunc("/contact", s.Contact)
-	s.Router.HandleFunc("/checkouts", s.Checkouts)
+	s.Router.HandleFunc("/checkout", s.Checkouts)
 	s.Router.HandleFunc("/cart/additem", s.CartApi.AddItemToCart)
 	s.Router.HandleFunc("/cart/deleteitem", s.CartApi.DeleteItemFromCart)
 	s.Router.HandleFunc("/cart/getcart", s.CartApi.GetCartInfo)
