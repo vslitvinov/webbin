@@ -686,5 +686,9 @@
     "contact":{
         "nametemp": "contact",
         "title": "Eternal Intelligence - Automated systems"
+    },
+    "checkouts":{
+        "nametemp": "checkouts",
+        "title": "Eternal Intelligence - Automated systems"
     }
 }
