@@ -180,6 +180,7 @@ func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request
 	if err != nil {
 		log.Println("err decode: ",err)
 	}
+	log.Println(data.UUID)
 
 	// read coockie file 
 	var cartToken = uuid.NewString()
@@ -208,7 +209,7 @@ func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request
 	if ok {
 		delete(cart.Items,data.UUID)
 	} 
-
+	log.Println(cart)
 	res, err := json.Marshal(FullCart{
 		UUID: cartToken,
 		Cart: cart,
