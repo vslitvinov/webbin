@@ -41,11 +41,12 @@
 	{{if eq .NameTemp "terms"}}
 		{{template "Terms" .}}
 
-	{{end}}	{{if eq .NameTemp "contact"}}
+	{{end}}	
+	{{if eq .NameTemp "contact"}}
 		{{template "Contact" .}}
 	{{end}}
 
-	{{end}}	{{if eq .NameTemp "checkouts"}}
+	{{if eq .NameTemp "checkouts"}}
 		{{template "Checkouts" .}}
 	{{end}}
 
