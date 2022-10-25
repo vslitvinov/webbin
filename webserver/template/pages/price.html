@@ -13,7 +13,7 @@
         </div>
         <!--end row-->
         <div class="row">
-             {{ range .Price.Items }}
+            {{ range .Price.Items }}
             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div class="card pricing border-0 rounded bg-transparent overflow-hidden text-center">
                     <div class="plan-name p-4 bg-{{ .BlockStyle}}">
@@ -35,7 +35,7 @@
                     <div class="bg-white p-4 border-bottom">
                         <ul class="feature-list list-unstyled mb-0">
                             {{ range .Items }}
-                                <li class="text-muted">{{ . }}</li>
+                            <li class="text-muted">{{ . }}</li>
                             {{end}}
                             <li class="text-muted">
                         </ul>

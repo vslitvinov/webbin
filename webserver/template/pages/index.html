@@ -26,6 +26,26 @@
 	{{end}}
 
 
+	{{if eq .NameTemp "education"}}
+		{{template "PageEducation" .}}
+	{{end}}
+
+	{{if eq .NameTemp "faqpage"}}
+		{{template "FAQPAGE" .}}
+	{{end}}
+
+	{{if eq .NameTemp "privacy"}}
+		{{template "Privacy" .}}
+	{{end}}
+
+	{{if eq .NameTemp "terms"}}
+		{{template "Terms" .}}
+
+	{{end}}	{{if eq .NameTemp "contact"}}
+		{{template "Contact" .}}
+	{{end}}
+
+
 
 	
 	{{template "Footer" .}}

@@ -666,5 +666,25 @@
     "cart":{
         "nametemp": "cart",
         "title": "Cart"
+    },
+    "education":{
+        "nametemp": "education",
+        "title": "Eternal Intelligence - Automated systems"
+    },
+    "faqpage":{
+        "nametemp": "faqpage",
+        "title": "Eternal Intelligence - Automated systems"
+    },
+    "privacy":{
+        "nametemp": "privacy",
+        "title": "Eternal Intelligence - Automated systems"
+    },
+    "terms":{
+        "nametemp": "terms",
+        "title": "Eternal Intelligence - Automated systems"
+    },
+    "contact":{
+        "nametemp": "contact",
+        "title": "Eternal Intelligence - Automated systems"
     }
 }

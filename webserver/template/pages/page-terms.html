@@ -1,661 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="utf-8" />
-        <title>Eternal Intelligence - Automated systems</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Premium bootstrap 5 Hosting Template" />
-        <meta name="keywords" content="bootstrap 5, premium, hosting, domain, reseller, vps" />
-        <meta name="author" content="Shreethemes" />
-        <meta name="version" content="2.1.0" />
-        <!-- favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <!-- Icons -->
-        <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-        <!-- Css -->
-        <link href="css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
-        <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
-
-    </head>
-
-    <body>
-        
-        <!-- Navbar STart -->
-        <header id="topnav" class="defaultscroll sticky nav-sticky">
-            <div class="container">
-                <!-- Logo container-->
-                <a class="logo" href="index.html">
-                    <span class="logo-light-mode">
-                        <img src="images/logo-dark.png" class="l-dark" height="60" alt="">
-                        <img src="images/logo-light.png" class="l-light" height="60" alt="">
-                    </span>
-                    <img src="images/logo-light.png" height="60" class="logo-dark-mode" alt="">
-                </a>
-
-                <div class="menu-extras">
-                    <div class="menu-item">
-                        <!-- Mobile menu toggle-->
-                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                            <div class="lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </a>
-                        <!-- End mobile menu toggle-->
-                    </div>
-                </div>
-
-                <ul class="buy-button list-inline mb-0">
-                   <!-- <li class="list-inline-item mb-0 me-1">
-                        <div class="dropdown">
-                            <button type="button" class="btn dropdown-toggle border-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="uil uil-search text-white title-dark btn-icon-light fs-5 align-middle"></i>
-                                <i class="uil uil-search text-dark btn-icon-dark fs-5 align-middle"></i>
-                            </button>
-                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-0" style="width: 300px;">
-                                <div class="search-bar">
-                                    <div id="itemSearch" class="menu-search mb-0">
-                                        <form role="search" method="get" id="searchItemform" class="searchform">
-                                            <input type="text" class="form-control border rounded" name="s" id="searchItem" placeholder="Search...">
-                                            <input type="submit" id="searchItemsubmit" value="Search">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
-                    <li class="list-inline-item mb-0">
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-icon rounded-circle btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="shopping-cart" class="icons"></i></button>
-                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-4" style="width: 300px;">
-                                <div class="pb-4">
-                                    <a href="javascript:void(0)" class="d-flex align-items-center">
-                                        <img src="images/shop/com.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
-                                        <div class="flex-1 text-start ms-3">
-                                            <h6 class="text-dark mb-0">.com</h6>
-                                            <p class="text-muted mb-0">$10 X 2</p>
-                                        </div>
-                                        <h6 class="text-dark mb-0">$10</h6>
-                                    </a>
-                                </div>
-
-                                <div class="d-flex align-items-center justify-content-between pt-4 border-top">
-                                    <h6 class="text-dark mb-0">Total($):</h6>
-                                    <h6 class="text-dark mb-0">$10</h6>
-                                </div>
-
-                                <div class="mt-3 text-center">
-                                    <a href="javascript:void(0)" class="btn btn-primary me-2">View Cart</a>
-                                    <a href="javascript:void(0)" class="btn btn-primary">Checkout</a>
-                                </div>
-                                <p class="text-muted text-start mt-1 mb-0">*T&C Apply</p>
-                            </div>
-                        </div>
-                    </li>
-                        
-                    <li class="list-inline-item mb-0">
-                        <div class="dropdown dropdown-primary">
-                            <button type="button" class="btn btn-icon rounded-circle btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="user" class="icons"></i></button>
-                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-3" style="width: 200px;">
-                                <a class="dropdown-item text-dark" href="my-account.html"><i class="uil uil-user align-middle me-1"></i> Account</a>
-                                <a class="dropdown-item text-dark" href="#"><i class="uil uil-clipboard-notes align-middle me-1"></i> Order History</a>
-                                <a class="dropdown-item text-dark" href="#"><i class="uil uil-arrow-circle-down align-middle me-1"></i> Dashboard</a>
-                                <div class="dropdown-divider my-3 border-top"></div>
-                                <a class="dropdown-item text-dark" href="page-login.html"><i class="uil uil-sign-out-alt align-middle me-1"></i> Logout</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-inline-item mb-0">
-                        <!-- <a href="#" class="btn btn-icon rounded-circle btn-primary dark-version t-dark" data-bs-target="#nightmode"><i data-feather="moon" class="icons" onclick="setTheme('style-dark')"></i></a> -->
-                        <a href="javascript:void(0)" class="btn btn-sm btn-icon rounded-circle btn-dark dark-version t-dark" onclick="setTheme('style-dark')"><i data-feather="moon" class="icons"></i></a>
-                        <a href="javascript:void(0)" class="btn btn-sm btn-icon rounded-circle btn-dark light-version t-light" onclick="setTheme('style')"><i data-feather="moon" class="icons"></i></a>
-                    </li>
-                </ul><!--end login button-->
-        
-                <div id="navigation">
-                    <!-- Navigation Menu-->   
-                    <ul class="navigation-menu nav-light">
-                        
-
-                        <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)">Trading Bots</a><span class="menu-arrow"></span>
-                            <ul class="submenu megamenu">
-                                <li>
-                                    <ul>
-                                        <li><a href="bot-dca.html" class="sub-menu-item"><img src="images/icons/dca-bot-icon.png" class="avatar avatar-ex-sm me-2" alt=""> DCA Bot</a></li>
-                                        <li><a href="bot-grid.html" class="sub-menu-item"><img src="images/icons/grid-bot-icon.png" class="avatar avatar-ex-sm me-2" alt=""> Grid Bot</a></li>     
-                                        <!-- <li><a href="bot-options.html" class="sub-menu-item"><img src="images/icons/dedicated.svg" class="avatar avatar-ex-sm me-2" alt=""> Options Bot</a></li> -->
-                                        <li><a href="bot-hold.html" class="sub-menu-item"><img src="images/icons/hold-bot-icon.png" class="avatar avatar-ex-sm me-2" alt=""> Hold Bot</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-        
-                        <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)">Information</a><span class="menu-arrow"></span>
-                            <ul class="submenu">
-                            <!--   <li class="has-submenu parent-menu-item">
-                                    <a href="javascript:void(0)"> Blog</a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="page-blog.html" class="sub-menu-item">Blog</a></li>
-                                        <li><a href="page-blog-sidebar.html" class="sub-menu-item">Blog Sidebar</a></li>
-                                        <li><a href="page-blog-single.html" class="sub-menu-item">Single Blog</a></li>
-                                    </ul>  
-                                </li>  --> 
-                                
-                                <li><a href="page-privacy.html" class="sub-menu-item">Privacy Policy</a></li>
-                                <li><a href="page-terms.html" class="sub-menu-item">Terms & Conditions</a></li>
-                                <li><a href="page-faqs.html" class="sub-menu-item">FAQs</a></li>
-                                
-                            </ul>
-                        </li>
-
-                       <!--  <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)" class="sub-menu-item">Domains</a><span class="menu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="domain-listing.html" class="sub-menu-item">Domain Listing</a></li>
-                                <li><a href="domian-detail.html" class="sub-menu-item">Domain Detail</a></li>
-                                <li><a href="cart.html" class="sub-menu-item">Cart</a></li>
-                                <li><a href="checkouts.html" class="sub-menu-item">Checkout</a></li>
-                                <li><a href="my-account.html" class="sub-menu-item">Account</a></li>
-                            </ul>
-                        </li> -->
-
-                        <li><a href="contact.html" class="sub-menu-item">Contacts</a></li>
-                        <li><a href="page-education.html" target="_blank" class="sub-menu-item">Education</a></li>
-                    </ul><!--end navigation menu-->
-                </div><!--end navigation-->
-            </div><!--end container-->
-        </header><!--end header-->
-        <!-- Navbar End -->
-
-        <!-- Home Start -->
-        <section class="bg-half-170 d-table w-100 bg-light" style="background: url('images/bg/page.png') top center;" id="home">
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="col-lg-12">
-                        <div class="title-heading text-center text-md-start">
-                            <h3>Terms & Conditions</h3>
-                            <p class="text-muted para-desc mt-3 mb-0">All terms & conditions</p> 
-                            <nav aria-label="breadcrumb" class="d-inline-block mt-4">
-                                <ul class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Eterinte</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Company</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div> <!--end container-->
-        </section><!--end section-->
-        <div class="position-relative">
-            <div class="shape overflow-hidden text-white">
-                <svg viewBox="0 0 1000 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z" fill="currentColor"></path>
-                </svg>
-            </div>
-        </div>
-        <!-- Home End -->
-
-        <!-- Start -->
-        <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-5 col-12 d-none d-md-block">
-                        <div class="rounded-pill shadow p-4 component-wrapper">
-                            <ul class="list-unstyled mb-0">
-                                <li class="mb-4"><a href="#accept" class="mouse-down h6 text-dark">Scroll down</a></li>
-                                <li class="mb-4"><a href="#intro" class="mouse-down h6 text-dark">INTRODUCTION</a></li>
-                                <li class="mb-4"><a href="#ownership" class="mouse-down h6 text-dark">OWNERSHIP</a></li>
-                                <li class="mb-4"><a href="#limitedgrant" class="mouse-down h6 text-dark">LIMITED LICENSE GRANT</a></li>
-                                <li class="mb-4"><a href="#limitations" class="mouse-down h6 text-dark">LICENSE LIMITATIONS</a></li>
-                                <li class="mb-4"><a href="#thirdparty" class="mouse-down h6 text-dark">THIRD PARTY SERVICES</a></li>
-                                <li class="mb-4"><a href="#liability" class="mouse-down h6 text-dark">LIMITATION OF LIABILITY</a></li>
-                                <li class="mb-4"><a href="#userobligations" class="mouse-down h6 text-dark">USER OBLIGATIONS</a></li>
-                                <li class="mb-4"><a href="#passpolicy" class="mouse-down h6 text-dark">USER NAME AND PASSWORD POLICY</a></li>
-                                <li class="mb-4"><a href="#reviewsmaterials" class="mouse-down h6 text-dark">REVIEWS AND MATERIALS</a></li>
-                                <li class="mb-4"><a href="#privacypolicy" class="mouse-down h6 text-dark">PRIVACY POLICY</a></li>
-                                <li class="mb-4"><a href="#notvalid" class="mouse-down h6 text-dark">NOT VALID WHERE PROHIBITED</a></li>
-                                <li class="mb-4"><a href="#norecommendations" class="mouse-down h6 text-dark">NO RECOMMENDATIONS</a></li>
-                                <li class="mb-4"><a href="#websecurity" class="mouse-down h6 text-dark">WEBSITE SECURITY</a></li>
-                                <li class="mb-4"><a href="#validity" class="mouse-down h6 text-dark">VALIDITY AND TERMINATION</a></li>
-                                <li class="mb-4"><a href="#governinglaw" class="mouse-down h6 text-dark">GOVERNING LAW AND DISPUTE RESOLUTION</a></li>
-                                <li class="mb-4"><a href="#generalprovosion" class="mouse-down h6 text-dark">GENERAL PROVISION</a></li>
-                                <li class="mb-4"><a href="#invalid" class="mouse-down h6 text-dark">INVALID</a></li>
-                                <li class="mb-4"><a href="#incomestatement" class="mouse-down h6 text-dark">INCOME STATEMENT</a></li>
-                            </ul>
-                        </div>
-                    </div><!--end col-->
-
-                    <div class="col-lg-8 col-md-7 col-12">
-                        <div class="section-title" id="intro">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> Introduction</h4>
-                            <p class="text-muted mt-4">IMPORTANT: These terms and conditions constitute a legal agreement between you, the User (hereinafter "You", "Your" or "User"), and us, eterinte.com, its affiliates and all their respective authorized representatives, officers, directors, employees, agents, shareholders, licensors, attorneys, heirs and assigns (hereinafter referred to as "We" or "eterinte.com"), and together with the Site's Privacy Policy and Software License Agreement, fully and exclusively govern such relationship.</p>
-                            <p class="text-muted mb-0">BEFORE ACCESSING OR USING THE SERVICES OFFERED ON THE SITE https://eterinte.com, PLEASE READ THE FOLLOWING TERMS AND CONDITIONS CONTAINED IN THIS SITE TERMS OF SERVICE AGREEMENT CAREFULLY.
-                                These terms govern your access to and use of the site and any programs, services, tools, software, materials or other information available through or used in connection with the site (the "site"). eterinte.com OFFERS A LICENSE AND PERMITS THE USE OF THIS SITE ONLY ON THE CONDITION THAT YOU ACCEPT AND AGREE TO ALL TERMS AND CONDITIONS CONTAINED IN THIS SITE. BY USING THE SITE, YOU HEREBY AGREE TO THE TERMS AND CONDITIONS SET FORTH BELOW. IF YOU DO NOT WISH TO BE BOUND BY THESE TERMS AND CONDITIONS, YOU ARE NOT GRANTED PERMISSION TO ACCESS OR OTHERWISE USE THE SITE AND YOU ARE RECOMMENDED TO LEAVE THE SITE IMMEDIATELY.</p>
-                            <p class="text-muted mb-0">eterinte.com reserves the right to make changes to this agreement at any time without notice to the user, and such changes will take effect immediately upon posting of the amended terms and conditions on the site. YOU AGREE TO REVIEW THE AGREEMENT PERIODICALLY TO BE AWARE OF SUCH CHANGES, AND YOUR FURTHER ACCESS TO OR USE OF THE SITE WILL BE CONSIDERED YOUR FINAL ACCEPTANCE OF THE AMENDED AGREEMENT. Revised versions of the Terms and Conditions will be identified by the date displayed at the top of the Terms of Service page on the site (for example, "Updated on [11-10-2022]").</p>
-                            </div>
-
-                        <div class="section-title mt-4 pt-2" id="ownership">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> OWNERSHIP</h4>
-                            <p class="text-muted mt-4">All intellectual property of the Site or related to it, including, without limitation, content, information, patents, trademarks, copyrights, modules, technologies, know-how, computer code (including html code), algorithms, business methods, user interfaces, graphic design, look and feel, software; and all developments, derivative works and improvements, whether registered or not (collectively referred to as "Intellectual Property"), unless otherwise noted, are wholly owned, controlled and licensed by eterinte.com , its affiliates, its heirs and assigns, and/or third parties, who have licensed eterinte.com to use such Intellectual Property.</p>
-                            <p class="text-muted">Publications, products, content or services mentioned here or on the Site are the exclusive trademarks or service marks of eterinte.com or their respective owners and are protected by law. Except as expressly provided herein, eterinte.com does not grant you or any other person any express or implied intellectual or proprietary rights.</p>
-                            <p class="text-muted mb-0">Any downloadable or printed software, programs, information or materials available through the Site, and all copyrights, trade secrets and know-how associated with them, unless otherwise noted, belong to eterinte.com or third party licensors. The name of the site, eterinte.com, its logo and all other names, logos and icons that identify the site eterinte.com and its services are eterinte.com's own trademarks, and any use of such marks, such as domain names, without express written permission eterinte.com is strictly prohibited.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="limitedgrant">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> LIMITED LICENSE GRANT</h4>
-                            <p class="text-muted mt-4">The Site is provided by eterinte.com, and subject to acceptance of this Site Terms of Service Agreement, grants you a personal, revocable, limited, non-exclusive, royalty-free, non-transferable license to use the Site and download any programs, services, tools, materials or information made available through site or from the site.</p>
-                            <p class="text-muted">Please note that download access and terms of use for downloadable eterinte.com software are subject to acceptance of a separate Software License Agreement. The Site Terms of Service permit you to use and access, for personal use only, the eterinte.com Site (a) on a single laptop, workstation or computer and (b) on a mobile device from the Internet or via an online network.</p>
-                            <p class="text-muted mb-0">You may also download information from the Site into the temporary memory (RAM) of your laptop, workstation or computer, print and download materials and information from the Site solely for your personal non-commercial use, provided that all hard copies contain all copyright and other applicable notices. .</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="limitations">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> LICENSE LIMITATIONS</h4>
-                            <p class="text-muted mt-4">The above license is limited. You cannot modify, copy, preserve, reproduce, transfer, transfer, sublicense, distribute, rent, lize, sell, commercially operate, or distribute, in any form, any data, intellectual property or materials presented by Eterinte.com by means THE SITE, IN ANY FORM NOT PERMITTED BY THESE TERMS OF SERVICE. THE FOREGOING LIMITATION INCLUDES, BUT IS NOT LIMITED TO TEXT, GRAPHICS, CODE AND/OR SOFTWARE.</p>
-                            <p class="text-muted">In addition, you may not modify, translate, decompile, create derivative works of, disassemble, broadcast, publish, remove or alter any proprietary notices or labels, grant a lien or otherwise use the Site in any manner not expressly permitted in this document. Furthermore, you may not (i) use any "deep links", "search pages", "robots", "spiders" or other automated devices, programs, scripts, algorithms or techniques, or any similar or equivalent manual processes to access, acquire, copy, or monitor any part of the Site or in any way reproduce or circumvent the navigational structure or presentation of the Site in order to obtain or attempt to obtain any materials, documents or information in any way that was not intentionally made available through the Site, OR (ii ) attempt to gain unauthorized access to any part or feature of the Site, including, without limitation, the account of any other Authorized User(s), any other systems or networks connected to the Site or its servers, to any of the services offered on or through the Site the Site, by hacking, "guessing" passwords, or by any other illegal or prohibited means, OR (iii) probing, analyze or test the vulnerability of the Site or any network connected to the Site, or violate the security or authentication measures on the Site or any network connected to the Site, OR (iv) reverse lookup, trace or attempt to trace any information about any other Authorized User or a visitor to the eterinte.com Site, OR (v) take any action that imposes an unreasonable or disproportionately large load on the Site's infrastructure, system, networks or any systems or networks connected to them, OR (vi) use any device, software , or procedure to interfere with the proper operation of the Site or transactions conducted on the Site, or the use of the Site by any other person, OR (vii) forge headers, impersonate another person, or otherwise manipulate identifiers in order to hide your identity or origin any message or transmission you send to eterinte.com on the Site or through the Site, OR (viii) use the Site to collect email addresses or other contact or personal information, OR (ix) market, share a brand, private label, appropriately use the name eterinte.com or a name similar to it on another domain, separately distribute, resell or otherwise allow third parties to access and use the Site, in whole or in part, without the express, separate and prior written permission of eterinte.com, OR (x) use the Site in any other unlawful manner or manner that may be perceived as damage, humiliation or other negative impact on eterinte.com. four.</p>
-                            <p class="text-muted mb-0">Moreover, this license is only valid where eterinte.com is allowed to operate. Access to and use of this site in violation of any laws or regulations, or where prohibited by law, is unauthorized and is not authorized by eterinte.com.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="thirdparty">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> INFORMATION / PRODUCTS / THIRD PARTY SERVICES / LINKS TO OTHER SITES.</h4>
-                            <p class="text-muted mt-4">The Site may contain information, data, links, promotional offers or other content in any form, including financial information relating to third parties. Such information is provided for your convenience and as a bonus service only and is not considered financial advice. Under no circumstances shall eterinte.com be liable for such content or for any damage or loss resulting from reliance on it. You understand that, except for information, products or services expressly provided by eterinte.com, eterinte.com is not affiliated with, is not responsible for, operates, controls or endorses any information, products or services offered by third parties, which are presented in any way on the Site.</p>
-                            <p class="text-muted">eterinte.com makes no representation, warranty or endorsement of the quality, non-infringement, accuracy, completeness or reliability of any third party materials, programs or products that appear on this Site or which you can access through a link on this Site.</p>
-                            <p class="text-muted mb-0">Your correspondence or any other relationship with such third parties found on this Site is solely your relationship with such third parties. Accordingly, eterinte.com SINCERELY DISCLAIMS RESPONSIBILITY FOR THE CONTENT, MATERIALS, ACCURACY AND/OR QUALITY OF THE INFORMATION, PRODUCTS AND/OR SERVICES AVAILABLE THROUGH OR PRESENTED ON THESE THIRD PARTY WEBSITES.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="warranty">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> DENIAL OF RESPONSIBILITY - NO WARRANTY</h4>
-                            <p class="text-muted mt-4">You understand and accept that eterinte.com cannot and does not guarantee that files available for download through the Site will be free from viruses, worms, Trojan horses or other code that exhibits contaminating or destructive properties. You are responsible for implementing sufficient procedures and checkpoints on your personal computer to meet your specific input and output accuracy requirements, and for maintaining a means external to the Site to recover any lost data.</p>
-                            <p class="text-muted">YOU UNDERSTAND AND AGREE TO ASSUME ALL RESPONSIBILITY AND RISK FOR YOUR USE OF THE SITE. eterinte.com PROVIDES THE SITE AND RELATED INFORMATION "AS IS" AND MAKES NO EXPRESS OR IMPLIED WARRANTIES, REPRESENTATIONS OR LIMITATIONS. eterinte.com SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-RESTRICTION. IN REGARD TO THE SITE, THE SERVICES OF THE PERSONAL ACCOUNT REPRESENTATIVE, OR ANY INFORMATION OR LINKS PROVIDED ON THE SITE, eterinte.com SHALL NOT BE LIABLE FOR ANY EXPENSES OR DAMAGES ARISING OR DIRECTLY FROM ANY OF THESE.</p>
-                            <p class="text-muted mb-0">The ACCURACY, completeness, and usefulness of all opinions, advice, services, products, and other information provided through the Service is solely at your discretion. eterinte.com DOES NOT WARRANT that the service will be uninterrupted or error free or that deficiencies in the service will be corrected. YOU ALSO UNDERSTAND THAT THE PURE NATURE OF THE INTERNET CONTAINS UNEDITED MATERIAL, SOME OF WHICH IS SEXY EXPRESSLY OR MAY BE OFFENSIVE TO YOU. YOUR ACCESS TO SUCH MATERIALS IS AT YOUR RISK. eterinte.com DOES NOT CONTROL OR ASSUME ANY RESPONSIBILITY FOR SUCH MATERIALS</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="liability">
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> LIMITATION OF LIABILITY</h4>
-                            <p class="text-muted mt-4">YOU EXPRESSLY ABSOLUTELY DISCLAIM AND RELEASE ETERINTE.COM FROM ANY CLAIMS FOR DAMAGE OUTSIDE OF ETERINTE.COM'S CONTROL INCLUDING, BUT NOT LIMITED TO, failure of electronic or mechanical equipment or communication lines for any reason whatsoever, such as for maintenance, service interruption attacks, telephone or other communication problems, COMPUTER VIRUSES, UNAUTHORIZED ACCESS, THEFT, OPERATOR ERROR, FORCE MAJEURE SUCH AS Severe WEATHER, EARTHQUAKES, NATURAL DISASTERS, STRIKE, LABOR PROBLEMS, WAR , GOVERNMENT RESTRICTIONS OR ACTIONS. In addition, under no circumstances will eterinte.com BE LIABLE FOR ANY UNPREDICTABLE, INCIDENTAL, UNPREDICTABLE, SIGNIFICANT OR SPECIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR INFORMATION), AND THEREFORE OR IN ANY CONNECTION WITH THE USE OR INABILITY TO USE THE SERVICES OF THE SITE, OR ANY INFORMATION OR TRANSACTIONS PROVIDED OR DOWNLOADED FROM THE SITE OR THE DELAY OF SUCH INFORMATION OR SERVICES, EVEN IF eterinte.com has been warned of, or for the possibility of any such damages associated with errors, omissions or other inaccuracies on the site and / or in materials or information downloaded through the site.</p>
-                            <p class="text-muted">BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. WITHOUT WEIGHING THE CONCLUSION, eterinte.com'S TOTAL LIABILITY FOR ANY REASON RELATED TO THE USE OF THE SITE SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY YOU TO eterinte.com IN CONNECTION WITH THE SUBJECT OF THE RESOLVED DISPUTE FOR THE PRESENT TIME</p>
-                            <p class="text-muted mb-0">You agree to indemnify, defend and hold harmless eterinte.com, its affiliates and all their respective officers, directors, employees, agents, licensors, attorneys, successors and assigns from all claims, proceedings, injuries, liabilities, losses, damages, costs and costs, including reasonable attorneys' fees and legal costs, relating to or arising out of any breach or breach of this Agreement by you (including negligent or reckless conduct). Each of the above individuals or entities reserves the right to bring claims and enforce these provisions directly against you, on its own behalf.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="userobligations"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> USER OBLIGATIONS</h4>
-                            <p class="text-muted mt-4">If you provide any false, inaccurate, inaccurate or incomplete information, eterinte.com reserves the right to immediately terminate your access to and use of the Site and any software you download. You agree to comply with all applicable local, state, national and international laws and regulations in relation to your use of the Site and related services.</p>
-                            <p class="text-muted">You further acknowledge and agree that your use of the Internet and access to the Site, transmission of data or communication with the Site is entirely at your own risk. While eterinte.com has endeavored to provide a safe and secure Site, you should understand that the confidentiality of any such communications cannot be guaranteed. Accordingly, eterinte.com is not responsible for the security or any breach thereof of any information transmitted to or from the Site.</p>
-                            <p class="text-muted mb-0">You agree to assume all responsibility for activities related to your use of the Site, including, without limitation, obtaining and paying for all licenses and costs for third party software and hardware necessary to use the Site and downloaded software, as well as maintaining or backing up copying any data. ten.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="passpolicy"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> USER NAME AND PASSWORD POLICY</h4>
-                            <p class="text-muted mt-4">Registering as an authorized user to access certain areas of the Site may require a username and password. Only one authorized user can use one username and password and one account. The use of multiple accounts registered by the same person or entity is not permitted and may result in one, some or all accounts being terminated by eterinte.com. By using the Site, you agree to keep your username and password confidential.</p>
-                            <p class="text-muted">You also agree not to use another authorized user's account. If you become aware of the loss or theft of your password, or any unauthorized use of your name and password, you will notify eterinte.com immediately. eterinte.com cannot and will not be liable for any loss or damage resulting from your failure to comply with these obligations. eterinte.com also reserves the right to remove or change (with notice) the username or password at any time and for any reason.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="reviewsmaterials"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> REVIEWS AND MATERIALS</h4>
-                            <p class="text-muted mt-4">You grant the eterinte.com team the right to use your name in connection with any materials freely provided by you and any other information, as well as in connection with all advertising, marketing and promotional materials related to them. You agree that you will not have any remedy against eterinte.com for any alleged or actual infringement or misappropriation of any proprietary right in your communications on the Site.</p>
-                            <p class="text-muted">Registered users of the Site will be able to provide feedback and information regarding their trading activities through the software and through the site, which will subsequently be displayed on the site on an anonymous basis. Such information is provided on a voluntary basis. eterinte.com does not control the accuracy or correctness of such self-reports and, accordingly, disclaims all responsibility for the User's reliance on such data.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="privacypolicy"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> PRIVACY POLICY</h4>
-                            <p class="text-muted mt-4">You understand, acknowledge and agree that the operation of some programs, services, tools, materials or information of the Site requires the provision, use and distribution of various personally identifiable information. Accordingly, if you wish to access and use these programs, services, tools, materials or information on the Site, you acknowledge and agree that your use of the Site will constitute acceptance of eterinte.com's practices of collecting and using personally identifiable information to protect your personal information. Please read our Privacy Policy before providing any personal information on this Site.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="notvalid"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> NOT VALID WHERE PROHIBITED</h4>
-                            <p class="text-muted mt-4">Any offer to sell any product or service made on this Site is void where prohibited. Moreover, eterinte.com makes no representations regarding the legality of accessing or using the Site or its contents in any country.</p>
-                            <p class="text-muted">Although the Site may be available worldwide, not all features, products or services provided or offered through the Site or on the Site are suitable or available for use in all countries. eterinte.com reserves the right, in its sole discretion, to limit the provision and quantity of any feature, product or service to any person or geographic area.</p>
-                            <p class="text-muted mb-0">If you access the Site from a jurisdiction where it is prohibited, you do so at your own risk and are solely responsible for complying with all applicable local rules. Persons under the age of 18 are prohibited from using the eterinte.com website.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="norecommendations"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> NO RECOMMENDATIONS</h4>
-                            <p class="text-muted mt-4">You acknowledge that neither the Site nor the "Personal Account Representative" service is authorized to offer any legal, tax, accounting advice or advice regarding suitability, profitability, investment strategy or other matters.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="websecurity"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> WEBSITE SECURITY</h4>
-                            <p class="text-muted mt-4">Actual or attempted unauthorized use of this Site may result in criminal and/or civil prosecution. eterinte.com reserves the right to view, monitor and record activity on the Site without notice or permission from the User, including, without limitation, archiving notifications or messages sent by you through the Site.</p>
-                            <p class="text-muted">In addition, eterinte.com reserves the right at any time and without notice to change, suspend, terminate or interrupt operation of or access to the Site or any part of it in order to protect the Site or eterinte.com's business.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="securitybreach"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> SECURITY BREACH NOTICE.</h4>
-                            <p class="text-muted mt-4">In addition to the indemnification obligations set forth in these Terms of Service, if you become aware of a breach or potential breach of security with respect to any personal information provided or made available to eterinte.com or any unauthorized hacking of the Site, you must (i) notify eterinte.com immediately of such breach or potential breach, (ii) assist eterinte.com as reasonably necessary to prevent or remedy any such breach, and (iii) allow eterinte.com to comply with any applicable laws requiring notice of breach of security with respect to any exposed personally identifiable information.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="validity"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> VALIDITY AND TERMINATION</h4>
-                            <p class="text-muted mt-4">These Terms of Service govern your right to use the Site, are effective from the time you access or use the Site, and are effective until terminated as set forth below. This Agreement may be terminated by eterinte.com without notice, at any time and for any reason.</p>
-                            <p class="text-muted">In addition, eterinte.com reserves the right, at any time and on reasonable grounds, such as a reasonable belief of fraudulent or illegal activity, or an act or omission that violates any term of these Terms, to deny you access to the Site in whole or in part for protection purposes. your name and goodwill, your business and/or other authorized users, or if you do not comply with these Terms, subject to the right to retain some of the provisions below. The termination is effective without notice.</p>
-                            <p class="text-muted mt-4">You may also terminate this Agreement at any time by ceasing to use the Site, subject to the rights to survival set forth below. Upon termination of the Agreement, you must destroy all copies you have made of any aspect of the Site and remove the downloaded software from your possession. The following provisions will survive termination of the Site Terms of Service Agreement for any reason: Ownership Rights, Limited License Grant, License Restrictions, Third Party Information, Disclaimer, Limitation of Liability, Indemnification, Governing Law and Miscellaneous.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="governinglaw"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> GOVERNING LAW AND DISPUTE RESOLUTION</h4>
-                            <p class="text-muted mt-4">These Terms of Service and any dispute or claim arising out of or arising out of them shall be governed by the laws of Cyprus, without giving effect to its conflict of laws rules. Any action or claim arising in connection with the use of the Site must be filed within one (1) year after the claim or cause of action arose, or such claim or cause of action is not subject to consideration.</p>
-                            <p class="text-muted">Plaintiff and eterinte.com waive their rights to trial by jury and participation in a class action lawsuit. All disputes arising out of or in connection with these Terms of Service shall be subject to binding arbitration, except that eterinte.com shall not be required to arbitrate any dispute relating to confidentiality, infringement, misappropriation or misuse of any intellectual property rights , or any other claim that requires an interim judgment to prevent serious and irreparable damage to eterinte.com or any other person or entity.</p>
-                            <p class="text-muted mt-4">You acknowledge that any breach, threatening or actual, may cause irreparable damage to eterinte.com that cannot be quantified in terms of monetary damages. You agree that eterinte.com will have the right to seek and obtain injunctive relief or other appropriate relief to deter any breach of your obligations under these Terms. Accordingly, you waive the requirement that eterinte.com post a bond or other security in the event that eterinte.com seeks or awards injunctive relief or relief to enforce any provision of these Terms.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="generalprovosion"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> GENERAL PROVISION</h4>
-                            <p class="text-muted mt-4">You agree that these Terms are for the User, and eterinte.com's licensors. Therefore, these Terms are personal to you and not transferable. No joint venture, partnership, employment or agency relationship exists between you and eterinte.com as a result of these Terms of Service or as a result of your use of the Site. eterinte.com's failure to insist on strict performance of any provision of this Agreement shall not be construed as a waiver of any provision or right under these Terms or at law.</p>
-                            <p class="text-muted">Neither the course of conduct between the parties nor trade practice shall operate to modify any provision of this Agreement. eterinte.com may assign its rights and obligations under this Agreement to any party at any time without notice to the User. The headings here are for convenience only.</p>
-                            <p class="text-muted mt-4">These Terms of Service and the eterinte.com Privacy Policy and Software License Agreement constitute the entire agreement between you and eterinte.com with respect to the use of the Site and supersede all prior or contemporaneous communications and suggestions, whether electronic, oral or written between you and eterinte.com.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="invalid"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> INVALID</h4>
-                            <p class="text-muted mt-4">If any provision of these Terms of Service is held by a court of competent jurisdiction to be invalid or unenforceable otherwise, or in conflict with applicable government regulation, such determination shall not affect the remaining provisions (or portions thereof) contained herein.</p>
-                            <p class="text-muted">Any invalid or unenforceable portion shall be deemed modified in order to achieve the greatest possible effect similar to the original version of the Terms of Service.</p>
-                        </div>
-
-                        <div class="section-title mt-4 pt-2" id="incomestatement"> 
-                            <h4><i class="mdi mdi-18px mdi-arrow-right"></i> INCOME STATEMENT</h4> <!-- From This Point -->
-                            <p class="text-muted mt-4">Every effort has been made to accurately represent this site or product and its potential. Although this industry is one of the few where you can write your own check in terms of earnings, there is no guarantee that you will make money using the techniques and ideas presented in these materials.</p>
-                            <p class="text-muted">The examples given in these materials should not be taken as a promise or guarantee of earnings. The earning potential is entirely dependent on the person using our product, ideas, methods and effort. We don't consider this a "get rich scheme."</p>
-                            <p class="text-muted">Your level of success in achieving the results stated in our materials depends on the time you devote to the program, the ideas and techniques mentioned, knowledge and various skills. Since these factors are different for each person, we cannot guarantee your success or income level.</p>
-                            <p class="text-muted">Any statements of earnings or trading results cannot be guaranteed. The user may, at his own discretion, make the necessary efforts. Due to the fact that the material supplier cannot guarantee the user's effort, success cannot be unambiguously guaranteed.</p>
-                            <p class="text-muted">Any claims of success and earnings when using the eterinte.com platform cannot be guaranteed. The user should use the knowledge provided in the materials or have working knowledge of other methods outside of the materials. Due to the material supplier's lack of control over the user's effort, in short, earnings claims are also not guaranteed.</p>
-                            <p class="text-muted">Any statements regarding trading income or success as a trader are also not guaranteed. The user of the materials is solely responsible for the success or lack thereof after following any methods related to online trading.</p>
-                            <p class="text-muted">Materials in our product and on our website may contain information that includes or is based on forward-looking statements within the meaning of the Securities Litigation Reform Act of 1995. Forward-looking statements reflect our expectations or projections of future events.</p>
-                            <p class="text-muted">You can identify these statements by the fact that they do not refer strictly to historical or current facts. They use words such as "anticipate", "estimate", "expect", "project", "intend", "believe", "plan" and other words and terms with similar meaning in connection with the description of potential income or financial indicators.</p>
-                            <p class="text-muted">Any and all forward-looking statements here or in any of our trading materials are intended to express our opinion of earning potential. Many factors will be important in determining your actual results and no guarantee is given that you will achieve results similar to ours or anyone else's, in fact no guarantee is given that you will achieve any results from our ideas and methods.</p>
-                            <p class="text-muted">This site may contain affiliate links from which the advertiser/creator earns a commission if you use the product. This site may contain links to brokers as an affiliate and/or may generate revenue if any visitor clicks on an advertisement provided by eterinte.com or any other contextual advertising program. The site may contain affiliate links from sites such as eterinte.com or any other sites, and the site owner may earn commissions by recommending products on this site.</p>
-                            <p class="text-muted mt-4">Results can vary, and as with any money making opportunity, you can make more or less. Success in ANY money-making opportunity is the result of hard work, time, and a host of other factors. eterinte.com makes no express or implied guarantees of income.</p>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
-        </section><!--end section-->
-        <!-- Start -->
-
-        <!-- Footer Start -->
-        <footer class="footer bg-footer">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="section-title text-md-center">
-                            <h4 class="text-light title-dark mb-0">Get In Touch !</h4>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-
-                <div class="row mt-3 justify-content-center">
-                    <div class="col-md-4 mt-4 pt-2">
-                        <div class="text-md-center">
-                            <div class="icon">
-                                <i data-feather="mail" class="fea icon-md text-light title-dark"></i>
-                            </div>
-                            <div class="content mt-2">
-                                <h5 class="title text-light title-dark">Email</h5>
-                                <a href="mailto:contact@example.com" class="text-foot">contact@example.com</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-
-                    <div class="col-md-4 mt-4 pt-2">
-                        <div class="text-md-center">
-                            <div class="icon">
-                                <i data-feather="phone" class="fea icon-md text-light title-dark"></i>
-                            </div>
-                            <div class="content mt-2">
-                                <h5 class="title text-light title-dark">Phone</h5>
-                                <a href="tel:+152534-468-854" class="text-foot">+152 534-468-854</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-
-                    <div class="col-md-4 mt-4 pt-2">
-                        <div class="text-md-center">
-                            <div class="icon">
-                                <i data-feather="map-pin" class="fea icon-md text-light title-dark"></i>
-                            </div>
-                            <div class="content mt-2">
-                                <h5 class="title text-light title-dark">Location</h5>
-                                <a href="#" class="text-foot">Australia</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
-
-            <div class="container mt-5">
-                <div class="footer-bar">
-                    <div class="row mt-5">
-                        <div class="col-lg-4 col-md-12">
-                            <a class="logo-footer h4 mouse-down text-light" href="#home">
-                                <img src="images/logo-light.png" height="20" alt="">
-                            </a>
-                            <p class="mt-4 text-foot">There is now an abundance of <br> readable dummy texts. These are is required purely to fill a space.</p>
-                            <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
-                            </ul><!--end icon-->
-                        </div>
-    
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2 mt-lg-0 pt-lg-0">
-                                    <h5 class="text-light title-dark footer-head fw-normal mb-0">Hosting</h5>
-                                    <ul class="list-unstyled footer-list mt-4">
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Shared Hosting</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>VPS Hosting</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Dedicated Hosting</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Cloud Hosting</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Reseller Hosting</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Domain Name</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2 mt-lg-0 pt-lg-0">
-                                    <h5 class="text-light title-dark footer-head fw-normal mb-0">About</h5>
-                                    <ul class="list-unstyled footer-list mt-4">
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>About us</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Contact us</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Terms & Services</a></li>
-                                        <li><a href="javascript:void(0)" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i>Privacy Policy</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="col-lg-6 col-md-4 col-12 mt-4 pt-2 mt-lg-0 pt-lg-0">
-                                    <h5 class="text-light title-dark footer-head fw-normal mb-0">Newsletter</h5>
-                                    <p class="mt-4 text-foot">Sign up and receive the latest tips via email.</p>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="foot-subscribe mb-3 position-relative">
-                                                    <label class="form-label text-foot">Write your email <span class="text-danger">*</span></label>
-                                                    <input type="email" name="email" id="emailsubscribe" class="form-control rounded" placeholder="Your email : " required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <input type="submit" id="submitsubscribe" name="send" class="btn btn-primary w-100" value="Subscribe">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer><!--end footer-->
-        <footer class="footer footer-line bg-footer">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-sm-6 col-md-7">
-                        <div class="text-sm-start">
-                            <p class="mb-0 text-foot">© <script>document.write(new Date().getFullYear())</script> Hostick. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
-                        </div>
-                    </div><!--end col-->
-
-                    <div class="col-sm-6 col-md-5 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                        <ul class="list-unstyled terms-service text-sm-end mb-0">
-                            <li class="list-inline-item mb-0"><a href="page-privacy.html" class="text-foot me-2">Privacy</a></li>
-                            <li class="list-inline-item mb-0"><a href="page-terms.html" class="text-foot me-2">Terms</a></li>
-                            <li class="list-inline-item mb-0"><a href="page-faqs.html" class="text-foot me-2">FAQs</a></li>
-                            <li class="list-inline-item mb-0"><a href="contact.html" class="text-foot">Contact</a></li>
+{{define "Terms"}}
+<!-- Home Start -->
+<section class="bg-half-170 d-table w-100 bg-light" style="background: url('/assets/images/bg/page.png') top center;" id="home">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="title-heading text-center text-md-start">
+                    <h3>Terms & Conditions</h3>
+                    <p class="text-muted para-desc mt-3 mb-0">All terms & conditions</p>
+                    <nav aria-label="breadcrumb" class="d-inline-block mt-4">
+                        <ul class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="eterinte.com">Eterinte</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Company</li>
                         </ul>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
-        </footer><!--end footer-->
-        <!-- Footer End -->
-
-        <!-- Login Modal Content Start -->
-        <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-                <div class="modal-content rounded shadow border-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Login </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="login-form">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="mb-3 position-relative">
-                                        <label class="form-label">Your Email <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control" name="email" required="" placeholder="Your Email :">
-                                    </div>
-                                </div><!--end col-->
-
-                                <div class="col-12">
-                                    <div class="mb-3 position-relative">
-                                        <label class="form-label">Password <span class="text-danger">*</span></label>
-                                        <input type="password" class="form-control" required="" placeholder="Password :">
-                                    </div>
-                                </div><!--end col-->
-
-                                <div class="col-12">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="mb-3 d-inline-block">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                                            </div>
-                                        </div>
-                                        <p class="forgot-pass mb-0"><a href="page-forgot-password.html" class="text-dark fw-bold">Forgot password ?</a></p>
-                                    </div>
-                                </div><!--end col-->
-                                <div class="col-12 mb-0">
-                                    <button class="btn btn-primary w-100">Sign in</button>
-                                </div><!--end col-->
-                                <div class="col-12 mt-4 text-center">
-                                    <h6 class="mb-0">Or Login With</h6>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-sm-6 mt-4">
-                                            <a href="#" class="btn w-100 btn-light bg-facebook"><i class="mdi mdi-facebook"></i> Facebook</a>
-                                        </div>
-                                        <div class="col-sm-6 mt-4">
-                                            <a href="#" class="btn w-100 btn-light"><i class="mdi mdi-google"></i> Google</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <p class="mb-0 mt-3"><small class="text-dark me-2">Don't have an account ?</small> <a href="page-signup.html" class="text-dark fw-bold">Sign Up</a></p>
-                                </div><!--end col-->
-                            </div><!--end row-->
-                        </form><!--end form-->
-                    </div>
+                    </nav>
                 </div>
             </div>
+            <!--end col-->
         </div>
-        <!-- Login Modal Content End -->
-
-        
-
-        <!-- Back to top -->
-        <a href="#" class="btn btn-icon btn-soft-primary back-to-top"><i data-feather="arrow-up" class="icons"></i></a>
-        <!-- Back to top -->
-
-        <!-- Wishlist Popup Start -->
-        <div class="modal fade" id="wishlist" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content rounded shadow-lg border-0 overflow-hidden">
-                    <div class="modal-body py-5">
-                        <div class="text-center">
-                            <div class="icon d-flex align-items-center justify-content-center bg-soft-danger rounded-circle mx-auto" style="height: 95px; width:95px;">
-                                <h1 class="mb-0"><i class="uil uil-heart-break align-middle"></i></h1>
-                            </div>
-                            <div class="mt-4">
-                                <h4>Your wishlist is empty.</h4>
-                                <p class="text-muted">Create your first wishlist request...</p>
-                                <div class="mt-4">
-                                    <a href="javascript:void(0)" class="btn btn-outline-primary">+ Create new wishlist</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 1000 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!-- Home End -->
+<!-- Start -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 col-12 d-none d-md-block">
+                <div class="rounded-pill shadow p-4 component-wrapper">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-4"><a href="#accept" class="mouse-down h6 text-dark">Scroll down</a></li>
+                        <li class="mb-4"><a href="#intro" class="mouse-down h6 text-dark">INTRODUCTION</a></li>
+                        <li class="mb-4"><a href="#ownership" class="mouse-down h6 text-dark">OWNERSHIP</a></li>
+                        <li class="mb-4"><a href="#limitedgrant" class="mouse-down h6 text-dark">LIMITED LICENSE GRANT</a></li>
+                        <li class="mb-4"><a href="#limitations" class="mouse-down h6 text-dark">LICENSE LIMITATIONS</a></li>
+                        <li class="mb-4"><a href="#thirdparty" class="mouse-down h6 text-dark">THIRD PARTY SERVICES</a></li>
+                        <li class="mb-4"><a href="#liability" class="mouse-down h6 text-dark">LIMITATION OF LIABILITY</a></li>
+                        <li class="mb-4"><a href="#userobligations" class="mouse-down h6 text-dark">USER OBLIGATIONS</a></li>
+                        <li class="mb-4"><a href="#passpolicy" class="mouse-down h6 text-dark">USER NAME AND PASSWORD POLICY</a></li>
+                        <li class="mb-4"><a href="#reviewsmaterials" class="mouse-down h6 text-dark">REVIEWS AND MATERIALS</a></li>
+                        <li class="mb-4"><a href="#privacypolicy" class="mouse-down h6 text-dark">PRIVACY POLICY</a></li>
+                        <li class="mb-4"><a href="#notvalid" class="mouse-down h6 text-dark">NOT VALID WHERE PROHIBITED</a></li>
+                        <li class="mb-4"><a href="#norecommendations" class="mouse-down h6 text-dark">NO RECOMMENDATIONS</a></li>
+                        <li class="mb-4"><a href="#websecurity" class="mouse-down h6 text-dark">WEBSITE SECURITY</a></li>
+                        <li class="mb-4"><a href="#validity" class="mouse-down h6 text-dark">VALIDITY AND TERMINATION</a></li>
+                        <li class="mb-4"><a href="#governinglaw" class="mouse-down h6 text-dark">GOVERNING LAW AND DISPUTE RESOLUTION</a></li>
+                        <li class="mb-4"><a href="#generalprovosion" class="mouse-down h6 text-dark">GENERAL PROVISION</a></li>
+                        <li class="mb-4"><a href="#invalid" class="mouse-down h6 text-dark">INVALID</a></li>
+                        <li class="mb-4"><a href="#incomestatement" class="mouse-down h6 text-dark">INCOME STATEMENT</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <!-- Wishlist Popup End -->
-
-        <!-- Style switcher -->
-        <div id="style-switcher" class="bg-light border p-3 pt-2 pb-2" onclick="toggleSwitcher()">
-            <div>
-                <h6 class="title text-center">Select Your Color</h6>
-                <ul class="pattern">
-                    <li class="list-inline-item">
-                        <a class="color1" href="javascript: void(0);" onclick="setColor('default')"></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="color2" href="javascript: void(0);" onclick="setColor('violet')"></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="color3" href="javascript: void(0);" onclick="setColor('green')"></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="color4" href="javascript: void(0);" onclick="setColor('blue')"></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="color5" href="javascript: void(0);" onclick="setColor('pink')"></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="color6" href="javascript: void(0);" onclick="setColor('purple')"></a>
-                    </li>
-                </ul>
-
-                <h6 class="title text-center pt-3 mb-0 border-top">Theme Option</h6>
-                <ul class="text-center list-unstyled mb-0">
-                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary rtl-version t-rtl-light mt-2" onclick="setTheme('style-rtl')">RTL</a></li>
-                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary ltr-version t-ltr-light mt-2" onclick="setTheme('style')">LTR</a></li>
-                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-rtl-version t-rtl-dark mt-2" onclick="setTheme('style-dark-rtl')">RTL</a></li>
-                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-ltr-version t-ltr-dark mt-2" onclick="setTheme('style-dark')">LTR</a></li>
-                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-dark dark-version t-dark mt-2" onclick="setTheme('style-dark')">Dark</a></li>
-                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-dark light-version t-light mt-2" onclick="setTheme('style')">Light</a></li>
-                </ul>
+            <!--end col-->
+            <div class="col-lg-8 col-md-7 col-12">
+                <div class="section-title" id="intro">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> Introduction</h4>
+                    <p class="text-muted mt-4">IMPORTANT: These terms and conditions constitute a legal agreement between you, the User (hereinafter "You", "Your" or "User"), and us, eterinte.com, its affiliates and all their respective authorized representatives, officers, directors, employees, agents, shareholders, licensors, attorneys, heirs and assigns (hereinafter referred to as "We" or "eterinte.com"), and together with the Site's Privacy Policy and Software License Agreement, fully and exclusively govern such relationship.</p>
+                    <p class="text-muted mb-0">BEFORE ACCESSING OR USING THE SERVICES OFFERED ON THE SITE https://eterinte.com, PLEASE READ THE FOLLOWING TERMS AND CONDITIONS CONTAINED IN THIS SITE TERMS OF SERVICE AGREEMENT CAREFULLY.
+                        These terms govern your access to and use of the site and any programs, services, tools, software, materials or other information available through or used in connection with the site (the "site"). eterinte.com OFFERS A LICENSE AND PERMITS THE USE OF THIS SITE ONLY ON THE CONDITION THAT YOU ACCEPT AND AGREE TO ALL TERMS AND CONDITIONS CONTAINED IN THIS SITE. BY USING THE SITE, YOU HEREBY AGREE TO THE TERMS AND CONDITIONS SET FORTH BELOW. IF YOU DO NOT WISH TO BE BOUND BY THESE TERMS AND CONDITIONS, YOU ARE NOT GRANTED PERMISSION TO ACCESS OR OTHERWISE USE THE SITE AND YOU ARE RECOMMENDED TO LEAVE THE SITE IMMEDIATELY.</p>
+                    <p class="text-muted mb-0">eterinte.com reserves the right to make changes to this agreement at any time without notice to the user, and such changes will take effect immediately upon posting of the amended terms and conditions on the site. YOU AGREE TO REVIEW THE AGREEMENT PERIODICALLY TO BE AWARE OF SUCH CHANGES, AND YOUR FURTHER ACCESS TO OR USE OF THE SITE WILL BE CONSIDERED YOUR FINAL ACCEPTANCE OF THE AMENDED AGREEMENT. Revised versions of the Terms and Conditions will be identified by the date displayed at the top of the Terms of Service page on the site (for example, "Updated on [11-10-2022]").</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="ownership">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> OWNERSHIP</h4>
+                    <p class="text-muted mt-4">All intellectual property of the Site or related to it, including, without limitation, content, information, patents, trademarks, copyrights, modules, technologies, know-how, computer code (including html code), algorithms, business methods, user interfaces, graphic design, look and feel, software; and all developments, derivative works and improvements, whether registered or not (collectively referred to as "Intellectual Property"), unless otherwise noted, are wholly owned, controlled and licensed by eterinte.com , its affiliates, its heirs and assigns, and/or third parties, who have licensed eterinte.com to use such Intellectual Property.</p>
+                    <p class="text-muted">Publications, products, content or services mentioned here or on the Site are the exclusive trademarks or service marks of eterinte.com or their respective owners and are protected by law. Except as expressly provided herein, eterinte.com does not grant you or any other person any express or implied intellectual or proprietary rights.</p>
+                    <p class="text-muted mb-0">Any downloadable or printed software, programs, information or materials available through the Site, and all copyrights, trade secrets and know-how associated with them, unless otherwise noted, belong to eterinte.com or third party licensors. The name of the site, eterinte.com, its logo and all other names, logos and icons that identify the site eterinte.com and its services are eterinte.com's own trademarks, and any use of such marks, such as domain names, without express written permission eterinte.com is strictly prohibited.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="limitedgrant">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> LIMITED LICENSE GRANT</h4>
+                    <p class="text-muted mt-4">The Site is provided by eterinte.com, and subject to acceptance of this Site Terms of Service Agreement, grants you a personal, revocable, limited, non-exclusive, royalty-free, non-transferable license to use the Site and download any programs, services, tools, materials or information made available through site or from the site.</p>
+                    <p class="text-muted">Please note that download access and terms of use for downloadable eterinte.com software are subject to acceptance of a separate Software License Agreement. The Site Terms of Service permit you to use and access, for personal use only, the eterinte.com Site (a) on a single laptop, workstation or computer and (b) on a mobile device from the Internet or via an online network.</p>
+                    <p class="text-muted mb-0">You may also download information from the Site into the temporary memory (RAM) of your laptop, workstation or computer, print and download materials and information from the Site solely for your personal non-commercial use, provided that all hard copies contain all copyright and other applicable notices. .</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="limitations">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> LICENSE LIMITATIONS</h4>
+                    <p class="text-muted mt-4">The above license is limited. You cannot modify, copy, preserve, reproduce, transfer, transfer, sublicense, distribute, rent, lize, sell, commercially operate, or distribute, in any form, any data, intellectual property or materials presented by Eterinte.com by means THE SITE, IN ANY FORM NOT PERMITTED BY THESE TERMS OF SERVICE. THE FOREGOING LIMITATION INCLUDES, BUT IS NOT LIMITED TO TEXT, GRAPHICS, CODE AND/OR SOFTWARE.</p>
+                    <p class="text-muted">In addition, you may not modify, translate, decompile, create derivative works of, disassemble, broadcast, publish, remove or alter any proprietary notices or labels, grant a lien or otherwise use the Site in any manner not expressly permitted in this document. Furthermore, you may not (i) use any "deep links", "search pages", "robots", "spiders" or other automated devices, programs, scripts, algorithms or techniques, or any similar or equivalent manual processes to access, acquire, copy, or monitor any part of the Site or in any way reproduce or circumvent the navigational structure or presentation of the Site in order to obtain or attempt to obtain any materials, documents or information in any way that was not intentionally made available through the Site, OR (ii ) attempt to gain unauthorized access to any part or feature of the Site, including, without limitation, the account of any other Authorized User(s), any other systems or networks connected to the Site or its servers, to any of the services offered on or through the Site the Site, by hacking, "guessing" passwords, or by any other illegal or prohibited means, OR (iii) probing, analyze or test the vulnerability of the Site or any network connected to the Site, or violate the security or authentication measures on the Site or any network connected to the Site, OR (iv) reverse lookup, trace or attempt to trace any information about any other Authorized User or a visitor to the eterinte.com Site, OR (v) take any action that imposes an unreasonable or disproportionately large load on the Site's infrastructure, system, networks or any systems or networks connected to them, OR (vi) use any device, software , or procedure to interfere with the proper operation of the Site or transactions conducted on the Site, or the use of the Site by any other person, OR (vii) forge headers, impersonate another person, or otherwise manipulate identifiers in order to hide your identity or origin any message or transmission you send to eterinte.com on the Site or through the Site, OR (viii) use the Site to collect email addresses or other contact or personal information, OR (ix) market, share a brand, private label, appropriately use the name eterinte.com or a name similar to it on another domain, separately distribute, resell or otherwise allow third parties to access and use the Site, in whole or in part, without the express, separate and prior written permission of eterinte.com, OR (x) use the Site in any other unlawful manner or manner that may be perceived as damage, humiliation or other negative impact on eterinte.com. four.</p>
+                    <p class="text-muted mb-0">Moreover, this license is only valid where eterinte.com is allowed to operate. Access to and use of this site in violation of any laws or regulations, or where prohibited by law, is unauthorized and is not authorized by eterinte.com.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="thirdparty">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> INFORMATION / PRODUCTS / THIRD PARTY SERVICES / LINKS TO OTHER SITES.</h4>
+                    <p class="text-muted mt-4">The Site may contain information, data, links, promotional offers or other content in any form, including financial information relating to third parties. Such information is provided for your convenience and as a bonus service only and is not considered financial advice. Under no circumstances shall eterinte.com be liable for such content or for any damage or loss resulting from reliance on it. You understand that, except for information, products or services expressly provided by eterinte.com, eterinte.com is not affiliated with, is not responsible for, operates, controls or endorses any information, products or services offered by third parties, which are presented in any way on the Site.</p>
+                    <p class="text-muted">eterinte.com makes no representation, warranty or endorsement of the quality, non-infringement, accuracy, completeness or reliability of any third party materials, programs or products that appear on this Site or which you can access through a link on this Site.</p>
+                    <p class="text-muted mb-0">Your correspondence or any other relationship with such third parties found on this Site is solely your relationship with such third parties. Accordingly, eterinte.com SINCERELY DISCLAIMS RESPONSIBILITY FOR THE CONTENT, MATERIALS, ACCURACY AND/OR QUALITY OF THE INFORMATION, PRODUCTS AND/OR SERVICES AVAILABLE THROUGH OR PRESENTED ON THESE THIRD PARTY WEBSITES.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="warranty">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> DENIAL OF RESPONSIBILITY - NO WARRANTY</h4>
+                    <p class="text-muted mt-4">You understand and accept that eterinte.com cannot and does not guarantee that files available for download through the Site will be free from viruses, worms, Trojan horses or other code that exhibits contaminating or destructive properties. You are responsible for implementing sufficient procedures and checkpoints on your personal computer to meet your specific input and output accuracy requirements, and for maintaining a means external to the Site to recover any lost data.</p>
+                    <p class="text-muted">YOU UNDERSTAND AND AGREE TO ASSUME ALL RESPONSIBILITY AND RISK FOR YOUR USE OF THE SITE. eterinte.com PROVIDES THE SITE AND RELATED INFORMATION "AS IS" AND MAKES NO EXPRESS OR IMPLIED WARRANTIES, REPRESENTATIONS OR LIMITATIONS. eterinte.com SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-RESTRICTION. IN REGARD TO THE SITE, THE SERVICES OF THE PERSONAL ACCOUNT REPRESENTATIVE, OR ANY INFORMATION OR LINKS PROVIDED ON THE SITE, eterinte.com SHALL NOT BE LIABLE FOR ANY EXPENSES OR DAMAGES ARISING OR DIRECTLY FROM ANY OF THESE.</p>
+                    <p class="text-muted mb-0">The ACCURACY, completeness, and usefulness of all opinions, advice, services, products, and other information provided through the Service is solely at your discretion. eterinte.com DOES NOT WARRANT that the service will be uninterrupted or error free or that deficiencies in the service will be corrected. YOU ALSO UNDERSTAND THAT THE PURE NATURE OF THE INTERNET CONTAINS UNEDITED MATERIAL, SOME OF WHICH IS SEXY EXPRESSLY OR MAY BE OFFENSIVE TO YOU. YOUR ACCESS TO SUCH MATERIALS IS AT YOUR RISK. eterinte.com DOES NOT CONTROL OR ASSUME ANY RESPONSIBILITY FOR SUCH MATERIALS</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="liability">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> LIMITATION OF LIABILITY</h4>
+                    <p class="text-muted mt-4">YOU EXPRESSLY ABSOLUTELY DISCLAIM AND RELEASE ETERINTE.COM FROM ANY CLAIMS FOR DAMAGE OUTSIDE OF ETERINTE.COM'S CONTROL INCLUDING, BUT NOT LIMITED TO, failure of electronic or mechanical equipment or communication lines for any reason whatsoever, such as for maintenance, service interruption attacks, telephone or other communication problems, COMPUTER VIRUSES, UNAUTHORIZED ACCESS, THEFT, OPERATOR ERROR, FORCE MAJEURE SUCH AS Severe WEATHER, EARTHQUAKES, NATURAL DISASTERS, STRIKE, LABOR PROBLEMS, WAR , GOVERNMENT RESTRICTIONS OR ACTIONS. In addition, under no circumstances will eterinte.com BE LIABLE FOR ANY UNPREDICTABLE, INCIDENTAL, UNPREDICTABLE, SIGNIFICANT OR SPECIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR INFORMATION), AND THEREFORE OR IN ANY CONNECTION WITH THE USE OR INABILITY TO USE THE SERVICES OF THE SITE, OR ANY INFORMATION OR TRANSACTIONS PROVIDED OR DOWNLOADED FROM THE SITE OR THE DELAY OF SUCH INFORMATION OR SERVICES, EVEN IF eterinte.com has been warned of, or for the possibility of any such damages associated with errors, omissions or other inaccuracies on the site and / or in materials or information downloaded through the site.</p>
+                    <p class="text-muted">BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. WITHOUT WEIGHING THE CONCLUSION, eterinte.com'S TOTAL LIABILITY FOR ANY REASON RELATED TO THE USE OF THE SITE SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY YOU TO eterinte.com IN CONNECTION WITH THE SUBJECT OF THE RESOLVED DISPUTE FOR THE PRESENT TIME</p>
+                    <p class="text-muted mb-0">You agree to indemnify, defend and hold harmless eterinte.com, its affiliates and all their respective officers, directors, employees, agents, licensors, attorneys, successors and assigns from all claims, proceedings, injuries, liabilities, losses, damages, costs and costs, including reasonable attorneys' fees and legal costs, relating to or arising out of any breach or breach of this Agreement by you (including negligent or reckless conduct). Each of the above individuals or entities reserves the right to bring claims and enforce these provisions directly against you, on its own behalf.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="userobligations">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> USER OBLIGATIONS</h4>
+                    <p class="text-muted mt-4">If you provide any false, inaccurate, inaccurate or incomplete information, eterinte.com reserves the right to immediately terminate your access to and use of the Site and any software you download. You agree to comply with all applicable local, state, national and international laws and regulations in relation to your use of the Site and related services.</p>
+                    <p class="text-muted">You further acknowledge and agree that your use of the Internet and access to the Site, transmission of data or communication with the Site is entirely at your own risk. While eterinte.com has endeavored to provide a safe and secure Site, you should understand that the confidentiality of any such communications cannot be guaranteed. Accordingly, eterinte.com is not responsible for the security or any breach thereof of any information transmitted to or from the Site.</p>
+                    <p class="text-muted mb-0">You agree to assume all responsibility for activities related to your use of the Site, including, without limitation, obtaining and paying for all licenses and costs for third party software and hardware necessary to use the Site and downloaded software, as well as maintaining or backing up copying any data. ten.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="passpolicy">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> USER NAME AND PASSWORD POLICY</h4>
+                    <p class="text-muted mt-4">Registering as an authorized user to access certain areas of the Site may require a username and password. Only one authorized user can use one username and password and one account. The use of multiple accounts registered by the same person or entity is not permitted and may result in one, some or all accounts being terminated by eterinte.com. By using the Site, you agree to keep your username and password confidential.</p>
+                    <p class="text-muted">You also agree not to use another authorized user's account. If you become aware of the loss or theft of your password, or any unauthorized use of your name and password, you will notify eterinte.com immediately. eterinte.com cannot and will not be liable for any loss or damage resulting from your failure to comply with these obligations. eterinte.com also reserves the right to remove or change (with notice) the username or password at any time and for any reason.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="reviewsmaterials">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> REVIEWS AND MATERIALS</h4>
+                    <p class="text-muted mt-4">You grant the eterinte.com team the right to use your name in connection with any materials freely provided by you and any other information, as well as in connection with all advertising, marketing and promotional materials related to them. You agree that you will not have any remedy against eterinte.com for any alleged or actual infringement or misappropriation of any proprietary right in your communications on the Site.</p>
+                    <p class="text-muted">Registered users of the Site will be able to provide feedback and information regarding their trading activities through the software and through the site, which will subsequently be displayed on the site on an anonymous basis. Such information is provided on a voluntary basis. eterinte.com does not control the accuracy or correctness of such self-reports and, accordingly, disclaims all responsibility for the User's reliance on such data.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="privacypolicy">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> PRIVACY POLICY</h4>
+                    <p class="text-muted mt-4">You understand, acknowledge and agree that the operation of some programs, services, tools, materials or information of the Site requires the provision, use and distribution of various personally identifiable information. Accordingly, if you wish to access and use these programs, services, tools, materials or information on the Site, you acknowledge and agree that your use of the Site will constitute acceptance of eterinte.com's practices of collecting and using personally identifiable information to protect your personal information. Please read our Privacy Policy before providing any personal information on this Site.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="notvalid">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> NOT VALID WHERE PROHIBITED</h4>
+                    <p class="text-muted mt-4">Any offer to sell any product or service made on this Site is void where prohibited. Moreover, eterinte.com makes no representations regarding the legality of accessing or using the Site or its contents in any country.</p>
+                    <p class="text-muted">Although the Site may be available worldwide, not all features, products or services provided or offered through the Site or on the Site are suitable or available for use in all countries. eterinte.com reserves the right, in its sole discretion, to limit the provision and quantity of any feature, product or service to any person or geographic area.</p>
+                    <p class="text-muted mb-0">If you access the Site from a jurisdiction where it is prohibited, you do so at your own risk and are solely responsible for complying with all applicable local rules. Persons under the age of 18 are prohibited from using the eterinte.com website.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="norecommendations">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> NO RECOMMENDATIONS</h4>
+                    <p class="text-muted mt-4">You acknowledge that neither the Site nor the "Personal Account Representative" service is authorized to offer any legal, tax, accounting advice or advice regarding suitability, profitability, investment strategy or other matters.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="websecurity">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> WEBSITE SECURITY</h4>
+                    <p class="text-muted mt-4">Actual or attempted unauthorized use of this Site may result in criminal and/or civil prosecution. eterinte.com reserves the right to view, monitor and record activity on the Site without notice or permission from the User, including, without limitation, archiving notifications or messages sent by you through the Site.</p>
+                    <p class="text-muted">In addition, eterinte.com reserves the right at any time and without notice to change, suspend, terminate or interrupt operation of or access to the Site or any part of it in order to protect the Site or eterinte.com's business.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="securitybreach">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> SECURITY BREACH NOTICE.</h4>
+                    <p class="text-muted mt-4">In addition to the indemnification obligations set forth in these Terms of Service, if you become aware of a breach or potential breach of security with respect to any personal information provided or made available to eterinte.com or any unauthorized hacking of the Site, you must (i) notify eterinte.com immediately of such breach or potential breach, (ii) assist eterinte.com as reasonably necessary to prevent or remedy any such breach, and (iii) allow eterinte.com to comply with any applicable laws requiring notice of breach of security with respect to any exposed personally identifiable information.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="validity">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> VALIDITY AND TERMINATION</h4>
+                    <p class="text-muted mt-4">These Terms of Service govern your right to use the Site, are effective from the time you access or use the Site, and are effective until terminated as set forth below. This Agreement may be terminated by eterinte.com without notice, at any time and for any reason.</p>
+                    <p class="text-muted">In addition, eterinte.com reserves the right, at any time and on reasonable grounds, such as a reasonable belief of fraudulent or illegal activity, or an act or omission that violates any term of these Terms, to deny you access to the Site in whole or in part for protection purposes. your name and goodwill, your business and/or other authorized users, or if you do not comply with these Terms, subject to the right to retain some of the provisions below. The termination is effective without notice.</p>
+                    <p class="text-muted mt-4">You may also terminate this Agreement at any time by ceasing to use the Site, subject to the rights to survival set forth below. Upon termination of the Agreement, you must destroy all copies you have made of any aspect of the Site and remove the downloaded software from your possession. The following provisions will survive termination of the Site Terms of Service Agreement for any reason: Ownership Rights, Limited License Grant, License Restrictions, Third Party Information, Disclaimer, Limitation of Liability, Indemnification, Governing Law and Miscellaneous.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="governinglaw">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> GOVERNING LAW AND DISPUTE RESOLUTION</h4>
+                    <p class="text-muted mt-4">These Terms of Service and any dispute or claim arising out of or arising out of them shall be governed by the laws of Cyprus, without giving effect to its conflict of laws rules. Any action or claim arising in connection with the use of the Site must be filed within one (1) year after the claim or cause of action arose, or such claim or cause of action is not subject to consideration.</p>
+                    <p class="text-muted">Plaintiff and eterinte.com waive their rights to trial by jury and participation in a class action lawsuit. All disputes arising out of or in connection with these Terms of Service shall be subject to binding arbitration, except that eterinte.com shall not be required to arbitrate any dispute relating to confidentiality, infringement, misappropriation or misuse of any intellectual property rights , or any other claim that requires an interim judgment to prevent serious and irreparable damage to eterinte.com or any other person or entity.</p>
+                    <p class="text-muted mt-4">You acknowledge that any breach, threatening or actual, may cause irreparable damage to eterinte.com that cannot be quantified in terms of monetary damages. You agree that eterinte.com will have the right to seek and obtain injunctive relief or other appropriate relief to deter any breach of your obligations under these Terms. Accordingly, you waive the requirement that eterinte.com post a bond or other security in the event that eterinte.com seeks or awards injunctive relief or relief to enforce any provision of these Terms.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="generalprovosion">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> GENERAL PROVISION</h4>
+                    <p class="text-muted mt-4">You agree that these Terms are for the User, and eterinte.com's licensors. Therefore, these Terms are personal to you and not transferable. No joint venture, partnership, employment or agency relationship exists between you and eterinte.com as a result of these Terms of Service or as a result of your use of the Site. eterinte.com's failure to insist on strict performance of any provision of this Agreement shall not be construed as a waiver of any provision or right under these Terms or at law.</p>
+                    <p class="text-muted">Neither the course of conduct between the parties nor trade practice shall operate to modify any provision of this Agreement. eterinte.com may assign its rights and obligations under this Agreement to any party at any time without notice to the User. The headings here are for convenience only.</p>
+                    <p class="text-muted mt-4">These Terms of Service and the eterinte.com Privacy Policy and Software License Agreement constitute the entire agreement between you and eterinte.com with respect to the use of the Site and supersede all prior or contemporaneous communications and suggestions, whether electronic, oral or written between you and eterinte.com.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="invalid">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> INVALID</h4>
+                    <p class="text-muted mt-4">If any provision of these Terms of Service is held by a court of competent jurisdiction to be invalid or unenforceable otherwise, or in conflict with applicable government regulation, such determination shall not affect the remaining provisions (or portions thereof) contained herein.</p>
+                    <p class="text-muted">Any invalid or unenforceable portion shall be deemed modified in order to achieve the greatest possible effect similar to the original version of the Terms of Service.</p>
+                </div>
+                <div class="section-title mt-4 pt-2" id="incomestatement">
+                    <h4><i class="mdi mdi-18px mdi-arrow-right"></i> INCOME STATEMENT</h4> <!-- From This Point -->
+                    <p class="text-muted mt-4">Every effort has been made to accurately represent this site or product and its potential. Although this industry is one of the few where you can write your own check in terms of earnings, there is no guarantee that you will make money using the techniques and ideas presented in these materials.</p>
+                    <p class="text-muted">The examples given in these materials should not be taken as a promise or guarantee of earnings. The earning potential is entirely dependent on the person using our product, ideas, methods and effort. We don't consider this a "get rich scheme."</p>
+                    <p class="text-muted">Your level of success in achieving the results stated in our materials depends on the time you devote to the program, the ideas and techniques mentioned, knowledge and various skills. Since these factors are different for each person, we cannot guarantee your success or income level.</p>
+                    <p class="text-muted">Any statements of earnings or trading results cannot be guaranteed. The user may, at his own discretion, make the necessary efforts. Due to the fact that the material supplier cannot guarantee the user's effort, success cannot be unambiguously guaranteed.</p>
+                    <p class="text-muted">Any claims of success and earnings when using the eterinte.com platform cannot be guaranteed. The user should use the knowledge provided in the materials or have working knowledge of other methods outside of the materials. Due to the material supplier's lack of control over the user's effort, in short, earnings claims are also not guaranteed.</p>
+                    <p class="text-muted">Any statements regarding trading income or success as a trader are also not guaranteed. The user of the materials is solely responsible for the success or lack thereof after following any methods related to online trading.</p>
+                    <p class="text-muted">Materials in our product and on our website may contain information that includes or is based on forward-looking statements within the meaning of the Securities Litigation Reform Act of 1995. Forward-looking statements reflect our expectations or projections of future events.</p>
+                    <p class="text-muted">You can identify these statements by the fact that they do not refer strictly to historical or current facts. They use words such as "anticipate", "estimate", "expect", "project", "intend", "believe", "plan" and other words and terms with similar meaning in connection with the description of potential income or financial indicators.</p>
+                    <p class="text-muted">Any and all forward-looking statements here or in any of our trading materials are intended to express our opinion of earning potential. Many factors will be important in determining your actual results and no guarantee is given that you will achieve results similar to ours or anyone else's, in fact no guarantee is given that you will achieve any results from our ideas and methods.</p>
+                    <p class="text-muted">This site may contain affiliate links from which the advertiser/creator earns a commission if you use the product. This site may contain links to brokers as an affiliate and/or may generate revenue if any visitor clicks on an advertisement provided by eterinte.com or any other contextual advertising program. The site may contain affiliate links from sites such as eterinte.com or any other sites, and the site owner may earn commissions by recommending products on this site.</p>
+                    <p class="text-muted mt-4">Results can vary, and as with any money making opportunity, you can make more or less. Success in ANY money-making opportunity is the result of hard work, time, and a host of other factors. eterinte.com makes no express or implied guarantees of income.</p>
+                </div>
             </div>
-            <div class="bottom">
-                <a href="javascript: void(0);" class="settings bg-white shadow d-block"><i class="mdi mdi-cog ms-1 mdi-24px position-absolute mdi-spin text-primary"></i></a>
-            </div>
+            <!--end col-->
         </div>
-        <!-- end Style switcher -->
-        
-        <!-- javascript -->
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <!-- Icons -->
-        <script src="js/feather.min.js"></script>
-        <!-- Switcher -->
-        <script src="js/switcher.js"></script>
-        
-        <!-- Main Js -->
-        <script src="js/app.js"></script>
-        
-    </body>
-
-</html>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- Start -->
+{{end}}
