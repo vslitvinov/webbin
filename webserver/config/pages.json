@@ -2,7 +2,7 @@
     "home":
     {
         "nametemp": "home",
-        "title": "Home",
+        "title": "Eterinte - Home",
         "tools":
         {
             "title": "Traiding Tools",
@@ -109,7 +109,7 @@
     "dca":
     {
         "nametemp": "dca",
-        "title": "DCA",
+        "title": "Eterinte - DCA Bot",
         "botHome":
         {
             "title": "DCA Bot",
@@ -270,7 +270,7 @@
     "grid":
     {
         "nametemp": "grid",
-        "title": "Grid",
+        "title": "Eterinte - Grid Bot",
         "botHome":
         {
             "title": "Grid Bot",
@@ -428,7 +428,7 @@
     "hold":
     {
         "nametemp": "hold",
-        "title": "Hold",
+        "title": "Eterinte - Hold Bot",
         "botHome":
         {
             "title": "Hold Bot",
@@ -589,7 +589,7 @@
     "options":
     {
         "nametemp": "options",
-        "title": "Options",
+        "title": "Eterinte - Options Bot",
         "botHome":
         {
             "title": "Options Bot",
@@ -745,30 +745,30 @@
     },
     "cart":{
         "nametemp": "cart",
-        "title": "Cart"
+        "title": "Eterinte - Cart"
     },
     "education":{
         "nametemp": "education",
-        "title": "Eternal Intelligence - Automated systems"
+        "title": "Eterinte - Education"
     },
     "faqpage":{
         "nametemp": "faqpage",
-        "title": "Eternal Intelligence - Automated systems"
+        "title": "Eterinte - FAQ"
     },
     "privacy":{
         "nametemp": "privacy",
-        "title": "Eternal Intelligence - Automated systems"
+        "title": "Eterinte - Privacy"
     },
     "terms":{
         "nametemp": "terms",
-        "title": "Eternal Intelligence - Automated systems"
+        "title": "Eterinte - Terms and Conditions"
     },
     "contact":{
         "nametemp": "contact",
-        "title": "Eternal Intelligence - Automated systems"
+        "title": "Eterinte - Contacts"
     },
     "checkouts":{
         "nametemp": "checkouts",
-        "title": "Eternal Intelligence - Automated systems"
+        "title": "Eterinte - Checkouts"
     }
 }
