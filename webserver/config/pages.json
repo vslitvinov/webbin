@@ -90,19 +90,19 @@
             "items": [
             {
                 "question": "How Eterinte work ?",
-                "answer": "Simple Text Example"
+                "answer": "Eterinte's job is to automate your processes across multiple platforms using intelligent and self-learning systems. Using the API keys of your account on the digital resources you need, our systems help to do all the work for you in the best possible way."
             },
             {
-                "question": "What is the main process open account ?",
-                "answer": "Simple Text Example"
+                "question": "Where do I begin? ?",
+                "answer": "You can start by browsing our automation offerings such as trading bots. If you like something, you can register and view the available tools on your account page."
             },
             {
-                "question": "How to make unlimited data entry ",
-                "answer": "Simple Text Example"
+                "question": "Do I need to download anything to use Etherinte? ",
+                "answer": "No, you don't need to download anything. All work with our service takes place through a browser on the site, easily and accessible from anywhere, any device."
             },
             {
                 "question": "Is Eterinte safer to use with my account ?",
-                "answer": "Simple Text Example"
+                "answer": "We give a 100% safety guarantee to our users. High-quality data encryption, server security from various types of cyberattacks, confidentiality, and privacy — guarantee the protection of your activities!"
             }]
         }
     },
@@ -245,6 +245,26 @@
                     ]
                 }
             ]
+        },
+        "faq":
+        {
+            "items": [
+            {
+                "question": "How our DCA Bot work ?",
+                "answer": "The DCA bot automatically buys and sells the cryptocurrency at recurring intervals for a specified period. If you enter the market, investing all your capital at once, you risk buying at a high price and losing money when the price falls. Investing in installments allows you to reduce the risks of local price movements by allocating investments over time."
+            },
+            {
+                "question": "Can i use multiple coin pairs ?",
+                "answer": "Of course, the bot can work with different pairs of currencies or groups by switching between them depending on the situation and user settings."
+            },
+            {
+                "question": "How this algorythm work ?",
+                "answer": "Simply saying, instead of a risky one-time investment, which may go into minus if you do not guess the market rate, we propose dividing this amount into parts and investing each with maximum benefit. As a result, instead of buying 100 shares for 100 dollars, on average, we will buy them for you 80-85 in installments. And when the price rises, you will sell them for a higher price smoothly."
+            },
+            {
+                "question": "Is Eterinte safer to use with my account ?",
+                "answer": "We give a 100% safety guarantee to our users. High-quality data encryption, server security from various types of cyberattacks, confidentiality, and privacy — guarantee the protection of your activities!"
+            }]
         }
     },
     "grid":
@@ -383,6 +403,26 @@
                     ]
                 }
             ]
+        },
+        "faq":
+        {
+            "items": [
+            {
+                "question": "How our Grid Bot work ?",
+                "answer": "Grid Bot constantly trades on the stock exchange from your account, observing and analyzing charts and the overall market situation."
+            },
+            {
+                "question": "Can i use multiple coin pairs ?",
+                "answer": "Of course, the bot can work with different pairs of currencies or groups by switching between them depending on the situation and user settings."
+            },
+            {
+                "question": "How this algorythm work ?",
+                "answer": "Grid Bot makes many buys and sells at the ideal time calculated by the algorithm, based on user settings and available capital, using candlestick analysis, chart history, market situation regarding bad coins and stocks of companies on the exchange."
+            },
+            {
+                "question": "Is Eterinte safer to use with my account ?",
+                "answer": "We give a 100% safety guarantee to our users. High-quality data encryption, server security from various types of cyberattacks, confidentiality, and privacy — guarantee the protection of your activities!"
+            }]
         }
     },
     "hold":
@@ -524,6 +564,26 @@
                     ]
                 }
             ]
+        },
+        "faq":
+        {
+            "items": [
+            {
+                "question": "How our Hold Bot work ?",
+                "answer": "HODL bots operate in the same way as DCA, but offer a more flexible investment strategy. Traditional investments involve monthly withdrawals from the account and investing in diversified portfolio elements such as funds and bonds."
+            },
+            {
+                "question": "Can i use multiple coin pairs ?",
+                "answer": "Of course, the bot can work with different pairs of currencies or groups by switching between them depending on the situation and user settings."
+            },
+            {
+                "question": "How this algorythm work ?",
+                "answer": "The Hold Bot algorithm is based on the ability of other bots to calculate the most profitable time for a successful investment on price drawdowns and holds this amount until the user's settings tell him to sell everything with the greatest profit."
+            },
+            {
+                "question": "Is Eterinte safer to use with my account ?",
+                "answer": "We give a 100% safety guarantee to our users. High-quality data encryption, server security from various types of cyberattacks, confidentiality, and privacy — guarantee the protection of your activities!"
+            }]
         }
     },
     "options":
@@ -661,6 +721,26 @@
                     ]
                 }
             ]
+        },
+        "faq":
+        {
+            "items": [
+            {
+                "question": "How our DCA Bot work ?",
+                "answer": "text"
+            },
+            {
+                "question": "Can i use multiple coin pairs ?",
+                "answer": "Of course, the bot can work with different pairs of currencies or groups by switching between them depending on the situation and user settings."
+            },
+            {
+                "question": "How this algorythm work ?",
+                "answer": "text"
+            },
+            {
+                "question": "Is Eterinte safer to use with my account ?",
+                "answer": "We give a 100% safety guarantee to our users. High-quality data encryption, server security from various types of cyberattacks, confidentiality, and privacy — guarantee the protection of your activities!"
+            }]
         }
     },
     "cart":{
