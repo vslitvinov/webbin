@@ -21,6 +21,7 @@ function DeleteItemCart(uuid){
     Request("POST", "/cart/deleteitem", {uuid:uuid}).onload = (e) => {
         // console.log(JSON.parse(e.srcElement.response))
         document.querySelector("." + uuid).remove()
+        GetCartInfo()
     }
 }
 
