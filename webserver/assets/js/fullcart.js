@@ -20,15 +20,13 @@ function GetCartInfo() {
 function DeleteItemCart(uuid){
     Request("POST", "/cart/deleteitem", {uuid:uuid}).onload = (e) => {
         // console.log(JSON.parse(e.srcElement.response))
-        let sel = "." + uuid
-        document.querySelector(sel).remove()
+        document.querySelector("." + uuid).remove()
     }
 }
 
 
 
 function PaintFullCart(data) {
-    console.log(data)
 
 	let fullCart = document.getElementById("fullCart")
     let TotalPriceCart = document.getElementById("TotalPriceCart")
