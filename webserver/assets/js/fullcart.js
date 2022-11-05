@@ -25,7 +25,6 @@ function DeleteItemCart(uuid){
     }
 }
 
-fu
 
 
 function PaintFullCart(data) {
