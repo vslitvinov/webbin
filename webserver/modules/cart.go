@@ -164,7 +164,8 @@ func (cs *CartService) Pay(w http.ResponseWriter, r *http.Request) {
 	}
 
 
-	log.Println(r.Host)
+	log.Println(" adrr: ",r.RemoteAddr)
+	log.Println(r.RequestURI)
 
 
 
