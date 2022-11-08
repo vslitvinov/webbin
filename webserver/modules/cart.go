@@ -152,6 +152,27 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 	fmt.Fprintf(w,string(res))
 }
 
+func (cs *CartService) Pay(w http.ResponseWriter, r *http.Request) {
+
+	token, err := r.Cookie("cart_token")
+	if err != nil {
+		log.Println("err get body cookie: ",err)
+	} 
+	
+	if token == nil {
+		log.Println("token nil")
+	}
+
+
+	log.Println(r.Host)
+
+
+
+
+
+}
+
+
 func (cs *CartService) ResetCart(w http.ResponseWriter, r *http.Request){
 	// удаляем содержимое корзины
 

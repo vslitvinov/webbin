@@ -59,6 +59,7 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 	s.Router.HandleFunc("/cart/additem", s.CartApi.AddItemToCart)
 	s.Router.HandleFunc("/cart/deleteitem", s.CartApi.DeleteItemFromCart)
 	s.Router.HandleFunc("/cart/getcart", s.CartApi.GetCartInfo)
+	s.Router.HandleFunc("/cart/pay", s.CartApi.Pay)
 
 
 	fs := http.FileServer(http.Dir("./webserver/assets"))
