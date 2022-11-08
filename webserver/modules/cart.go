@@ -163,9 +163,9 @@ func (cs *CartService) Pay(w http.ResponseWriter, r *http.Request) {
 		log.Println("token nil")
 	}
 
+	// ipClient := r.RemoteAddr
 
-	log.Println(" adrr: ",r.RemoteAddr)
-	log.Println(r.RequestURI)
+
 
 
 
