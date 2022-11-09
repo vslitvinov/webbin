@@ -18,11 +18,12 @@
                 <div class="card pricing border-0 rounded bg-transparent overflow-hidden text-center">
                     <div class="plan-name p-4 bg-{{ .BlockStyle}}">
                         <h4 class="title text-white title-dark mb-3">{{ .Name }}</h4>
-                        <p class="para text-light title-dark mb-0">Profit Limit <strong>${{ .Profit }}</strong>/month</p>
+                        <p class="para text-light title-dark mb-0">Profit Limit <strong>€{{ .Profit }}</strong>/month</p>
+                        <p class="para text-light title-dark mb-0">Recommended minimum deposit on the exchange <strong>${{ .Deposit }}</strong></p>
                     </div>
                     <div class="p-4 bg-white">
                         <div class="d-flex justify-content-center">
-                            <span class="h6 text-muted mb-0 mt-2">$</span>
+                            <span class="h6 text-muted mb-0 mt-2">€</span>
                             <span class="price text-{{ .BlockStyle}} h1 mb-0">{{ .Price }}</span>
                             <span class="h6 text-muted align-self-end mb-1">/month</span>
                         </div>

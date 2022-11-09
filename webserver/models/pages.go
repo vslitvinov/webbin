@@ -13,6 +13,7 @@ type PriceItem struct {
 	SubTitle   string   `json:"subtitle"`
 	Profit     int      `json:"profit"`
 	Price      int      `json:"price"`
+	Deposit    int      `json:"deposit"`
 	CountBot   int      `json:"countbot"`
 	TyBot      string   `json:"tybot"`
 	Button     string   `json:"button"`
