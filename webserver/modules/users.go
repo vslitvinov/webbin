@@ -4,7 +4,6 @@ import (
 	"context"
 	"html/template"
 	"log"
-	"fmt"
 	"net/http"
 	"site/webserver/models"
 	"time"
