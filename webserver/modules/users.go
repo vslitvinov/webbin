@@ -169,9 +169,9 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 	c, err := r.Cookie("session_token")
 	if err != nil {
 		if err == http.ErrNoCookie {
-			http.Redirect(w, r, "./login", http.StatusSeeOther) 
+			// http.Redirect(w, r, "./login", http.StatusSeeOther) 
 		}
-		http.Redirect(w, r, "./login", http.StatusSeeOther) 
+		// http.Redirect(w, r, "./login", http.StatusSeeOther) 
 	}
 
 	userSession, ok := us.cacheSession.Get(c.Value)
@@ -184,7 +184,7 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 	user, ok := us.cacheUser.Get(email)
 	if !ok {
 		log.Println("err get user is cache")
-		http.Redirect(w, r, "./login", http.StatusSeeOther)  
+		// http.Redirect(w, r, "./login", http.StatusSeeOther)  
 	}
 
 	log.Println(email)
