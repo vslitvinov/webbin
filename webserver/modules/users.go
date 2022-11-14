@@ -160,7 +160,18 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 		http.Redirect(w, r, "./login", http.StatusSeeOther)
 	}
 
-	fmt.Fprintf(w,"lol")
+	// fmt.Fprintf(w,"lol")
+
+
+
+    us.Temp.ExecuteTemplate(w, "Index", struct{
+    	T string
+    	Title string
+    }{
+    	T: "account",
+    	Title: "Account",
+    })
+
 	// http.Redirect(w, r, newUrl, http.StatusSeeOther)
 }
 

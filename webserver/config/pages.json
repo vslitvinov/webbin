@@ -786,5 +786,9 @@
     "checkouts":{
         "nametemp": "checkouts",
         "title": "Eterinte - Checkouts"
+    },
+    "account":{
+        "nametemp": "account",
+        "title": "Eterinte - Account"
     }
 }
