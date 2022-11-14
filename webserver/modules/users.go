@@ -179,16 +179,14 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 		http.Redirect(w, r, "./login", http.StatusSeeOther)  
 		// токен сеанса отсутствует 
 		log.Println("err load user session")
-	}
-	email := userSession.(sessionUser).GetEmail()
+	} 
 
-	user, ok := us.cacheUser.Get(email)
+	user, ok := us.cacheUser.Get(userSession.(sessionUser).GetEmail())
 	if !ok {
 		log.Println("err get user is cache")
 		http.Redirect(w, r, "./login", http.StatusSeeOther)  
 	}
 
-	log.Println(email)
     us.Temp.ExecuteTemplate(w, "Index", struct{
     	T string
     	Title string
