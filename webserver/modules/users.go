@@ -4,6 +4,7 @@ import (
 	"context"
 	"html/template"
 	"log"
+	"fmt"
 	"net/http"
 	"site/webserver/models"
 	"time"
@@ -158,6 +159,8 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 	if !us.CheckSessionToken(r){
 		http.Redirect(w, r, "./login", http.StatusSeeOther)
 	}
+
+	fmt.Fprintf(w,"lol")
 	// http.Redirect(w, r, newUrl, http.StatusSeeOther)
 }
 
