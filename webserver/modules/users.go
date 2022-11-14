@@ -170,8 +170,10 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 	if err != nil {
 		if err == http.ErrNoCookie {
 			http.Redirect(w, r, "./login", http.StatusSeeOther) 
+			return
 		}
 		http.Redirect(w, r, "./login", http.StatusSeeOther) 
+		return
 	}
 
 	email := ""
@@ -181,6 +183,7 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 		http.Redirect(w, r, "./login", http.StatusSeeOther)  
 		// токен сеанса отсутствует 
 		log.Println("err load user session")
+		return
 	} else {
 		email = userSession.(sessionUser).GetEmail()
 	}
@@ -190,6 +193,7 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 	if !ok {
 		log.Println("err get user is cache")
 		http.Redirect(w, r, "./login", http.StatusSeeOther)  
+		return
 	}
 
 	log.Println(email)
