@@ -181,8 +181,10 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 		http.Redirect(w, r, "./login", http.StatusSeeOther)  
 		// токен сеанса отсутствует 
 		log.Println("err load user session")
-	} 
-	email = userSession.(sessionUser).GetEmail()
+	} else {
+		email = userSession.(sessionUser).GetEmail()
+	}
+	
 
 	user, ok := us.cacheUser.Get(email)
 	if !ok {
