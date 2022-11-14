@@ -23,6 +23,10 @@ func (s sessionUser) isExpired() bool {
 	return s.expiry.Before(time.Now())
 }
 
+func (s sessionUser) GetEmail() string{
+	return s.email
+}
+
 type UsersService struct {
 	db Storage
 	cacheUser *Cache
@@ -161,14 +165,37 @@ func (us *UsersService) Account(w http.ResponseWriter, r *http.Request){
 
 	// fmt.Fprintf(w,"lol")
 
+	// токен сеанса из cookies
+	c, err := r.Cookie("session_token")
+	if err != nil {
+		if err == http.ErrNoCookie {
+			http.Redirect(w, r, "./login", http.StatusSeeOther) 
+		}
+		http.Redirect(w, r, "./login", http.StatusSeeOther) 
+	}
 
+	userSession, ok := us.cacheSession.Get(c.Value)
+	if !ok {
+		// токен сеанса отсутствует 
+		log.Println("err load user session")
+	}
+	email := userSession.(sessionUser).GetEmail()
 
+	user, ok := us.cacheUser.Get(email)
+	if !ok {
+		log.Println("err get user is cache")
+		http.Redirect(w, r, "./login", http.StatusSeeOther)  
+	}
+
+	log.Println(email)
     us.Temp.ExecuteTemplate(w, "Index", struct{
     	T string
     	Title string
+    	User models.User
     }{
     	T: "account",
     	Title: "Account",
+    	User: user.(models.User),
     })
 
 	// http.Redirect(w, r, newUrl, http.StatusSeeOther)
