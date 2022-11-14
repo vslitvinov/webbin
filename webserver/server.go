@@ -49,6 +49,7 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 	s.Router.HandleFunc("/hold", s.Hold)
 	s.Router.HandleFunc("/signup", s.US.Signup)
 	s.Router.HandleFunc("/login", s.US.Signin)
+	s.Router.HandleFunc("/account", s.US.Account)
 	s.Router.HandleFunc("/cart", s.Cart)
 	s.Router.HandleFunc("/education", s.Education)
 	s.Router.HandleFunc("/faqs", s.FAQ)
