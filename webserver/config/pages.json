@@ -227,26 +227,6 @@
                         "Cluster System Support",
                         "30 Bot AI settings/month"
                     ]
-                },
-                {
-                    "uuid":"e7c07980-97de-408f-af63-3ea2c8015f08",
-                    "blockstyle": "info",
-                    "name":"Max 5000",
-                    "subtitle":"Bot Army Style",
-                    "profit":20000,
-                    "price":4999,
-                    "deposit": 100000,
-                    "countbot":30,
-                    "tybot":"DCA Bots",
-                    "button":"Get Max 5000",
-                    "items": [
-                        "30 DCA Bots",
-                        "Unlimited Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "Personal support service",
-                        "Unlimited Bot AI settings support"
-                    ]
                 }
             ]
         },
@@ -388,26 +368,6 @@
                         "Free Settings support",
                         "Cluster System Support",
                         "30 Bot AI settings/month"
-                    ]
-                },
-                {
-                    "uuid":"10c13e2b-b10a-4f97-b6b8-d1be85280a69",
-                    "name":"Max 5000",
-                    "blockstyle": "info",
-                    "subtitle":"Bot Army Style",
-                    "profit":20000,
-                    "price":4999,
-                    "deposit": 100000,
-                    "countbot":30,
-                    "tybot":"Grid Bots",
-                    "button":"Get Max 5000",
-                    "items": [
-                        "30 Grid Bots",
-                        "Unlimited Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "Personal support service",
-                        "Unlimited Bot AI settings support"
                     ]
                 }
             ]
@@ -554,26 +514,6 @@
                         "Cluster System Support",
                         "30 Bot AI settings/month"
                     ]
-                },
-                {
-                    "uuid": "5758eb96-f367-44f3-8d2f-cc7ab95943ef",
-                    "blockstyle": "info",
-                    "name":"Max 5000",
-                    "subtitle":"Bot Army Style",
-                    "profit":20000,
-                    "price":4999,
-                    "deposit": 100000,
-                    "countbot":30,
-                    "tybot":"Hold Bots",
-                    "button":"Get Max 5000",
-                    "items": [
-                        "30 Hold Bots",
-                        "Unlimited Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "Personal support service",
-                        "Unlimited Bot AI settings support"
-                    ]
                 }
             ]
         },
@@ -715,25 +655,6 @@
                         "Free Settings support",
                         "Cluster System Support",
                         "30 Bot AI settings/month"
-                    ]
-                },
-                {
-                    "blockstyle": "info",
-                    "name":"Max 5000",
-                    "subtitle":"Bot Army Style",
-                    "profit":20000,
-                    "price":4999,
-                    "deposit": 100000,
-                    "countbot":30,
-                    "tybot":"Options Bots",
-                    "button":"Get Max 5000",
-                    "items": [
-                        "30 Options Bots",
-                        "Unlimited Coin Pairs",
-                        "Free Settings support",
-                        "Cluster System Support",
-                        "Personal support service",
-                        "Unlimited Bot AI settings support"
                     ]
                 }
             ]
