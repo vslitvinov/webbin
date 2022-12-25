@@ -73,18 +73,24 @@ func NewWebServer(db *pgxpool.Pool) *WebServer{
 
 func (ws *WebServer) HomePage(w http.ResponseWriter, r *http.Request){
 	 // w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["home"])
     if err != nil {
     	log.Println(err)
     }
 }
 func (ws *WebServer) DCA(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["dca"])
     if err != nil {
     	log.Println(err)
     }
 }
 func (ws *WebServer) Hold(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["hold"])
     if err != nil {
     	log.Println(err)
@@ -92,6 +98,8 @@ func (ws *WebServer) Hold(w http.ResponseWriter, r *http.Request){
 }
 
 func (ws *WebServer) Grid(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["grid"])
     if err != nil {
     	log.Println(err)
@@ -99,12 +107,16 @@ func (ws *WebServer) Grid(w http.ResponseWriter, r *http.Request){
 }
 
 func (ws *WebServer) Education(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["education"])
     if err != nil {
     	log.Println(err)
     }
 }
 func (ws *WebServer) FAQ(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["faqpage"])
     if err != nil {
     	log.Println(err)
@@ -112,6 +124,8 @@ func (ws *WebServer) FAQ(w http.ResponseWriter, r *http.Request){
 }
 
 func (ws *WebServer) Privacy(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["privacy"])
     if err != nil {
     	log.Println(err)
@@ -119,6 +133,8 @@ func (ws *WebServer) Privacy(w http.ResponseWriter, r *http.Request){
 }
 
 func (ws *WebServer) Terms(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["terms"])
     if err != nil {
     	log.Println(err)
@@ -126,6 +142,8 @@ func (ws *WebServer) Terms(w http.ResponseWriter, r *http.Request){
 }
 
 func (ws *WebServer) Contact(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["contact"])
     if err != nil {
     	log.Println(err)
@@ -133,6 +151,8 @@ func (ws *WebServer) Contact(w http.ResponseWriter, r *http.Request){
 }
 
 func (ws *WebServer) Checkouts(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["checkouts"])
     if err != nil {
     	log.Println(err)
@@ -143,7 +163,8 @@ func (ws *WebServer) Checkouts(w http.ResponseWriter, r *http.Request){
 
 
 func (ws *WebServer) Cart(w http.ResponseWriter, r *http.Request){
-
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
     err := ws.Temp.ExecuteTemplate(w, "Index", ws.Pages["cart"])
     if err != nil {
     	log.Println(err)

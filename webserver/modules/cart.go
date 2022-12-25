@@ -80,6 +80,8 @@ type FullCart struct {
 }
 
 func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	// проверяем если ли токен корзинны ? 
 		// если нет создаем токен и корзину
 	// генерируем uuid и добавляем элемент 
@@ -153,6 +155,8 @@ func (cs *CartService) AddItemToCart(w http.ResponseWriter, r *http.Request){
 }
 
 func (cs *CartService) Pay(w http.ResponseWriter, r *http.Request) {
+w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 	token, err := r.Cookie("cart_token")
 	if err != nil {
@@ -175,6 +179,8 @@ func (cs *CartService) Pay(w http.ResponseWriter, r *http.Request) {
 
 
 func (cs *CartService) ResetCart(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	// удаляем содержимое корзины
 
 	var cartToken = uuid.NewString()
@@ -192,6 +198,8 @@ func (cs *CartService) ResetCart(w http.ResponseWriter, r *http.Request){
 }
 
 func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	// фейл сейф проверка если в куках токен корзины 
 	// проверка находится ли в корзине товар с нужным uuid 
 		// если да удаляем 
@@ -243,6 +251,8 @@ func (cs *CartService) DeleteItemFromCart(w http.ResponseWriter, r *http.Request
 }
 
 func (cs *CartService) GetCartInfo(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	// read coockie file 
 	var cartToken = uuid.NewString()
 
