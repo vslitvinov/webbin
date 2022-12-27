@@ -56,7 +56,7 @@ func main() {
 	}()
 
 	fmt.Printf("Server listening on %s", server.Addr)
-	if err := server.ListenAndServeTLS("eterinte_com.ca-bundle", "key.pem"); err != nil {
+	if err := server.ListenAndServeTLS("eterinte_com.ca-bundle", "RSA_PRIVATE_KEY.txt"); err != nil {
 		fmt.Println(err)
 	}
 
